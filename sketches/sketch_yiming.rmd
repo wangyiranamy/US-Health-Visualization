@@ -1,0 +1,69 @@
+---
+title: "sketch"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Load data and packages.
+```{r}
+library(tidyverse)
+library(extracat)
+demographics <- read.csv("../data/demographics.csv")
+causes <- read.csv("../data/leading_causes_of_death.csv")
+demographics[demographics == -9999 | demographics == -1111 | demographics == -2222 | demographics == -2222.2 | demographics == -2 | demographics == -1111 | demographics == -1111.1 | demographics == -1] <- NA
+causes[causes == -9999 | causes == -1111 | causes == -2222 | causes == -2222.2 | causes == -2 | causes == -1111 | causes == -1111.1 | causes == -1] <- NA
+```
+
+Missing data
+```{r}
+visna(causes, sort = 'b')
+```
+
+```{r fig.width = 10}
+ggplot(demographics) + geom_bar(mapping = aes(x = fct_rev(fct_infreq(CHSI_State_Abbr))))
+demographics %>%
+  filter(Population_Size <= 100000) %>%
+  ggplot() + geom_histogram(mapping = aes(x = Population_Size))
+demographics %>%
+  filter(Population_Size > 100000 & Population_Size < 250000) %>%
+  ggplot() + geom_histogram(mapping = aes(x = Population_Size))
+demographics %>%
+  filter(Population_Density < 1000 & Population_Density > 0) %>%
+  ggplot() + geom_histogram(mapping = aes(x = Population_Density))
+demographics %>%
+  filter(Population_Density > 1000) %>%
+  ggplot() + geom_histogram(mapping = aes(x = Population_Density))
+demographics %>%
+  filter(Poverty > 0 & Poverty < 100) %>%
+  ggplot() + geom_histogram(mapping = aes(x = Poverty))
+demographics %>%
+  filter(Age_19_Under > 0 & Age_19_Under < 100) %>%
+  ggplot() + geom_histogram(mapping = aes(x = Age_19_Under))
+demographics %>%
+  filter(Age_19_64 > 0 & Age_19_64 < 100) %>%
+  ggplot() + geom_histogram(mapping = aes(x = Age_19_64))
+demographics %>%
+  filter(Age_65_84 > 0 & Age_65_84 < 100) %>%
+  ggplot() + geom_histogram(mapping = aes(x = Age_65_84))
+demographics %>%
+  filter(Age_85_and_Over > 0 & Age_85_and_Over < 100) %>%
+  ggplot() + geom_histogram(mapping = aes(x = Age_85_and_Over))
+demographics %>%
+  filter(Black > 0 & Black < 100) %>%
+  ggplot() + geom_histogram(mapping = aes(x = Black))
+demographics %>%
+  filter(White > 0 & White < 100) %>%
+  ggplot() + geom_histogram(mapping = aes(x = White))
+demographics %>%
+  filter(Asian > 0 & Asian < 100) %>%
+  ggplot() + geom_histogram(mapping = aes(x = Asian))
+demographics %>%
+  filter(Native_American > 0 & Native_American < 100) %>%
+  ggplot() + geom_histogram(mapping = aes(x = Native_American))
+demographics %>%
+  filter(Hispanic > 0 & Hispanic < 100) %>%
+  ggplot() + geom_histogram(mapping = aes(x = Hispanic))
+```
