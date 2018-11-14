@@ -1,0 +1,98 @@
+---
+title: "Final Project"
+author: "Yiran Wang"
+date: "2018/11/1"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+### 
+```{r readfile}
+summary_measure <-read.csv("/Users/yiranwang/US-Health-Visualization/data/summary_measures_of_health.csv")
+
+vulnerable<-read.csv("/Users/yiranwang/US-Health-Visualization/data/vunerable_pops_and_env_health.csv")
+```
+
+```{r filter01}
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+
+summary_measure_df1<- summary_measure %>% 
+  select(State_FIPS_Code,County_FIPS_Code,CHSI_County_Name,CHSI_State_Name,CHSI_State_Abbr,ALE, All_Death, Health_Status, Unhealthy_Days)
+
+summary_measure_df1[summary_measure_df1==-2222.20] <- NA
+summary_measure_df1[summary_measure_df1==-1111.10] <- NA
+
+library(extracat)
+visna(summary_measure_df1,sort = "b")
+```
+
+```{r filter02}
+summary_measure_df1 <- summary_measure_df1[complete.cases(summary_measure_df1), ]
+summary_measure_state <- summary_measure_df1%>%
+  group_by(CHSI_State_Abbr) %>%
+  summarise(meanALE = mean(ALE,rm.na=TRUE), mAD = mean(All_Death),mHS= mean(Health_Status), mUD =mean(Unhealthy_Days))%>%
+  mutate(meanALE = meanALE, meanAll_Death = mAD, meanHealth_Status = mHS, meanUnhealthy_Days=mUD)
+ggplot(summary_measure_state, aes(CHSI_State_Abbr,meanALE))+
+  geom_bar(stat = "identity")+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+ggplot(summary_measure_state, aes(CHSI_State_Abbr,meanAll_Death))+
+  geom_bar(stat = "identity")+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+ggplot(summary_measure_state, aes(CHSI_State_Abbr,meanHealth_Status))+
+  geom_bar(stat = "identity")+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+ggplot(summary_measure_state, aes(CHSI_State_Abbr,meanUnhealthy_Days))+
+  geom_bar(stat = "identity")+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+write.csv(summary_measure_state, file = "summary_measure_state.csv", row.names = FALSE)
+```
+
+```{r cleveland}
+summary_measure_state2 <- gather(summary_measure_state, key = variable, value=Value, ALE)
+summary_measure_state3 <- gather(summary_measure_state, key = variable, value=Value, All_Death)
+summary_measure_state4 <- gather(summary_measure_state, key = variable, value=Value, Unhealthy_Days)
+summary_measure_state5 <- gather(summary_measure_state, key = variable, value=Value, Health_Status)
+g1 <-ggplot(summary_measure_state2, aes(x=Value, y = fct_reorder2(CHSI_State_Name, fct_rev(variable),-Value)))+geom_point(aes(col=variable))+scale_color_manual("Variables", values = c("black", "skyblue", "rosybrown")) +ylab("State_Name")
+g2 <-ggplot(summary_measure_state3, aes(x=Value, y = fct_reorder2(CHSI_State_Name, fct_rev(variable),-Value)))+geom_point(aes(col=variable))+scale_color_manual("Variables", values = c("black", "skyblue", "rosybrown")) +ylab("State_Name")
+g3 <-ggplot(summary_measure_state4, aes(x=Value, y = fct_reorder2(CHSI_State_Name, fct_rev(variable),-Value)))+geom_point(aes(col=variable))+scale_color_manual("Variables", values = c("black", "skyblue", "rosybrown")) +ylab("State_Name")
+g4 <-ggplot(summary_measure_state5, aes(x=Value, y = fct_reorder2(CHSI_State_Name, fct_rev(variable),-Value)))+geom_point(aes(col=variable))+scale_color_manual("Variables", values = c("black", "skyblue", "rosybrown")) +ylab("State_Name")
+g1
+g2
+g3
+g4
+```
+
+```{r}
+merge_demomeasure <- merge(summary_measure_df1, demographics, by=c("CHSI_County_Name","CHSI_State_Abbr"), all=TRUE)
+```
+
+
+
+```{r map1}
+library(plotly)
+l <- list(color = toRGB("white"), width = 2)
+g <- list(
+  scope = 'usa',
+  projection = list(type = 'albers usa'),
+  showlakes = TRUE,
+  lakecolor = toRGB('white')
+)
+
+p <- plot_geo(summary_measure_state, locationmode = 'USA-states') %>%
+  add_trace(
+    z = ~meanALE, text = ~meanUnhealthy_Days, locations = ~CHSI_State_Abbr,
+    color = ~meanALE, colors = 'Purples'
+  ) %>%
+  colorbar(title = "ALE") %>%
+  layout(
+    title = '2011 US Average Life Expectation by State<br>(Hover for breakdown)',
+    geo = g
+  )
+chart_link = api_create(p, filename="choropleth-ag")
+chart_link
+
+```
