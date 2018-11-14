@@ -1,0 +1,1618 @@
+"","CHSI_County_Name","CHSI_State_Name","Brst_Cancer","Col_Cancer","Lung_Cancer"
+"1","Bibb","Alabama",30.1,17.4,64.6
+"2","Bullock","Alabama",30.4,23,49.9
+"3","Butler","Alabama",20.5,17.8,52.5
+"4","Cherokee","Alabama",11,15.3,54.1
+"5","Choctaw","Alabama",30.2,21.1,65.7
+"6","Clay","Alabama",14.4,12.5,54.2
+"7","Cleburne","Alabama",12.7,14.9,50.1
+"8","Conecuh","Alabama",25.9,19.3,58.4
+"9","Coosa","Alabama",24.3,19.6,61.4
+"10","Crenshaw","Alabama",26.7,16.7,65.9
+"11","Fayette","Alabama",19.2,15.6,60
+"12","Geneva","Alabama",22.8,14.6,68.3
+"13","Greene","Alabama",39.4,16.9,51.5
+"14","Hale","Alabama",29.5,21.4,61.7
+"15","Henry","Alabama",31.4,17.2,62.8
+"16","Lamar","Alabama",23.9,21.6,64.9
+"17","Lowndes","Alabama",19.9,14.2,45.4
+"18","Macon","Alabama",25.9,30.8,57.1
+"19","Marengo","Alabama",26.5,17.5,64.9
+"20","Monroe","Alabama",21.7,19.5,56.8
+"21","Perry","Alabama",29.9,27.7,50.3
+"22","Pickens","Alabama",17.7,17.1,55.1
+"23","Randolph","Alabama",30.9,23.7,51.9
+"24","Sumter","Alabama",24.3,17.8,57.1
+"25","Washington","Alabama",26.3,16.6,58.5
+"26","Wilcox","Alabama",35,22.1,44.6
+"27","Winston","Alabama",17.5,16.7,70.9
+"28","Aleutians East","Alaska",NA,NA,NA
+"29","Aleutians West","Alaska",NA,NA,49.1
+"30","Bethel","Alaska",NA,40.4,65.5
+"31","Bristol Bay","Alaska",NA,NA,NA
+"32","Denali","Alaska",NA,NA,NA
+"33","Dillingham","Alaska",NA,42.5,60.9
+"34","Haines","Alaska",NA,NA,61.7
+"35","Ketchikan Gateway","Alaska",30.8,30.5,55.2
+"36","Kodiak Island","Alaska",30.9,30.3,51.2
+"37","Lake and Peninsula","Alaska",NA,NA,NA
+"38","Nome","Alaska",NA,40.8,80.4
+"39","North Slope","Alaska",NA,NA,101.9
+"40","Northwest Arctic","Alaska",NA,43.3,59.6
+"41","Prince of Wales-Outer Ketchikan","Alaska",NA,NA,34.1
+"42","Sitka","Alaska",NA,25.3,49.7
+"43","Skagway-Hoonah-Angoon","Alaska",NA,NA,NA
+"44","Southeast Fairbanks","Alaska",NA,NA,43
+"45","Valdez-Cordova","Alaska",NA,NA,66.7
+"46","Wade Hampton","Alaska",NA,46.3,83.6
+"47","Wrangell-Petersburg","Alaska",NA,24.1,61.9
+"48","Yakutat","Alaska",NA,NA,NA
+"49","Yukon-Koyukuk","Alaska",NA,29.5,70.8
+"50","Greenlee","Arizona",27.4,18.3,37.5
+"51","La Paz","Arizona",24.7,14.6,39.9
+"52","Arkansas","Arkansas",27.9,29.9,80.2
+"53","Ashley","Arkansas",31,20.1,75.2
+"54","Bradley","Arkansas",22.4,20.4,71.2
+"55","Calhoun","Arkansas",25,20.5,80.6
+"56","Carroll","Arkansas",24.7,20.6,52.4
+"57","Chicot","Arkansas",29.4,26.7,66
+"58","Clark","Arkansas",27.8,21.6,61.5
+"59","Clay","Arkansas",20.2,26.7,84.8
+"60","Cleburne","Arkansas",22.4,18.4,65.3
+"61","Cleveland","Arkansas",NA,17.4,64.2
+"62","Conway","Arkansas",23.2,18.4,60.1
+"63","Cross","Arkansas",36.2,28.9,75.5
+"64","Dallas","Arkansas",42.7,23.3,69.4
+"65","Desha","Arkansas",21.8,29.3,61
+"66","Drew","Arkansas",25.4,22,68.6
+"67","Franklin","Arkansas",21.9,18.5,73.7
+"68","Fulton","Arkansas",23.1,16.1,73.6
+"69","Grant","Arkansas",26.6,15.5,65.5
+"70","Hempstead","Arkansas",29.9,20.9,75.2
+"71","Howard","Arkansas",39.1,18.1,74.8
+"72","Izard","Arkansas",30.3,22.2,83.8
+"73","Jackson","Arkansas",19.3,21,74.7
+"74","Johnson","Arkansas",20.7,14.6,69.5
+"75","Lafayette","Arkansas",31.1,24.5,84.2
+"76","Lawrence","Arkansas",18,20.6,91
+"77","Lee","Arkansas",37.4,22.6,82.3
+"78","Lincoln","Arkansas",20.6,17.4,68.1
+"79","Little River","Arkansas",23.8,21.9,73
+"80","Logan","Arkansas",27.3,21.6,84.4
+"81","Madison","Arkansas",17.6,19.3,60.3
+"82","Marion","Arkansas",29.6,22.3,70.8
+"83","Monroe","Arkansas",28.5,30.7,84.6
+"84","Montgomery","Arkansas",20.3,14.2,56.9
+"85","Nevada","Arkansas",26.2,22,67.1
+"86","Newton","Arkansas",21.3,10.6,71.5
+"87","Perry","Arkansas",30.9,22.4,71.5
+"88","Pike","Arkansas",25.9,18.9,70.6
+"89","Poinsett","Arkansas",23.9,23.4,85.3
+"90","Polk","Arkansas",29.2,27.8,71.5
+"91","Prairie","Arkansas",22.5,27.5,75.5
+"92","Randolph","Arkansas",19.8,26.4,71
+"93","Scott","Arkansas",13.8,19.4,71.7
+"94","Searcy","Arkansas",25.7,15.6,83.7
+"95","Sevier","Arkansas",17.7,19.6,69.2
+"96","Sharp","Arkansas",31.6,18.5,60.5
+"97","Stone","Arkansas",27.2,23.7,63.3
+"98","Van Buren","Arkansas",28.5,22.9,70.8
+"99","Woodruff","Arkansas",27.7,36.9,93.8
+"100","Yell","Arkansas",19.6,25.2,85.3
+"101","Alpine","California",NA,NA,NA
+"102","Colusa","California",21.1,23.8,55.6
+"103","Inyo","California",26.1,21,55.4
+"104","Mariposa","California",32.3,19.2,55.7
+"105","Modoc","California",19.9,18.1,50.9
+"106","Mono","California",NA,NA,42
+"107","Plumas","California",32.8,18.7,65.4
+"108","Sierra","California",NA,NA,49.1
+"109","Trinity","California",32.3,21.8,70.4
+"110","Alamosa","Colorado",15.9,22.6,29
+"111","Archuleta","Colorado",NA,26,28.5
+"112","Baca","Colorado",NA,18.5,53.4
+"113","Bent","Colorado",38.7,NA,54.3
+"114","Chaffee","Colorado",21.3,14.7,35.7
+"115","Cheyenne","Colorado",NA,NA,NA
+"116","Clear Creek","Colorado",NA,19.5,40.3
+"117","Conejos","Colorado",NA,21.2,26.7
+"118","Costilla","Colorado",NA,NA,21.4
+"119","Crowley","Colorado",NA,27.2,44
+"120","Custer","Colorado",NA,NA,NA
+"121","Dolores","Colorado",NA,NA,48.6
+"122","Elbert","Colorado",41.2,18.2,36
+"123","Gilpin","Colorado",NA,NA,49.9
+"124","Grand","Colorado",23.4,NA,29.3
+"125","Gunnison","Colorado",23.7,23.4,30.7
+"126","Hinsdale","Colorado",NA,NA,NA
+"127","Huerfano","Colorado",27.1,21.2,34.7
+"128","Jackson","Colorado",NA,NA,NA
+"129","Kiowa","Colorado",NA,NA,61
+"130","Kit Carson","Colorado",NA,21.8,39
+"131","Lake","Colorado",NA,NA,45.7
+"132","Las Animas","Colorado",19.2,20.1,35.1
+"133","Lincoln","Colorado",NA,13.2,35.3
+"134","Logan","Colorado",26.3,14.7,40.3
+"135","Mineral","Colorado",NA,NA,NA
+"136","Moffat","Colorado",NA,22.3,41
+"137","Montezuma","Colorado",26,20.5,49.6
+"138","Otero","Colorado",31.8,17.7,39.3
+"139","Ouray","Colorado",NA,NA,34.2
+"140","Park","Colorado",29.4,23.2,38.5
+"141","Phillips","Colorado",NA,14.8,33.3
+"142","Pitkin","Colorado",21.3,NA,10.5
+"143","Prowers","Colorado",22.6,23,55.6
+"144","Rio Blanco","Colorado",NA,NA,29.1
+"145","Rio Grande","Colorado",28.4,24.7,32.2
+"146","Routt","Colorado",27.9,11.1,40.2
+"147","Saguache","Colorado",39.8,NA,43.1
+"148","San Juan","Colorado",NA,NA,NA
+"149","San Miguel","Colorado",NA,NA,NA
+"150","Sedgwick","Colorado",NA,32.4,52
+"151","Summit","Colorado",NA,14.8,NA
+"152","Teller","Colorado",33.6,27.2,28.6
+"153","Washington","Colorado",NA,17.2,29.3
+"154","Yuma","Colorado",40.8,25.6,34.7
+"155","Baker","Florida",33,25.6,71.1
+"156","Bradford","Florida",20.6,18.9,77.5
+"157","Calhoun","Florida",21,20,79.7
+"158","Dixie","Florida",23.4,16.5,76.4
+"159","Franklin","Florida",25.6,22.1,89.7
+"160","Gilchrist","Florida",28.4,20.7,76.7
+"161","Glades","Florida",20.9,19,74.1
+"162","Gulf","Florida",22.3,33.2,87.3
+"163","Hamilton","Florida",41.8,27.8,86.4
+"164","Hardee","Florida",29.1,15.1,53.1
+"165","Holmes","Florida",28.8,19.9,65.8
+"166","Jefferson","Florida",32.1,20,60.3
+"167","Lafayette","Florida",NA,25.1,69.8
+"168","Liberty","Florida",44.9,17.7,78.1
+"169","Madison","Florida",23.5,20.8,64.3
+"170","Taylor","Florida",40.7,18.9,81.4
+"171","Union","Florida",NA,22.5,166.4
+"172","Wakulla","Florida",15.4,17.3,75.1
+"173","Washington","Florida",24.4,24.2,78.1
+"174","Appling","Georgia",20.7,23.6,67.6
+"175","Atkinson","Georgia",NA,NA,72.2
+"176","Bacon","Georgia",28.3,24.6,67.1
+"177","Baker","Georgia",NA,NA,54.3
+"178","Banks","Georgia",21.7,15.1,61.1
+"179","Ben Hill","Georgia",27.6,26.4,83.5
+"180","Berrien","Georgia",24.9,17,78.6
+"181","Bleckley","Georgia",13.8,18.4,84.6
+"182","Brantley","Georgia",17.2,12.8,88.1
+"183","Brooks","Georgia",16.3,21.4,66.5
+"184","Bryan","Georgia",25.5,24,64.2
+"185","Burke","Georgia",24.2,21.8,58.7
+"186","Butts","Georgia",37.6,19.7,72.3
+"187","Calhoun","Georgia",NA,16.8,45.5
+"188","Candler","Georgia",29.3,22.8,59.1
+"189","Charlton","Georgia",28.4,17.3,66.6
+"190","Chattahoochee","Georgia",NA,NA,100.2
+"191","Chattooga","Georgia",29.4,18.7,74.6
+"192","Clay","Georgia",NA,27.7,60.3
+"193","Clinch","Georgia",NA,15,76.2
+"194","Cook","Georgia",32.2,23,64.8
+"195","Crawford","Georgia",21.7,NA,56
+"196","Crisp","Georgia",26.3,18.8,80
+"197","Dade","Georgia",21.8,18.6,69.7
+"198","Dawson","Georgia",29.9,22.4,58.5
+"199","Dodge","Georgia",24.9,19.2,70.2
+"200","Dooly","Georgia",42.2,20.6,61.9
+"201","Early","Georgia",28.1,19.8,59.5
+"202","Echols","Georgia",NA,NA,61.9
+"203","Elbert","Georgia",27.1,20.5,61.4
+"204","Emanuel","Georgia",27.1,23.8,62.9
+"205","Evans","Georgia",23.5,17.8,64.1
+"206","Fannin","Georgia",26.8,20.7,75.5
+"207","Franklin","Georgia",26.3,20.4,56.1
+"208","Gilmer","Georgia",23.8,19,65.3
+"209","Glascock","Georgia",NA,NA,55.7
+"210","Grady","Georgia",25.9,19.5,62
+"211","Greene","Georgia",29.3,24.2,55.3
+"212","Hancock","Georgia",30.4,19.4,55.2
+"213","Haralson","Georgia",21.2,19.3,70.2
+"214","Harris","Georgia",28.9,19.5,47
+"215","Hart","Georgia",26.6,21.5,55.2
+"216","Heard","Georgia",22.8,11.9,61.9
+"217","Irwin","Georgia",22.7,17.4,82.5
+"218","Jasper","Georgia",26.7,27.2,63.6
+"219","Jeff Davis","Georgia",17.6,20.8,81.5
+"220","Jefferson","Georgia",41,23.1,75.6
+"221","Jenkins","Georgia",NA,18.3,64.1
+"222","Johnson","Georgia",18.5,21.2,64.3
+"223","Jones","Georgia",26.6,18.4,61.3
+"224","Lamar","Georgia",29.1,18.6,68.3
+"225","Lanier","Georgia",27.5,NA,76.1
+"226","Lee","Georgia",12.4,13.9,67.1
+"227","Lincoln","Georgia",32.5,19.7,73
+"228","Long","Georgia",NA,20.8,68
+"229","Lumpkin","Georgia",26.3,21,72.6
+"230","McDuffie","Georgia",34.8,20.1,73.9
+"231","McIntosh","Georgia",32.6,18.8,59.3
+"232","Macon","Georgia",19.7,18.4,59.8
+"233","Madison","Georgia",30,24.4,61.4
+"234","Marion","Georgia",29.6,27.8,53.2
+"235","Meriwether","Georgia",19,15.8,59.3
+"236","Miller","Georgia",25.5,NA,51.8
+"237","Mitchell","Georgia",19.7,20.5,79.7
+"238","Monroe","Georgia",18.9,22.2,72
+"239","Montgomery","Georgia",NA,24.9,65.2
+"240","Morgan","Georgia",16.3,20.6,55.8
+"241","Oconee","Georgia",23.7,16.1,48.7
+"242","Oglethorpe","Georgia",25.4,14.1,60.5
+"243","Peach","Georgia",33.9,20.7,71.7
+"244","Pickens","Georgia",37.2,14.5,56.1
+"245","Pierce","Georgia",27.3,20.5,73.5
+"246","Pike","Georgia",15,17.3,66.1
+"247","Pulaski","Georgia",36.2,22.7,59.9
+"248","Putnam","Georgia",12.6,23.2,59.7
+"249","Quitman","Georgia",NA,NA,65.9
+"250","Rabun","Georgia",23.2,20,53.5
+"251","Randolph","Georgia",24.9,29.6,62.2
+"252","Schley","Georgia",NA,NA,71.8
+"253","Screven","Georgia",35.7,30.7,66.1
+"254","Seminole","Georgia",27.2,24.9,51.4
+"255","Stewart","Georgia",36.4,16.7,66.9
+"256","Talbot","Georgia",35,22,74.2
+"257","Taliaferro","Georgia",NA,NA,NA
+"258","Tattnall","Georgia",28.5,20.5,75.4
+"259","Taylor","Georgia",28.3,27.1,56.4
+"260","Telfair","Georgia",30.8,25.6,74.6
+"261","Terrell","Georgia",27.2,35.1,92.2
+"262","Towns","Georgia",26.4,16.1,47.6
+"263","Treutlen","Georgia",NA,16.1,62.8
+"264","Turner","Georgia",NA,15.4,67.6
+"265","Twiggs","Georgia",22.7,27.8,76.6
+"266","Union","Georgia",21.5,20,59.4
+"267","Warren","Georgia",29.4,23.8,68
+"268","Washington","Georgia",23.1,22.4,62.7
+"269","Webster","Georgia",NA,37,37.9
+"270","Wheeler","Georgia",NA,19.4,54.1
+"271","White","Georgia",26.6,18.5,55.3
+"272","Wilcox","Georgia",NA,18.6,62.9
+"273","Wilkes","Georgia",35.3,23,70
+"274","Wilkinson","Georgia",26.8,20.3,69.5
+"275","Worth","Georgia",25.5,19.7,61.2
+"276","Kalawao","Hawaii",NA,NA,NA
+"277","Adams","Idaho",NA,NA,44.9
+"278","Bear Lake","Idaho",NA,21.3,30.7
+"279","Benewah","Idaho",NA,20.1,61.8
+"280","Blaine","Idaho",25.8,11.2,37.7
+"281","Boise","Idaho",NA,NA,55.8
+"282","Boundary","Idaho",31.3,NA,58.6
+"283","Butte","Idaho",NA,NA,36.6
+"284","Camas","Idaho",NA,NA,NA
+"285","Caribou","Idaho",25.6,NA,23.7
+"286","Cassia","Idaho",22.4,21.9,33.4
+"287","Clark","Idaho",NA,NA,NA
+"288","Clearwater","Idaho",28.3,NA,47.4
+"289","Custer","Idaho",NA,NA,40.2
+"290","Elmore","Idaho",30.8,16,58.7
+"291","Franklin","Idaho",31.6,12.3,14.7
+"292","Fremont","Idaho",24.8,10.1,27.4
+"293","Gem","Idaho",24.7,23.9,51
+"294","Gooding","Idaho",23.9,12.1,46.3
+"295","Idaho","Idaho",22.8,18.6,43.1
+"296","Jefferson","Idaho",26.1,17.7,27.9
+"297","Jerome","Idaho",20.6,17.2,48.6
+"298","Lemhi","Idaho",28.9,23.5,42.1
+"299","Lewis","Idaho",39.3,NA,48.6
+"300","Lincoln","Idaho",NA,NA,47.7
+"301","Madison","Idaho",33,14.3,12.4
+"302","Minidoka","Idaho",27.5,20,29.5
+"303","Oneida","Idaho",NA,22.9,NA
+"304","Owyhee","Idaho",NA,17.4,49.7
+"305","Payette","Idaho",25.3,15,57.7
+"306","Power","Idaho",29.2,15.5,36.6
+"307","Shoshone","Idaho",34.6,17.4,83.6
+"308","Teton","Idaho",NA,NA,NA
+"309","Valley","Idaho",26,11.7,51.3
+"310","Washington","Idaho",22.9,21.6,56.2
+"311","Alexander","Illinois",30.3,33.1,77
+"312","Bond","Illinois",31.8,20.9,57.5
+"313","Brown","Illinois",31.5,29.1,59.5
+"314","Calhoun","Illinois",NA,26.7,52.3
+"315","Carroll","Illinois",29.8,25.8,65.2
+"316","Cass","Illinois",34.3,27.3,61.4
+"317","Clark","Illinois",22.1,24.9,54.1
+"318","Clay","Illinois",29.7,21.8,65.1
+"319","Crawford","Illinois",32.2,30.8,56.1
+"320","Cumberland","Illinois",15.3,29.3,66.1
+"321","De Witt","Illinois",28.6,20.7,66.5
+"322","Douglas","Illinois",29.2,20.2,57.8
+"323","Edgar","Illinois",21.3,26.5,68.3
+"324","Edwards","Illinois",NA,28.4,62.5
+"325","Fayette","Illinois",20.2,23.2,52.2
+"326","Ford","Illinois",21.4,27.8,52.7
+"327","Gallatin","Illinois",42.6,22,69.7
+"328","Greene","Illinois",23.5,32.3,61.5
+"329","Hamilton","Illinois",17.3,28.7,69.9
+"330","Hancock","Illinois",25,27.5,58
+"331","Hardin","Illinois",NA,25,85.8
+"332","Henderson","Illinois",34.9,17.7,59.7
+"333","Jasper","Illinois",17.1,24.6,64.9
+"334","Jersey","Illinois",24.2,23,49.8
+"335","Jo Daviess","Illinois",30.4,16.4,53.5
+"336","Johnson","Illinois",28.4,25,65.2
+"337","Lawrence","Illinois",28.7,23.3,65
+"338","Marshall","Illinois",28,23.8,57.1
+"339","Mason","Illinois",30.1,28.9,64
+"340","Massac","Illinois",13.4,26,67.4
+"341","Menard","Illinois",33.3,23.3,50.8
+"342","Mercer","Illinois",12.8,14.1,52.3
+"343","Moultrie","Illinois",35.2,19.5,53.8
+"344","Perry","Illinois",37.3,24.1,58.2
+"345","Piatt","Illinois",20.5,23.2,55.1
+"346","Pike","Illinois",28.6,25.7,60.6
+"347","Pope","Illinois",NA,25.3,55
+"348","Pulaski","Illinois",29.5,28.3,70.7
+"349","Putnam","Illinois",46.7,26.3,54.2
+"350","Richland","Illinois",24.1,23.7,58.9
+"351","Schuyler","Illinois",31.3,23.8,65.4
+"352","Scott","Illinois",NA,28.6,53.4
+"353","Shelby","Illinois",29.3,20.8,48.4
+"354","Stark","Illinois",NA,22.5,63.9
+"355","Union","Illinois",22,26.5,69.2
+"356","Wabash","Illinois",28.3,26.2,68.5
+"357","Warren","Illinois",27.3,29.9,54
+"358","Washington","Illinois",28.1,26.1,44.8
+"359","Wayne","Illinois",23.9,17.6,62.4
+"360","White","Illinois",17.7,25.9,66.2
+"361","Benton","Indiana",17.9,21.5,64.8
+"362","Blackford","Indiana",36.1,25.9,53.6
+"363","Brown","Indiana",41.2,19.1,64.8
+"364","Carroll","Indiana",21.4,20.9,51.7
+"365","Crawford","Indiana",22.9,24.2,66.9
+"366","Fountain","Indiana",41.3,24.9,69.9
+"367","Franklin","Indiana",15.4,30,44.2
+"368","Fulton","Indiana",35.2,25.1,66.5
+"369","Jay","Indiana",23.1,23.7,59
+"370","Martin","Indiana",24.4,32.8,58.1
+"371","Newton","Indiana",20,26.1,71.4
+"372","Ohio","Indiana",NA,17.9,94.4
+"373","Orange","Indiana",24.1,19,68.4
+"374","Owen","Indiana",24.1,21.9,76.1
+"375","Parke","Indiana",27.5,22,66.4
+"376","Perry","Indiana",25.2,29.3,58.6
+"377","Pike","Indiana",27,20.2,62.7
+"378","Pulaski","Indiana",30.9,24.5,50.5
+"379","Rush","Indiana",23.2,21.1,70.3
+"380","Scott","Indiana",31.1,29,91.2
+"381","Spencer","Indiana",22.8,16,57.5
+"382","Starke","Indiana",32.2,24,76.9
+"383","Sullivan","Indiana",31,31,77.3
+"384","Switzerland","Indiana",NA,27.4,77.1
+"385","Tipton","Indiana",27.7,21.9,58.4
+"386","Union","Indiana",33.9,21.1,58.5
+"387","Vermillion","Indiana",31.9,28.1,69
+"388","Warren","Indiana",22.4,25.5,66.5
+"389","Adair","Iowa",21.7,28.5,44.8
+"390","Adams","Iowa",32.5,19.1,50.4
+"391","Allamakee","Iowa",28.7,27.7,38.7
+"392","Appanoose","Iowa",20.8,27.3,42.6
+"393","Audubon","Iowa",NA,16.4,41.8
+"394","Bremer","Iowa",27.3,20.1,39.3
+"395","Buchanan","Iowa",36.6,23.3,49.8
+"396","Buena Vista","Iowa",26.6,29.2,33.6
+"397","Butler","Iowa",28.7,21.3,38.9
+"398","Calhoun","Iowa",18.9,22,48.4
+"399","Carroll","Iowa",29.9,27.1,48.9
+"400","Cass","Iowa",18.5,20.5,50.3
+"401","Cedar","Iowa",25.8,20.5,41.1
+"402","Cherokee","Iowa",28.8,20.4,38.7
+"403","Chickasaw","Iowa",25.6,19.9,56.2
+"404","Clarke","Iowa",32.2,20.5,38.4
+"405","Clay","Iowa",30.7,22.3,38.1
+"406","Clayton","Iowa",27.6,28.3,42.3
+"407","Crawford","Iowa",17.7,26.4,39.8
+"408","Davis","Iowa",NA,23.5,49
+"409","Decatur","Iowa",31.1,32.8,40.7
+"410","Delaware","Iowa",26,34.5,44.5
+"411","Dickinson","Iowa",30.5,22.7,49.8
+"412","Emmet","Iowa",34.2,20.3,47.5
+"413","Fayette","Iowa",24.5,21.1,52.3
+"414","Floyd","Iowa",28.3,21.2,52.6
+"415","Franklin","Iowa",26.7,21.8,37.8
+"416","Fremont","Iowa",46.9,28.9,62.3
+"417","Greene","Iowa",24.1,24.4,45.4
+"418","Grundy","Iowa",33.9,20.9,36.2
+"419","Guthrie","Iowa",20.3,23.1,51.3
+"420","Hamilton","Iowa",26.4,18.5,59.4
+"421","Hancock","Iowa",17.8,24.5,46.6
+"422","Hardin","Iowa",32.7,19.6,48.1
+"423","Harrison","Iowa",24.2,30.6,55.4
+"424","Henry","Iowa",25.9,21.9,53.7
+"425","Howard","Iowa",44.8,28.6,31.8
+"426","Humboldt","Iowa",23.3,21.6,44.2
+"427","Ida","Iowa",31.3,25.8,34
+"428","Iowa","Iowa",30.8,21,46.3
+"429","Jackson","Iowa",18.6,27.1,56.2
+"430","Jefferson","Iowa",31.8,17.1,40.3
+"431","Jones","Iowa",24.6,24.5,52.4
+"432","Keokuk","Iowa",13.6,22.5,55.6
+"433","Kossuth","Iowa",30.5,20.1,39
+"434","Louisa","Iowa",21,26.1,50.2
+"435","Lucas","Iowa",14.9,18.2,59.2
+"436","Lyon","Iowa",33.8,24.7,35.2
+"437","Madison","Iowa",33.8,21.4,48.1
+"438","Mahaska","Iowa",31.7,21,59.1
+"439","Mills","Iowa",33.4,26.5,52.3
+"440","Mitchell","Iowa",29,22,40.8
+"441","Monona","Iowa",19.7,23.6,60.9
+"442","Monroe","Iowa",27.6,22.3,57.5
+"443","Montgomery","Iowa",25.2,21.1,54.8
+"444","O'Brien","Iowa",32,20.5,40.2
+"445","Osceola","Iowa",19.1,13.8,43.3
+"446","Page","Iowa",24,21.5,57.5
+"447","Palo Alto","Iowa",31.3,27.7,47.2
+"448","Plymouth","Iowa",28.7,24.1,41.3
+"449","Pocahontas","Iowa",17.2,23,49.8
+"450","Poweshiek","Iowa",24.3,28.4,43.8
+"451","Ringgold","Iowa",14.5,21.3,47.9
+"452","Sac","Iowa",32.9,29.7,40.6
+"453","Shelby","Iowa",16,26.6,37.4
+"454","Tama","Iowa",34.7,22.4,43.7
+"455","Taylor","Iowa",39.3,23.7,34.9
+"456","Union","Iowa",26.4,26.3,54.9
+"457","Van Buren","Iowa",41.8,26.3,46.2
+"458","Washington","Iowa",20.4,25.2,32.3
+"459","Wayne","Iowa",29.4,32.3,57.2
+"460","Winnebago","Iowa",28.6,16.5,37.2
+"461","Winneshiek","Iowa",19.4,26.1,38.3
+"462","Worth","Iowa",20.1,15.6,47.8
+"463","Wright","Iowa",28.2,23.7,49.8
+"464","Allen","Kansas",26.6,30.2,63.5
+"465","Anderson","Kansas",37,29.9,56.4
+"466","Atchison","Kansas",35.2,22.8,64.6
+"467","Barber","Kansas",26.1,17.8,56.8
+"468","Bourbon","Kansas",19.7,25.9,48.6
+"469","Brown","Kansas",33.1,23,42.5
+"470","Chase","Kansas",NA,36.5,88.1
+"471","Chautauqua","Kansas",33.2,12.4,64.3
+"472","Cherokee","Kansas",29.5,25.3,73.4
+"473","Cheyenne","Kansas",NA,24.9,22.2
+"474","Clark","Kansas",NA,NA,47.2
+"475","Clay","Kansas",24.5,15,47.9
+"476","Cloud","Kansas",18.5,20.1,51.2
+"477","Coffey","Kansas",17.2,14.2,65
+"478","Comanche","Kansas",NA,NA,63.8
+"479","Decatur","Kansas",NA,27.3,40.4
+"480","Dickinson","Kansas",22.5,17.9,47.3
+"481","Doniphan","Kansas",25.7,14.9,46.5
+"482","Edwards","Kansas",NA,NA,50
+"483","Elk","Kansas",23.1,29.9,66.8
+"484","Ellsworth","Kansas",26.3,29.8,48.4
+"485","Franklin","Kansas",32.3,18.3,52.8
+"486","Gove","Kansas",NA,NA,41.4
+"487","Graham","Kansas",56.4,NA,49.3
+"488","Grant","Kansas",NA,NA,58.1
+"489","Gray","Kansas",40.1,26.1,35.8
+"490","Greeley","Kansas",NA,NA,NA
+"491","Greenwood","Kansas",33.3,22.6,72.2
+"492","Hamilton","Kansas",NA,NA,55.9
+"493","Harper","Kansas",27.8,27.9,67.8
+"494","Haskell","Kansas",NA,NA,45.9
+"495","Hodgeman","Kansas",NA,41.8,NA
+"496","Jackson","Kansas",23.8,25.2,54.3
+"497","Jefferson","Kansas",15.7,21.5,54.5
+"498","Jewell","Kansas",NA,15.7,46.8
+"499","Kearny","Kansas",NA,NA,41.8
+"500","Kingman","Kansas",24.1,15.6,45.3
+"501","Kiowa","Kansas",NA,NA,29
+"502","Labette","Kansas",27.9,28.7,58.3
+"503","Lane","Kansas",NA,NA,35.4
+"504","Lincoln","Kansas",NA,21.7,35.4
+"505","Linn","Kansas",24.8,17.5,60.4
+"506","Logan","Kansas",NA,31.4,38
+"507","Marion","Kansas",28,16.6,43.7
+"508","Marshall","Kansas",28.2,25.3,42.6
+"509","Meade","Kansas",34.9,NA,35
+"510","Mitchell","Kansas",27.1,17.6,39.9
+"511","Morris","Kansas",NA,18.3,52.6
+"512","Morton","Kansas",NA,NA,34.5
+"513","Nemaha","Kansas",23.1,14.2,40.1
+"514","Neosho","Kansas",14.7,20.7,64.3
+"515","Ness","Kansas",41.1,NA,47.5
+"516","Norton","Kansas",31.4,23,58.7
+"517","Osage","Kansas",27.8,19,54.1
+"518","Osborne","Kansas",47,21.5,67.9
+"519","Ottawa","Kansas",27.7,17.5,41.7
+"520","Pawnee","Kansas",31.7,15.2,57.6
+"521","Phillips","Kansas",NA,24.1,44.3
+"522","Pottawatomie","Kansas",28.1,23.7,48.5
+"523","Pratt","Kansas",38,15.6,48
+"524","Rawlins","Kansas",35.7,21.6,42.4
+"525","Republic","Kansas",16.2,18.4,38.4
+"526","Rice","Kansas",20.7,18.2,52.6
+"527","Rooks","Kansas",21.6,35.6,32.8
+"528","Rush","Kansas",NA,19.1,61.9
+"529","Russell","Kansas",38,19.8,49
+"530","Scott","Kansas",NA,27.1,45.9
+"531","Seward","Kansas",29.6,17.5,54.3
+"532","Sheridan","Kansas",NA,30.4,22.2
+"533","Sherman","Kansas",31.3,24.3,46.8
+"534","Smith","Kansas",24.8,28,42.1
+"535","Stafford","Kansas",NA,27,49.9
+"536","Stanton","Kansas",NA,NA,NA
+"537","Stevens","Kansas",NA,NA,36.4
+"538","Thomas","Kansas",19.1,23,46.7
+"539","Trego","Kansas",NA,17.4,43.4
+"540","Wabaunsee","Kansas",30.8,16.7,55.5
+"541","Wallace","Kansas",NA,NA,43
+"542","Washington","Kansas",22.8,19.9,46.6
+"543","Wichita","Kansas",NA,NA,50.6
+"544","Wilson","Kansas",16.7,20.2,60.2
+"545","Woodson","Kansas",35.4,NA,41
+"546","Adair","Kentucky",17.1,21.4,77.7
+"547","Allen","Kentucky",24.2,24.4,83
+"548","Anderson","Kentucky",20.2,23.4,69.3
+"549","Ballard","Kentucky",NA,32.2,78.2
+"550","Bath","Kentucky",36.9,25.7,84.3
+"551","Bourbon","Kentucky",29.5,31,84.2
+"552","Bracken","Kentucky",NA,22.6,79.8
+"553","Breathitt","Kentucky",25.1,27.6,119.3
+"554","Breckinridge","Kentucky",30.3,30.7,75.9
+"555","Butler","Kentucky",25.4,21.9,92.5
+"556","Caldwell","Kentucky",29.7,25.3,70.3
+"557","Carlisle","Kentucky",NA,28.2,65.5
+"558","Carroll","Kentucky",28.4,27.9,73.2
+"559","Casey","Kentucky",22,21,84.5
+"560","Clay","Kentucky",33,16.4,84
+"561","Clinton","Kentucky",40,24,66.4
+"562","Crittenden","Kentucky",34.2,23.1,82.3
+"563","Cumberland","Kentucky",NA,24.1,60.8
+"564","Edmonson","Kentucky",22.2,22.3,79.7
+"565","Elliott","Kentucky",NA,20.5,100.4
+"566","Estill","Kentucky",32.1,23.4,85.9
+"567","Fleming","Kentucky",35.7,28.7,66.9
+"568","Fulton","Kentucky",33.6,22.9,76.8
+"569","Gallatin","Kentucky",31,32.7,123.9
+"570","Garrard","Kentucky",18.5,32.1,64.5
+"571","Grant","Kentucky",30.8,20.4,94.6
+"572","Grayson","Kentucky",25.4,18.5,73.6
+"573","Green","Kentucky",29.5,18.8,65.6
+"574","Hancock","Kentucky",25.7,26.2,73.2
+"575","Harrison","Kentucky",21.1,25.3,64.3
+"576","Hart","Kentucky",21.9,21.9,78.4
+"577","Henry","Kentucky",19.5,24.9,70.6
+"578","Hickman","Kentucky",21,24.1,72.5
+"579","Jackson","Kentucky",32.8,21.3,87.5
+"580","Johnson","Kentucky",25.7,19,86.2
+"581","Knott","Kentucky",26.1,18.1,107
+"582","Larue","Kentucky",22.4,28.8,56.2
+"583","Lawrence","Kentucky",36.4,19,95.7
+"584","Lee","Kentucky",22.3,16.6,110
+"585","Leslie","Kentucky",22.8,14.2,92.7
+"586","Lewis","Kentucky",34.7,27.5,75.3
+"587","Lincoln","Kentucky",23.7,23.3,89
+"588","Livingston","Kentucky",32.6,21.7,71.1
+"589","Lyon","Kentucky",18.1,26.2,76.1
+"590","McCreary","Kentucky",25.9,27,109.5
+"591","McLean","Kentucky",35.6,16.4,83.3
+"592","Magoffin","Kentucky",29.5,28.8,92.1
+"593","Marion","Kentucky",29.4,26.6,71.5
+"594","Martin","Kentucky",20.3,16.7,94.5
+"595","Mason","Kentucky",27.8,29.9,76.8
+"596","Menifee","Kentucky",29.1,27.7,71.9
+"597","Mercer","Kentucky",25.3,22.1,74
+"598","Metcalfe","Kentucky",16.7,16.4,89.9
+"599","Monroe","Kentucky",32.4,22.5,70.4
+"600","Montgomery","Kentucky",31.1,28.9,83.8
+"601","Morgan","Kentucky",20,24.7,64.4
+"602","Nicholas","Kentucky",26.3,23.4,74.8
+"603","Ohio","Kentucky",40.3,24.3,90.4
+"604","Owen","Kentucky",28.5,21.8,71.4
+"605","Owsley","Kentucky",NA,20.7,104.8
+"606","Pendleton","Kentucky",25.5,30.3,76.1
+"607","Powell","Kentucky",34,23.8,99.2
+"608","Robertson","Kentucky",NA,NA,78.6
+"609","Rockcastle","Kentucky",25.3,24.3,79.8
+"610","Rowan","Kentucky",24,22.8,77.2
+"611","Russell","Kentucky",23.6,21.2,78.9
+"612","Simpson","Kentucky",31.5,20.6,71.8
+"613","Spencer","Kentucky",19.8,22.7,65.8
+"614","Taylor","Kentucky",24.2,29.3,69.7
+"615","Todd","Kentucky",28.2,25.6,77.4
+"616","Trigg","Kentucky",35.7,24.1,83.8
+"617","Trimble","Kentucky",26.5,22.4,66.1
+"618","Union","Kentucky",25.7,27.6,89.4
+"619","Washington","Kentucky",22.5,27,63.4
+"620","Wayne","Kentucky",27.2,18.8,81.1
+"621","Webster","Kentucky",20.5,32.2,77.7
+"622","Wolfe","Kentucky",42,31.2,99.9
+"623","Woodford","Kentucky",31,18.8,69.1
+"624","Allen","Louisiana",26.3,27.4,65.5
+"625","Assumption","Louisiana",34.1,20.3,73.3
+"626","Bienville","Louisiana",33.1,23,62.1
+"627","Caldwell","Louisiana",28.9,23.9,81.2
+"628","Cameron","Louisiana",29.3,18.5,95
+"629","Catahoula","Louisiana",21.7,17.7,72.7
+"630","Claiborne","Louisiana",28.6,23,60.3
+"631","Concordia","Louisiana",37.2,23.9,70.5
+"632","East Carroll","Louisiana",38.8,30.4,80.7
+"633","East Feliciana","Louisiana",35.3,23.6,66.3
+"634","Franklin","Louisiana",26.5,19.4,65.2
+"635","Grant","Louisiana",23.8,23.5,78.2
+"636","Jackson","Louisiana",19,19.5,62.1
+"637","La Salle","Louisiana",20.7,24.5,72.5
+"638","Madison","Louisiana",44.2,25.8,64.2
+"639","Pointe Coupee","Louisiana",28.1,23.3,61.3
+"640","Red River","Louisiana",30.2,27.4,53.5
+"641","Richland","Louisiana",24.9,21.6,83
+"642","Sabine","Louisiana",24.9,20.8,73.5
+"643","St. Helena","Louisiana",24.5,18.5,68.6
+"644","St. James","Louisiana",35.1,30.4,58.7
+"645","Tensas","Louisiana",44.8,26.8,77.3
+"646","Union","Louisiana",28.6,17.9,74.6
+"647","West Baton Rouge","Louisiana",31.3,24.8,71.6
+"648","West Carroll","Louisiana",20.5,19.1,61.8
+"649","West Feliciana","Louisiana",NA,11.3,79.3
+"650","Winn","Louisiana",21.1,30,72
+"651","Piscataquis","Maine",24.1,21.3,71.1
+"652","Kent","Maryland",27.5,20,57.2
+"653","Somerset","Maryland",29.9,22.5,84.9
+"654","Dukes","Massachusetts",32.3,21,50.4
+"655","Nantucket","Massachusetts",35,20.8,69.3
+"656","Alcona","Michigan",35.9,19.9,60.2
+"657","Alger","Michigan",17.8,14.8,57.5
+"658","Antrim","Michigan",34.3,18.8,59
+"659","Arenac","Michigan",27.1,19.5,59.1
+"660","Baraga","Michigan",18.6,15.6,59.9
+"661","Benzie","Michigan",23.3,15.9,55.9
+"662","Charlevoix","Michigan",18.3,16.4,56.2
+"663","Cheboygan","Michigan",27.7,16.3,61.7
+"664","Crawford","Michigan",28.8,23.2,68.5
+"665","Gladwin","Michigan",30.3,17.3,70.6
+"666","Gogebic","Michigan",28.2,18.3,57.6
+"667","Iron","Michigan",30,16.7,65.3
+"668","Kalkaska","Michigan",18.8,27.3,63.3
+"669","Keweenaw","Michigan",NA,NA,51.9
+"670","Lake","Michigan",35.4,33.4,65.9
+"671","Leelanau","Michigan",25.8,14.1,42.1
+"672","Luce","Michigan",NA,24.4,62.4
+"673","Mackinac","Michigan",42.7,20.4,68
+"674","Manistee","Michigan",24.3,27.5,59.3
+"675","Menominee","Michigan",20.4,17.6,49.4
+"676","Missaukee","Michigan",17.2,20.3,58.2
+"677","Montmorency","Michigan",32.6,22.3,71.1
+"678","Oceana","Michigan",22.4,17,48.7
+"679","Ogemaw","Michigan",27.3,19.7,67.5
+"680","Ontonagon","Michigan",25.3,15.9,52
+"681","Osceola","Michigan",22.1,17.3,68.1
+"682","Oscoda","Michigan",34.2,17.5,65.7
+"683","Otsego","Michigan",22.8,21.1,52.7
+"684","Presque Isle","Michigan",28.3,16.4,56.1
+"685","Roscommon","Michigan",22,19.2,70.2
+"686","Schoolcraft","Michigan",35.2,28.4,68.3
+"687","Aitkin","Minnesota",21.9,17.2,58.1
+"688","Big Stone","Minnesota",28.4,35.7,47.8
+"689","Chippewa","Minnesota",21.2,21.3,40.4
+"690","Clearwater","Minnesota",32.5,18.2,61.4
+"691","Cook","Minnesota",NA,NA,38.1
+"692","Cottonwood","Minnesota",30.1,23,36.3
+"693","Dodge","Minnesota",25.8,13.2,35.9
+"694","Faribault","Minnesota",24.7,21.7,35.5
+"695","Fillmore","Minnesota",24.9,17.4,39
+"696","Grant","Minnesota",28.3,28.3,31
+"697","Houston","Minnesota",23.1,19.9,38.8
+"698","Hubbard","Minnesota",23.8,20.6,48.4
+"699","Jackson","Minnesota",27.1,17.8,31
+"700","Kanabec","Minnesota",26.6,25.3,49.3
+"701","Kittson","Minnesota",32.6,17.3,53
+"702","Koochiching","Minnesota",28.2,16.2,57.5
+"703","Lac qui Parle","Minnesota",19.6,21.7,36.9
+"704","Lake","Minnesota",22.4,20.5,59.8
+"705","Lake of the Woods","Minnesota",NA,NA,58.1
+"706","Le Sueur","Minnesota",27.5,21.2,44.3
+"707","Lincoln","Minnesota",37.5,25.8,50.3
+"708","Lyon","Minnesota",24.5,16.8,46.5
+"709","Mahnomen","Minnesota",55,20,41.4
+"710","Marshall","Minnesota",24.3,19.8,33.7
+"711","Martin","Minnesota",33.6,22.3,41.5
+"712","Meeker","Minnesota",29.4,19.9,37.5
+"713","Mille Lacs","Minnesota",27.5,24,51.2
+"714","Murray","Minnesota",29.5,15.9,37.8
+"715","Nobles","Minnesota",24.8,20.1,31.7
+"716","Norman","Minnesota",27.5,25.3,46.4
+"717","Pennington","Minnesota",23.2,17.2,38
+"718","Pine","Minnesota",20.7,20.5,59.4
+"719","Pipestone","Minnesota",30.1,18,37.2
+"720","Pope","Minnesota",15.2,17.3,47.4
+"721","Red Lake","Minnesota",NA,23.8,42.7
+"722","Redwood","Minnesota",24.6,26.5,44.4
+"723","Renville","Minnesota",17.6,21.4,36.6
+"724","Rock","Minnesota",36.5,14.2,41.8
+"725","Roseau","Minnesota",35.2,21.1,37
+"726","Sibley","Minnesota",40.3,25.5,30.8
+"727","Stevens","Minnesota",19.2,24.5,40.9
+"728","Swift","Minnesota",27.8,22.2,47
+"729","Todd","Minnesota",23.4,17.5,44.4
+"730","Traverse","Minnesota",45.2,25.7,35
+"731","Wabasha","Minnesota",21.2,22.7,51.1
+"732","Wadena","Minnesota",29.4,21.9,42.1
+"733","Waseca","Minnesota",28.8,13.9,42
+"734","Watonwan","Minnesota",20.5,23.6,44.9
+"735","Wilkin","Minnesota",23.5,23.9,52.2
+"736","Yellow Medicine","Minnesota",30.3,26,42.4
+"737","Amite","Mississippi",25.8,21.3,64.9
+"738","Attala","Mississippi",23.5,23.9,53
+"739","Benton","Mississippi",NA,18.6,79.8
+"740","Calhoun","Mississippi",27.7,19.1,59.4
+"741","Carroll","Mississippi",28,21.1,57.5
+"742","Chickasaw","Mississippi",28.9,18.6,69.2
+"743","Choctaw","Mississippi",39.3,22.6,40.8
+"744","Claiborne","Mississippi",25.5,12.4,45.2
+"745","Clarke","Mississippi",18.9,9.5,43.3
+"746","Clay","Mississippi",21,21,47.6
+"747","Covington","Mississippi",24.9,18.7,68.2
+"748","Franklin","Mississippi",NA,22.2,51.4
+"749","George","Mississippi",27.8,26,82.1
+"750","Greene","Mississippi",20.5,16.5,73.6
+"751","Grenada","Mississippi",27.6,21.8,63.5
+"752","Holmes","Mississippi",31.8,22.4,67.3
+"753","Humphreys","Mississippi",38.5,35.4,75.6
+"754","Issaquena","Mississippi",NA,NA,58.4
+"755","Itawamba","Mississippi",30.1,16.2,72
+"756","Jasper","Mississippi",38.8,17,67.5
+"757","Jefferson","Mississippi",35.1,35.8,73.1
+"758","Jefferson Davis","Mississippi",22,20.3,72.5
+"759","Kemper","Mississippi",22.1,18.3,53.8
+"760","Lawrence","Mississippi",20.8,17.7,69.9
+"761","Leake","Mississippi",28.8,22,57.5
+"762","Montgomery","Mississippi",20.8,17.4,61
+"763","Newton","Mississippi",27.1,22,72.8
+"764","Noxubee","Mississippi",31.4,17.7,53.2
+"765","Perry","Mississippi",33.8,22.3,62
+"766","Pontotoc","Mississippi",27.2,16.2,71.4
+"767","Prentiss","Mississippi",21.7,13.5,65.5
+"768","Quitman","Mississippi",41.8,23.5,92.8
+"769","Sharkey","Mississippi",62.3,43.1,62.3
+"770","Smith","Mississippi",17.6,15.5,72.6
+"771","Stone","Mississippi",34.9,25.5,74.3
+"772","Tallahatchie","Mississippi",20.2,24.4,52.9
+"773","Tate","Mississippi",33.2,24.3,66.3
+"774","Tippah","Mississippi",25.3,24.9,61.4
+"775","Tishomingo","Mississippi",32.8,16.9,78
+"776","Tunica","Mississippi",27.9,39.7,82.4
+"777","Union","Mississippi",19.6,17.2,58.9
+"778","Walthall","Mississippi",31.6,22.8,58.7
+"779","Wayne","Mississippi",31.7,20,59.9
+"780","Webster","Mississippi",23.5,20.4,69.1
+"781","Wilkinson","Mississippi",21.1,28.9,62.2
+"782","Winston","Mississippi",30.2,19.4,64.8
+"783","Yalobusha","Mississippi",27.6,24.2,76.8
+"784","Adair","Missouri",23,25,57.3
+"785","Andrew","Missouri",24.3,19.6,54.2
+"786","Atchison","Missouri",29.7,25.7,53
+"787","Audrain","Missouri",19.3,21.2,64.6
+"788","Barton","Missouri",21.2,21,57.2
+"789","Bates","Missouri",24.2,25,68.3
+"790","Benton","Missouri",33.3,30.6,92.4
+"791","Bollinger","Missouri",24.7,24.2,69.6
+"792","Caldwell","Missouri",19.1,29.9,46.4
+"793","Carroll","Missouri",27,20.4,50.1
+"794","Carter","Missouri",28.5,20.4,72.1
+"795","Cedar","Missouri",32.5,16.8,62
+"796","Chariton","Missouri",29.7,29.4,43.5
+"797","Clark","Missouri",30.5,21,56.8
+"798","Clinton","Missouri",36.7,19.6,70.7
+"799","Cooper","Missouri",22.3,22.1,48.4
+"800","Crawford","Missouri",24.5,23.8,66.8
+"801","Dade","Missouri",27.7,21.5,52.9
+"802","Dallas","Missouri",29.3,14.1,67
+"803","Daviess","Missouri",19.6,27.6,59.8
+"804","DeKalb","Missouri",34.5,22.8,65.7
+"805","Dent","Missouri",26.5,29.5,64.3
+"806","Douglas","Missouri",27.1,27.5,57.8
+"807","Gasconade","Missouri",31,17.8,56.9
+"808","Gentry","Missouri",19.8,27,41
+"809","Grundy","Missouri",22.1,20.1,65.8
+"810","Harrison","Missouri",22.8,22.9,57.1
+"811","Henry","Missouri",31.5,25.8,66.8
+"812","Hickory","Missouri",28.2,23,81.8
+"813","Holt","Missouri",NA,17,41.2
+"814","Howard","Missouri",28.1,26.7,56.7
+"815","Iron","Missouri",18.4,29.5,85.8
+"816","Knox","Missouri",40.7,25.2,66.7
+"817","Lewis","Missouri",35.1,27.4,62
+"818","Linn","Missouri",32.9,29,55.5
+"819","Livingston","Missouri",34.8,15.2,56.2
+"820","McDonald","Missouri",23.3,23.5,77.3
+"821","Macon","Missouri",28.3,26.2,54.2
+"822","Madison","Missouri",28.6,25.3,88.3
+"823","Maries","Missouri",38.7,21.1,59.9
+"824","Mercer","Missouri",NA,22.8,44
+"825","Miller","Missouri",19.9,24.5,63.2
+"826","Mississippi","Missouri",36.4,22.3,78.9
+"827","Moniteau","Missouri",19.7,18.8,50.9
+"828","Monroe","Missouri",21,28.6,63
+"829","Montgomery","Missouri",19.1,19.8,61.1
+"830","Morgan","Missouri",27.6,21.6,71.7
+"831","New Madrid","Missouri",25.9,20.3,76.8
+"832","Nodaway","Missouri",25.6,16.6,52.6
+"833","Oregon","Missouri",32.5,19.7,61.5
+"834","Osage","Missouri",18.7,22.9,37
+"835","Ozark","Missouri",28.2,30.4,76.1
+"836","Pemiscot","Missouri",22.5,22.6,86.7
+"837","Perry","Missouri",17.8,31.5,48.8
+"838","Pike","Missouri",29.1,26.5,53.9
+"839","Putnam","Missouri",NA,30,53.5
+"840","Ralls","Missouri",32.5,22.6,65.6
+"841","Randolph","Missouri",26,20,51
+"842","Ray","Missouri",27.1,22.1,70.9
+"843","Reynolds","Missouri",NA,19.3,66.3
+"844","Ripley","Missouri",20.9,23.8,69.4
+"845","St. Clair","Missouri",21.6,19.6,75.4
+"846","Ste. Genevieve","Missouri",29.8,14.7,44.7
+"847","Saline","Missouri",28.8,24.6,52.4
+"848","Schuyler","Missouri",NA,32.4,51.2
+"849","Scotland","Missouri",NA,28.3,57.1
+"850","Shannon","Missouri",30.6,18.9,81.9
+"851","Shelby","Missouri",23.8,25.8,48.9
+"852","Sullivan","Missouri",NA,16.6,57.1
+"853","Texas","Missouri",25.2,20.4,59.2
+"854","Vernon","Missouri",18.5,21.9,59.3
+"855","Warren","Missouri",30.9,21.3,60.8
+"856","Washington","Missouri",17.6,24.6,83.2
+"857","Wayne","Missouri",21.6,22.3,83.3
+"858","Worth","Missouri",NA,28.9,47.3
+"859","Wright","Missouri",19.4,21.2,71.3
+"860","Beaverhead","Montana",25.8,14,59.6
+"861","Big Horn","Montana",25.9,18.7,64.4
+"862","Blaine","Montana",28.3,NA,50
+"863","Broadwater","Montana",NA,21.1,70
+"864","Carbon","Montana",NA,15.3,45.9
+"865","Carter","Montana",NA,NA,NA
+"866","Chouteau","Montana",NA,16.8,30
+"867","Custer","Montana",27.3,26.3,69.3
+"868","Daniels","Montana",NA,25.8,43.7
+"869","Dawson","Montana",19.9,22.3,46
+"870","Deer Lodge","Montana",23.9,20.8,55.2
+"871","Fallon","Montana",47.8,NA,39.3
+"872","Fergus","Montana",25.5,24,49.9
+"873","Garfield","Montana",NA,NA,NA
+"874","Glacier","Montana",33,22.4,63.7
+"875","Golden Valley","Montana",NA,NA,86.6
+"876","Granite","Montana",NA,NA,69.9
+"877","Hill","Montana",27.3,16,57.8
+"878","Jefferson","Montana",32.7,15.7,57.4
+"879","Judith Basin","Montana",NA,NA,51.7
+"880","Liberty","Montana",NA,NA,NA
+"881","Lincoln","Montana",22.6,19.5,62.7
+"882","McCone","Montana",NA,NA,NA
+"883","Madison","Montana",35,13.5,32.7
+"884","Meagher","Montana",NA,NA,64.9
+"885","Mineral","Montana",NA,NA,63.7
+"886","Musselshell","Montana",36.4,NA,66.1
+"887","Park","Montana",23.2,23.3,53.2
+"888","Petroleum","Montana",NA,NA,NA
+"889","Phillips","Montana",NA,19.2,53.3
+"890","Pondera","Montana",27.9,25.6,49.1
+"891","Powder River","Montana",NA,NA,38
+"892","Powell","Montana",27.1,15.3,50.7
+"893","Prairie","Montana",NA,NA,NA
+"894","Richland","Montana",25.7,22,58
+"895","Roosevelt","Montana",20.8,29,59.7
+"896","Rosebud","Montana",25.2,20.9,68.9
+"897","Sanders","Montana",24.2,17.3,57.3
+"898","Sheridan","Montana",27.6,19.6,58.9
+"899","Stillwater","Montana",NA,17.6,43.5
+"900","Sweet Grass","Montana",NA,23.2,41.2
+"901","Teton","Montana",NA,23.5,52
+"902","Toole","Montana",NA,26.5,49
+"903","Treasure","Montana",NA,NA,NA
+"904","Valley","Montana",18,22,48.4
+"905","Wheatland","Montana",NA,NA,31.1
+"906","Wibaux","Montana",NA,NA,NA
+"907","Antelope","Nebraska",23.8,30.2,43.6
+"908","Arthur","Nebraska",NA,NA,NA
+"909","Banner","Nebraska",NA,NA,NA
+"910","Blaine","Nebraska",NA,NA,NA
+"911","Boone","Nebraska",22.9,17.7,31.5
+"912","Box Butte","Nebraska",23.7,23.7,49.5
+"913","Boyd","Nebraska",NA,NA,31
+"914","Brown","Nebraska",NA,15.6,36.4
+"915","Burt","Nebraska",28,23.9,59.1
+"916","Butler","Nebraska",25.4,22.7,38.1
+"917","Cass","Nebraska",20.1,21.2,55.1
+"918","Cedar","Nebraska",NA,22.8,30
+"919","Chase","Nebraska",NA,25.1,46.7
+"920","Cherry","Nebraska",23.7,28.7,37.9
+"921","Cheyenne","Nebraska",26.6,20.9,42
+"922","Clay","Nebraska",23.3,25.2,52.1
+"923","Colfax","Nebraska",16.3,17.3,31.7
+"924","Cuming","Nebraska",31,23.4,32.6
+"925","Custer","Nebraska",22.9,17.7,41.8
+"926","Dakota","Nebraska",30,23.8,61.8
+"927","Dawes","Nebraska",32.2,20.4,51.6
+"928","Dawson","Nebraska",30,19,45.7
+"929","Deuel","Nebraska",NA,30.6,67.7
+"930","Dixon","Nebraska",NA,11.7,36.7
+"931","Dundy","Nebraska",NA,NA,32.6
+"932","Fillmore","Nebraska",22.8,14.8,50.2
+"933","Franklin","Nebraska",NA,39.4,64.8
+"934","Frontier","Nebraska",NA,NA,28.6
+"935","Furnas","Nebraska",NA,22.9,39.9
+"936","Gage","Nebraska",22.1,20.4,43
+"937","Garden","Nebraska",NA,NA,61.7
+"938","Garfield","Nebraska",NA,30.4,NA
+"939","Gosper","Nebraska",NA,NA,NA
+"940","Grant","Nebraska",NA,NA,NA
+"941","Greeley","Nebraska",NA,NA,34.1
+"942","Hamilton","Nebraska",31.3,24.2,45.2
+"943","Harlan","Nebraska",NA,30.6,53.3
+"944","Hayes","Nebraska",NA,NA,NA
+"945","Hitchcock","Nebraska",NA,NA,50
+"946","Holt","Nebraska",33.2,19,35.4
+"947","Hooker","Nebraska",NA,NA,NA
+"948","Howard","Nebraska",42.9,15.3,50.7
+"949","Jefferson","Nebraska",23.9,23,34
+"950","Johnson","Nebraska",38,23.2,44
+"951","Kearney","Nebraska",31.7,17.9,48.9
+"952","Keith","Nebraska",24.5,19.2,49.5
+"953","Keya Paha","Nebraska",NA,NA,NA
+"954","Kimball","Nebraska",NA,19.3,54.9
+"955","Knox","Nebraska",14.2,22.2,32.3
+"956","Logan","Nebraska",NA,NA,NA
+"957","Loup","Nebraska",NA,NA,NA
+"958","McPherson","Nebraska",NA,NA,NA
+"959","Merrick","Nebraska",18.7,21.9,56.6
+"960","Morrill","Nebraska",NA,17.2,50
+"961","Nance","Nebraska",28.3,26.1,47.9
+"962","Nemaha","Nebraska",17.5,28.1,57.1
+"963","Nuckolls","Nebraska",29.7,20.1,60.2
+"964","Otoe","Nebraska",24.8,28,44.2
+"965","Pawnee","Nebraska",NA,22.9,34.8
+"966","Perkins","Nebraska",NA,19.9,51
+"967","Phelps","Nebraska",19.6,20.1,34.3
+"968","Pierce","Nebraska",24,24.4,35.9
+"969","Polk","Nebraska",NA,24.5,30.1
+"970","Red Willow","Nebraska",31.6,21.7,50.2
+"971","Richardson","Nebraska",17.3,30.7,53.1
+"972","Rock","Nebraska",NA,NA,54.2
+"973","Saline","Nebraska",31.5,22.2,46.2
+"974","Saunders","Nebraska",23.5,17.7,48.8
+"975","Seward","Nebraska",13.3,21.5,45.6
+"976","Sheridan","Nebraska",21,23.6,38.2
+"977","Sherman","Nebraska",35.1,NA,24.4
+"978","Sioux","Nebraska",NA,NA,NA
+"979","Stanton","Nebraska",NA,21.8,46.2
+"980","Thayer","Nebraska",26,23.4,30.1
+"981","Thomas","Nebraska",NA,NA,NA
+"982","Thurston","Nebraska",NA,19.2,54.3
+"983","Valley","Nebraska",26.1,17.4,37.6
+"984","Washington","Nebraska",24.1,22.8,46.1
+"985","Wayne","Nebraska",20.7,15.1,33.4
+"986","Webster","Nebraska",NA,21.6,38.1
+"987","Wheeler","Nebraska",NA,NA,NA
+"988","York","Nebraska",19.8,20.1,42.2
+"989","Churchill","Nevada",25.2,20.8,56.4
+"990","Esmeralda","Nevada",NA,NA,NA
+"991","Eureka","Nevada",NA,NA,NA
+"992","Humboldt","Nevada",35,18.3,67.1
+"993","Lander","Nevada",NA,NA,62.9
+"994","Lincoln","Nevada",NA,24,44.2
+"995","Mineral","Nevada",28.9,38.2,59.2
+"996","Pershing","Nevada",NA,NA,46.7
+"997","Storey","Nevada",NA,NA,57.7
+"998","White Pine","Nevada",29.2,12.7,40.7
+"999","Catron","New Mexico",NA,NA,33.5
+"1000","Colfax","New Mexico",23,21.1,36.8
+"1001","De Baca","New Mexico",NA,NA,40.1
+"1002","Guadalupe","New Mexico",NA,NA,25.5
+"1003","Harding","New Mexico",NA,NA,60.6
+"1004","Hidalgo","New Mexico",NA,NA,34
+"1005","Lincoln","New Mexico",27.3,14.9,33.9
+"1006","Los Alamos","New Mexico",20.9,14.4,24
+"1007","Luna","New Mexico",25.4,16.3,37.7
+"1008","Mora","New Mexico",NA,NA,18
+"1009","Quay","New Mexico",28.7,17.3,55.4
+"1010","Roosevelt","New Mexico",19.7,16.8,51.9
+"1011","Sierra","New Mexico",16.9,16.4,65.1
+"1012","Socorro","New Mexico",35.1,23.8,44.7
+"1013","Torrance","New Mexico",16.9,20.4,44.8
+"1014","Union","New Mexico",NA,NA,31
+"1015","Hamilton","New York",37.6,23.7,60.2
+"1016","Schuyler","New York",27,23.9,62.7
+"1017","Yates","New York",25.6,24.5,63
+"1018","Alleghany","North Carolina",33.7,18.6,51.4
+"1019","Anson","North Carolina",37.4,25.2,54.3
+"1020","Ashe","North Carolina",18.3,18.4,57.5
+"1021","Avery","North Carolina",16.9,18.2,60.7
+"1022","Bertie","North Carolina",28.4,32.9,71.4
+"1023","Camden","North Carolina",33.4,32.6,76.9
+"1024","Caswell","North Carolina",31.4,22.1,73.5
+"1025","Cherokee","North Carolina",30.9,20.3,69.2
+"1026","Chowan","North Carolina",22.8,23.6,65.4
+"1027","Clay","North Carolina",24.9,20.9,55.4
+"1028","Currituck","North Carolina",22.8,24.6,78.5
+"1029","Gates","North Carolina",36.4,27.9,61.8
+"1030","Graham","North Carolina",22.7,22.6,70.5
+"1031","Greene","North Carolina",31.9,18.6,63.1
+"1032","Hertford","North Carolina",29.7,28.8,75.3
+"1033","Hyde","North Carolina",30.6,29.3,58
+"1034","Jones","North Carolina",27,27.8,65.1
+"1035","Madison","North Carolina",31.4,15.5,56.7
+"1036","Mitchell","North Carolina",21.6,19.2,62.3
+"1037","Montgomery","North Carolina",26.1,21.9,57.7
+"1038","Northampton","North Carolina",31.5,24.7,63.2
+"1039","Pamlico","North Carolina",18.1,18.4,61.8
+"1040","Perquimans","North Carolina",27.7,21.9,66.6
+"1041","Polk","North Carolina",23.4,20.9,47.5
+"1042","Swain","North Carolina",30,16.9,54.5
+"1043","Tyrrell","North Carolina",56.2,34.3,72.7
+"1044","Warren","North Carolina",34.9,22.1,54.3
+"1045","Washington","North Carolina",26.8,24.1,69.1
+"1046","Yancey","North Carolina",24,18,49.3
+"1047","Adams","North Dakota",NA,35.4,49.1
+"1048","Barnes","North Dakota",31.9,24.4,43.1
+"1049","Benson","North Dakota",NA,13.6,41.2
+"1050","Billings","North Dakota",NA,NA,NA
+"1051","Bottineau","North Dakota",13.8,17.3,34.3
+"1052","Bowman","North Dakota",58.5,17.2,51.2
+"1053","Burke","North Dakota",NA,26.1,49.3
+"1054","Cavalier","North Dakota",33.5,31.4,38.4
+"1055","Dickey","North Dakota",22.2,14.1,43.8
+"1056","Divide","North Dakota",NA,36.5,42.4
+"1057","Dunn","North Dakota",NA,32.8,33.1
+"1058","Eddy","North Dakota",NA,NA,44.2
+"1059","Emmons","North Dakota",39.8,13.5,46.1
+"1060","Foster","North Dakota",49,20.3,47.5
+"1061","Golden Valley","North Dakota",NA,NA,NA
+"1062","Grant","North Dakota",39.7,NA,34.6
+"1063","Griggs","North Dakota",46.2,NA,34.3
+"1064","Hettinger","North Dakota",NA,NA,46.4
+"1065","Kidder","North Dakota",NA,32.4,37.6
+"1066","LaMoure","North Dakota",NA,15.4,38.8
+"1067","Logan","North Dakota",NA,NA,29.3
+"1068","McHenry","North Dakota",24.5,21.7,32
+"1069","McIntosh","North Dakota",29,20.4,43
+"1070","McKenzie","North Dakota",NA,19.9,31.4
+"1071","McLean","North Dakota",18.1,24,49.7
+"1072","Mercer","North Dakota",31.1,23.5,46.3
+"1073","Morton","North Dakota",23,20.7,52.7
+"1074","Mountrail","North Dakota",34.4,29.1,42.2
+"1075","Nelson","North Dakota",37.4,26.3,49.6
+"1076","Oliver","North Dakota",NA,NA,NA
+"1077","Pembina","North Dakota",18.2,21.4,52.9
+"1078","Pierce","North Dakota",NA,22.8,51.6
+"1079","Ramsey","North Dakota",19.2,22.4,42.2
+"1080","Ransom","North Dakota",20.3,29.8,35.3
+"1081","Renville","North Dakota",NA,NA,40.9
+"1082","Richland","North Dakota",17.1,17.3,34.7
+"1083","Rolette","North Dakota",32.3,29,85.7
+"1084","Sargent","North Dakota",NA,33.1,38.4
+"1085","Sheridan","North Dakota",NA,NA,NA
+"1086","Sioux","North Dakota",NA,NA,NA
+"1087","Slope","North Dakota",NA,NA,NA
+"1088","Stark","North Dakota",24.4,15.7,37.6
+"1089","Steele","North Dakota",NA,NA,39.8
+"1090","Stutsman","North Dakota",24.7,17.6,47.7
+"1091","Towner","North Dakota",36.2,25.5,37
+"1092","Traill","North Dakota",23.3,19.9,35.1
+"1093","Walsh","North Dakota",29.3,21.7,48.5
+"1094","Wells","North Dakota",NA,17.6,43.2
+"1095","Williams","North Dakota",31.1,19.6,47.8
+"1096","Harrison","Ohio",33.9,22.4,78.4
+"1097","Meigs","Ohio",25.6,26.4,84.6
+"1098","Monroe","Ohio",23.1,28.2,48.1
+"1099","Morgan","Ohio",26,25.3,67.4
+"1100","Noble","Ohio",15.3,22.9,48.1
+"1101","Paulding","Ohio",25.8,24.5,64.8
+"1102","Vinton","Ohio",28,18.9,75.3
+"1103","Wyandot","Ohio",27.5,19.6,54.7
+"1104","Adair","Oklahoma",32.7,17.5,77.8
+"1105","Alfalfa","Oklahoma",26.9,9.8,53.6
+"1106","Atoka","Oklahoma",22.6,17.4,68.8
+"1107","Beaver","Oklahoma",35.3,26.4,28.5
+"1108","Beckham","Oklahoma",27.6,19.9,59.9
+"1109","Blaine","Oklahoma",19.5,24.6,54.6
+"1110","Choctaw","Oklahoma",34.5,18.8,66.1
+"1111","Cimarron","Oklahoma",NA,23.9,50.5
+"1112","Coal","Oklahoma",32.8,24.1,58.1
+"1113","Cotton","Oklahoma",28.2,18.1,61.7
+"1114","Craig","Oklahoma",32.9,24.6,67.9
+"1115","Dewey","Oklahoma",33.2,25,73.1
+"1116","Ellis","Oklahoma",NA,16.3,52.3
+"1117","Grant","Oklahoma",NA,18.7,49.1
+"1118","Greer","Oklahoma",29.5,25.8,60.8
+"1119","Harmon","Oklahoma",NA,28.6,61.1
+"1120","Harper","Oklahoma",28.6,21.8,47.6
+"1121","Haskell","Oklahoma",25.1,22,76.9
+"1122","Hughes","Oklahoma",24.8,18.7,74.6
+"1123","Jefferson","Oklahoma",24,17.4,62.8
+"1124","Johnston","Oklahoma",29.7,25,78.3
+"1125","Kingfisher","Oklahoma",15.7,17.9,52.3
+"1126","Kiowa","Oklahoma",33.7,25.1,60.6
+"1127","Latimer","Oklahoma",19.6,15.5,80.6
+"1128","Love","Oklahoma",26.6,16.7,62.9
+"1129","McIntosh","Oklahoma",22.8,19.6,63.2
+"1130","Major","Oklahoma",20.8,14.2,35.8
+"1131","Marshall","Oklahoma",21.7,13.6,68.1
+"1132","Murray","Oklahoma",22.5,21.2,76
+"1133","Noble","Oklahoma",28,19.1,56.9
+"1134","Nowata","Oklahoma",18,24.6,73.2
+"1135","Okfuskee","Oklahoma",30.4,24.3,55
+"1136","Pawnee","Oklahoma",24.3,21.6,74.1
+"1137","Pushmataha","Oklahoma",23.3,27,87.2
+"1138","Roger Mills","Oklahoma",NA,NA,34.7
+"1139","Texas","Oklahoma",32.2,23.8,54.5
+"1140","Tillman","Oklahoma",22.6,22.7,72.4
+"1141","Washita","Oklahoma",27.3,14.8,48.5
+"1142","Woods","Oklahoma",16.4,19.5,38.9
+"1143","Woodward","Oklahoma",29.7,19.6,53.8
+"1144","Baker","Oregon",23.1,19,52.5
+"1145","Crook","Oregon",28.8,22.8,59.1
+"1146","Curry","Oregon",23.9,19.4,69.5
+"1147","Gilliam","Oregon",NA,NA,34.7
+"1148","Grant","Oregon",29.9,27,45.4
+"1149","Harney","Oregon",30.8,24.3,58.4
+"1150","Hood River","Oregon",28.5,19.2,47.4
+"1151","Jefferson","Oregon",23.8,16.2,49.2
+"1152","Lake","Oregon",28.3,20.2,62.1
+"1153","Morrow","Oregon",NA,25.6,62.2
+"1154","Sherman","Oregon",NA,NA,52.5
+"1155","Tillamook","Oregon",25.9,15.2,61.1
+"1156","Wallowa","Oregon",21.9,11.2,49.9
+"1157","Wasco","Oregon",28.3,20,57.3
+"1158","Wheeler","Oregon",NA,NA,46.5
+"1159","Cameron","Pennsylvania",27.5,27.1,61.3
+"1160","Forest","Pennsylvania",35.2,16.3,61.3
+"1161","Fulton","Pennsylvania",23,15.3,51.3
+"1162","Juniata","Pennsylvania",28.5,29.3,41.7
+"1163","Montour","Pennsylvania",29,26.7,48.1
+"1164","Potter","Pennsylvania",39.4,26.5,55.5
+"1165","Sullivan","Pennsylvania",28,25,49.9
+"1166","Abbeville","South Carolina",25.4,21.2,52.7
+"1167","Allendale","South Carolina",45,27.4,56.1
+"1168","Bamberg","South Carolina",31.2,16.5,60.7
+"1169","Barnwell","South Carolina",29.7,22,61
+"1170","Calhoun","South Carolina",17.5,23,52.5
+"1171","Edgefield","South Carolina",28.7,24.8,62.2
+"1172","Fairfield","South Carolina",29.1,22.9,60.9
+"1173","Hampton","South Carolina",32.2,17.6,47.1
+"1174","Jasper","South Carolina",25.7,21.7,56.2
+"1175","Lee","South Carolina",34.5,25.3,63.8
+"1176","McCormick","South Carolina",31.4,18.7,65.6
+"1177","Saluda","South Carolina",29.4,20.3,59.6
+"1178","Aurora","South Dakota",59,27.1,37
+"1179","Beadle","South Dakota",24.1,22.3,48.1
+"1180","Bennett","South Dakota",NA,NA,40.5
+"1181","Bon Homme","South Dakota",19.9,20,31.4
+"1182","Brule","South Dakota",25.8,22.7,46.9
+"1183","Buffalo","South Dakota",NA,NA,NA
+"1184","Butte","South Dakota",21.7,28.3,67.2
+"1185","Campbell","South Dakota",NA,NA,NA
+"1186","Charles Mix","South Dakota",19.7,16.6,58.9
+"1187","Clark","South Dakota",NA,30.2,26.1
+"1188","Clay","South Dakota",29.6,18.2,53.7
+"1189","Corson","South Dakota",NA,NA,55.7
+"1190","Custer","South Dakota",NA,15.5,54.1
+"1191","Davison","South Dakota",24.7,24.9,49.3
+"1192","Day","South Dakota",31.3,25.6,49.4
+"1193","Deuel","South Dakota",NA,24.6,26.5
+"1194","Dewey","South Dakota",NA,31.1,70.6
+"1195","Douglas","South Dakota",NA,27.2,34.8
+"1196","Edmunds","South Dakota",31.7,34.3,43.4
+"1197","Fall River","South Dakota",29.9,17.8,58.1
+"1198","Faulk","South Dakota",NA,22.5,28.4
+"1199","Grant","South Dakota",27,21.9,41.3
+"1200","Gregory","South Dakota",30.2,21,43.1
+"1201","Haakon","South Dakota",NA,NA,53.8
+"1202","Hamlin","South Dakota",NA,17.7,32.6
+"1203","Hand","South Dakota",26.8,20.9,34.3
+"1204","Hanson","South Dakota",NA,31.2,44.5
+"1205","Harding","South Dakota",NA,NA,NA
+"1206","Hughes","South Dakota",24.3,22.4,45.4
+"1207","Hutchinson","South Dakota",36.6,22.5,36.6
+"1208","Hyde","South Dakota",NA,NA,68.2
+"1209","Jackson","South Dakota",NA,NA,61.8
+"1210","Jerauld","South Dakota",NA,NA,41.7
+"1211","Jones","South Dakota",NA,NA,NA
+"1212","Kingsbury","South Dakota",36,20.2,29.4
+"1213","Lake","South Dakota",17.1,19.5,48.9
+"1214","Lawrence","South Dakota",24.6,20.3,48.8
+"1215","Lincoln","South Dakota",38.1,22.1,41
+"1216","Lyman","South Dakota",NA,NA,76.8
+"1217","McCook","South Dakota",33.4,26.5,27.3
+"1218","McPherson","South Dakota",NA,22,26.5
+"1219","Marshall","South Dakota",NA,24.6,35.5
+"1220","Meade","South Dakota",20.1,17.9,53.1
+"1221","Mellette","South Dakota",NA,NA,85.8
+"1222","Miner","South Dakota",NA,29.3,45.3
+"1223","Moody","South Dakota",NA,19.5,41.8
+"1224","Perkins","South Dakota",NA,NA,38.6
+"1225","Potter","South Dakota",NA,29.4,41.7
+"1226","Roberts","South Dakota",21.4,27,52.3
+"1227","Sanborn","South Dakota",NA,29.6,52
+"1228","Shannon","South Dakota",NA,27.5,89.8
+"1229","Spink","South Dakota",21.6,25.6,46.9
+"1230","Stanley","South Dakota",NA,NA,55.1
+"1231","Sully","South Dakota",NA,NA,NA
+"1232","Todd","South Dakota",NA,NA,53.3
+"1233","Tripp","South Dakota",39.4,19.1,44.4
+"1234","Turner","South Dakota",24.2,21.9,40
+"1235","Union","South Dakota",27.3,26.6,49.4
+"1236","Walworth","South Dakota",NA,19.4,56.4
+"1237","Yankton","South Dakota",26.7,20.8,45.5
+"1238","Ziebach","South Dakota",NA,NA,NA
+"1239","Benton","Tennessee",18,14.6,77.2
+"1240","Bledsoe","Tennessee",20.4,19.7,68.5
+"1241","Cannon","Tennessee",24.2,15.6,73.4
+"1242","Chester","Tennessee",23.5,21.7,59.8
+"1243","Clay","Tennessee",25.7,35.5,74.2
+"1244","Crockett","Tennessee",20.3,19.7,56
+"1245","Decatur","Tennessee",44.2,23.4,73.4
+"1246","DeKalb","Tennessee",25.6,15.6,71.7
+"1247","Fentress","Tennessee",22.7,20.7,91.3
+"1248","Grainger","Tennessee",29.1,21.9,76.7
+"1249","Grundy","Tennessee",29.3,22.9,74.6
+"1250","Hancock","Tennessee",22.7,21.7,87.6
+"1251","Hardeman","Tennessee",37.8,28.4,64.3
+"1252","Hardin","Tennessee",22.5,16.4,69.6
+"1253","Haywood","Tennessee",27.1,21.3,62.6
+"1254","Henderson","Tennessee",22.8,16.5,81.8
+"1255","Hickman","Tennessee",24.6,27.4,70.9
+"1256","Houston","Tennessee",19.8,18.4,62.7
+"1257","Humphreys","Tennessee",25.1,26.5,75.5
+"1258","Jackson","Tennessee",27.4,17.2,91.4
+"1259","Johnson","Tennessee",30.3,18.1,62.7
+"1260","Lake","Tennessee",58.8,20.6,107.6
+"1261","Lauderdale","Tennessee",29,28.7,78.7
+"1262","Lewis","Tennessee",27,24.4,76.7
+"1263","McNairy","Tennessee",31.4,20.5,75.5
+"1264","Macon","Tennessee",30.2,28.3,73.3
+"1265","Meigs","Tennessee",18,11.6,68.2
+"1266","Moore","Tennessee",NA,24.4,49.9
+"1267","Morgan","Tennessee",27.2,15.5,85.3
+"1268","Overton","Tennessee",22.4,27.4,88.6
+"1269","Perry","Tennessee",20.8,29.9,90.8
+"1270","Pickett","Tennessee",NA,NA,81
+"1271","Polk","Tennessee",27.8,17.7,76.6
+"1272","Scott","Tennessee",28.9,26.9,88.5
+"1273","Sequatchie","Tennessee",18.2,28.7,63
+"1274","Smith","Tennessee",32.4,19.2,70.5
+"1275","Stewart","Tennessee",27.5,15.9,90.4
+"1276","Trousdale","Tennessee",40,24,97.6
+"1277","Unicoi","Tennessee",32.7,19.1,57.3
+"1278","Union","Tennessee",23,23.9,80.7
+"1279","Van Buren","Tennessee",38.3,20.8,58.6
+"1280","Wayne","Tennessee",22.6,18.6,71.6
+"1281","White","Tennessee",25.3,27.9,70.2
+"1282","Andrews","Texas",22,16.2,58.6
+"1283","Aransas","Texas",26.2,21.5,82
+"1284","Archer","Texas",36.7,14.1,56.7
+"1285","Armstrong","Texas",NA,NA,42.6
+"1286","Austin","Texas",30.7,21.7,54.2
+"1287","Bailey","Texas",NA,16.3,40
+"1288","Bandera","Texas",27.8,17.8,54.3
+"1289","Baylor","Texas",38,24.5,72.9
+"1290","Blanco","Texas",NA,19.4,51.7
+"1291","Borden","Texas",NA,NA,NA
+"1292","Bosque","Texas",25.9,20.3,67.8
+"1293","Brewster","Texas",30.4,13.6,33.2
+"1294","Briscoe","Texas",NA,NA,53
+"1295","Brooks","Texas",NA,15.4,32.4
+"1296","Burleson","Texas",17.1,23.6,68.3
+"1297","Calhoun","Texas",21.2,17.4,61.3
+"1298","Callahan","Texas",14.8,19.7,69.7
+"1299","Camp","Texas",28.5,25.5,71.8
+"1300","Carson","Texas",25.9,25.8,50.6
+"1301","Castro","Texas",23.9,18.9,40.9
+"1302","Chambers","Texas",24,19.4,73
+"1303","Childress","Texas",21.4,27.2,69.1
+"1304","Clay","Texas",19.6,17.5,57.7
+"1305","Cochran","Texas",NA,32.5,50.3
+"1306","Coke","Texas",NA,21.5,67
+"1307","Coleman","Texas",16.6,21.3,67
+"1308","Collingsworth","Texas",NA,NA,42.8
+"1309","Colorado","Texas",38.2,20.8,44.5
+"1310","Comanche","Texas",32.2,20.9,58.5
+"1311","Concho","Texas",NA,NA,55
+"1312","Cottle","Texas",NA,NA,58.2
+"1313","Crane","Texas",NA,NA,60
+"1314","Crockett","Texas",NA,NA,54.5
+"1315","Crosby","Texas",24.3,17.3,45.2
+"1316","Culberson","Texas",NA,NA,44.7
+"1317","Dallam","Texas",NA,NA,59.9
+"1318","Dawson","Texas",39,19.5,54.5
+"1319","Deaf Smith","Texas",23.4,17.8,38
+"1320","Delta","Texas",24.7,27.2,66.4
+"1321","DeWitt","Texas",29.3,25.8,54
+"1322","Dickens","Texas",NA,NA,76.1
+"1323","Dimmit","Texas",NA,16.2,36.9
+"1324","Donley","Texas",NA,30.9,68.4
+"1325","Duval","Texas",14.6,12.7,51.1
+"1326","Eastland","Texas",32.8,21,66.4
+"1327","Edwards","Texas",NA,NA,67.5
+"1328","Falls","Texas",29,22.9,66.5
+"1329","Fayette","Texas",23.5,21.4,38.5
+"1330","Fisher","Texas",NA,23,46.4
+"1331","Floyd","Texas",17.9,17.2,41.2
+"1332","Foard","Texas",NA,NA,36
+"1333","Franklin","Texas",NA,26.2,63.4
+"1334","Freestone","Texas",21.9,20.7,60.1
+"1335","Frio","Texas",23.3,15.7,39.7
+"1336","Gaines","Texas",31.1,20.1,45.5
+"1337","Garza","Texas",NA,NA,54.7
+"1338","Gillespie","Texas",33,15.1,39.6
+"1339","Glasscock","Texas",NA,NA,NA
+"1340","Goliad","Texas",NA,19.3,55.1
+"1341","Gonzales","Texas",24.4,26.8,56.7
+"1342","Gray","Texas",31.9,20.1,59
+"1343","Grimes","Texas",26.9,21.8,64.2
+"1344","Hall","Texas",NA,22.6,56
+"1345","Hamilton","Texas",32.5,20.3,57.3
+"1346","Hansford","Texas",33.2,21.4,47.6
+"1347","Hardeman","Texas",NA,21.6,49.2
+"1348","Hartley","Texas",NA,NA,44.6
+"1349","Haskell","Texas",NA,15.9,50.2
+"1350","Hemphill","Texas",NA,NA,55.7
+"1351","Hockley","Texas",20.2,22.4,56.7
+"1352","Houston","Texas",28,18.3,77.2
+"1353","Hudspeth","Texas",NA,NA,57.7
+"1354","Hutchinson","Texas",28.8,19.8,59.3
+"1355","Irion","Texas",NA,NA,NA
+"1356","Jack","Texas",21.3,23.8,76.4
+"1357","Jackson","Texas",27.5,22.9,62.8
+"1358","Jeff Davis","Texas",NA,NA,NA
+"1359","Jim Hogg","Texas",33.7,22.4,30.4
+"1360","Jones","Texas",22.4,19.1,59.7
+"1361","Karnes","Texas",18.4,26.7,49.3
+"1362","Kendall","Texas",29.1,18.5,52.8
+"1363","Kenedy","Texas",NA,NA,NA
+"1364","Kent","Texas",NA,NA,90.1
+"1365","Kimble","Texas",NA,19.4,47.1
+"1366","King","Texas",NA,NA,NA
+"1367","Kinney","Texas",NA,NA,52.9
+"1368","Knox","Texas",NA,21,58.1
+"1369","Lamb","Texas",25.4,17.7,46.5
+"1370","Lampasas","Texas",17.3,22.2,78.4
+"1371","La Salle","Texas",NA,25.8,35.7
+"1372","Lavaca","Texas",26.5,19.9,49.3
+"1373","Lee","Texas",31.3,24.4,47.4
+"1374","Leon","Texas",35.2,23.6,70
+"1375","Limestone","Texas",34.1,23.8,69.4
+"1376","Lipscomb","Texas",NA,NA,48.4
+"1377","Live Oak","Texas",16.8,18.4,54.7
+"1378","Llano","Texas",23,20.3,63.3
+"1379","Loving","Texas",NA,NA,NA
+"1380","Lynn","Texas",NA,19.5,41
+"1381","McCulloch","Texas",28,29.5,76.5
+"1382","McMullen","Texas",NA,NA,NA
+"1383","Madison","Texas",26.3,24.6,57.1
+"1384","Marion","Texas",28.3,21,70.6
+"1385","Martin","Texas",NA,NA,65
+"1386","Mason","Texas",36.4,16.9,55.4
+"1387","Menard","Texas",NA,24,73.1
+"1388","Milam","Texas",24.7,18.5,56.2
+"1389","Mills","Texas",NA,19.3,48.3
+"1390","Mitchell","Texas",28.8,19.4,67.5
+"1391","Montague","Texas",36.8,25.7,79.2
+"1392","Moore","Texas",22.4,15.5,51.9
+"1393","Morris","Texas",32.2,25,77.1
+"1394","Motley","Texas",NA,NA,70.5
+"1395","Newton","Texas",20.8,20.4,69.1
+"1396","Nolan","Texas",24.1,20.4,60.4
+"1397","Ochiltree","Texas",NA,24,38.4
+"1398","Oldham","Texas",NA,NA,71.3
+"1399","Panola","Texas",24.8,19.4,74
+"1400","Parmer","Texas",25.6,17.6,29.2
+"1401","Pecos","Texas",30.5,19.5,41.7
+"1402","Presidio","Texas",NA,15.2,25.7
+"1403","Rains","Texas",23.4,17.9,89.7
+"1404","Reagan","Texas",NA,NA,62
+"1405","Real","Texas",NA,23.4,62.2
+"1406","Red River","Texas",31.3,29.5,72.6
+"1407","Reeves","Texas",19.6,13,58
+"1408","Refugio","Texas",29.5,14.9,70.9
+"1409","Roberts","Texas",NA,NA,NA
+"1410","Robertson","Texas",30.1,22.3,70.5
+"1411","Runnels","Texas",26.8,18,66.3
+"1412","Sabine","Texas",29.7,23.7,72.1
+"1413","San Augustine","Texas",15.4,30.7,65.4
+"1414","San Jacinto","Texas",28,20.3,78.7
+"1415","San Saba","Texas",NA,18.4,37
+"1416","Schleicher","Texas",NA,NA,72.1
+"1417","Scurry","Texas",28.3,17.2,60.1
+"1418","Shackelford","Texas",NA,28.6,80.4
+"1419","Shelby","Texas",20.7,24.5,76.8
+"1420","Sherman","Texas",NA,NA,64.1
+"1421","Somervell","Texas",36.7,16.2,62.8
+"1422","Stephens","Texas",23.1,27.8,76.5
+"1423","Sterling","Texas",NA,NA,NA
+"1424","Stonewall","Texas",NA,NA,78.5
+"1425","Sutton","Texas",NA,34.6,51
+"1426","Swisher","Texas",32.5,22.5,36
+"1427","Terrell","Texas",NA,NA,NA
+"1428","Terry","Texas",23.9,17.4,46.9
+"1429","Throckmorton","Texas",NA,NA,53.7
+"1430","Trinity","Texas",24.8,12.9,71.4
+"1431","Tyler","Texas",24.2,20.6,73
+"1432","Upton","Texas",NA,NA,45.4
+"1433","Ward","Texas",23.6,27.2,63.6
+"1434","Wheeler","Texas",26.1,23.7,58.7
+"1435","Wilbarger","Texas",27.3,24.5,55.9
+"1436","Willacy","Texas",22,10.6,37.2
+"1437","Winkler","Texas",28.3,22.3,53.1
+"1438","Yoakum","Texas",36.8,25.7,46.7
+"1439","Young","Texas",26.1,26.6,61
+"1440","Zapata","Texas",NA,NA,23
+"1441","Zavala","Texas",19.2,16.6,24.9
+"1442","Beaver","Utah",NA,20.1,51.1
+"1443","Carbon","Utah",18.7,22.9,36.4
+"1444","Daggett","Utah",NA,NA,NA
+"1445","Duchesne","Utah",18.7,19.1,33.1
+"1446","Emery","Utah",NA,17.3,26.8
+"1447","Garfield","Utah",NA,NA,NA
+"1448","Grand","Utah",NA,15.9,59.8
+"1449","Juab","Utah",34.3,NA,17.3
+"1450","Kane","Utah",30.3,17.3,29.1
+"1451","Millard","Utah",25.4,19.8,17.2
+"1452","Morgan","Utah",NA,NA,21.9
+"1453","Piute","Utah",NA,NA,NA
+"1454","Rich","Utah",NA,NA,NA
+"1455","San Juan","Utah",NA,NA,19.1
+"1456","Sanpete","Utah",25.5,15.1,26.8
+"1457","Sevier","Utah",25.8,23,22.1
+"1458","Wasatch","Utah",28,19.5,19.8
+"1459","Wayne","Utah",NA,NA,NA
+"1460","Essex","Vermont",34.6,40.2,57.7
+"1461","Grand Isle","Vermont",NA,14.9,49.1
+"1462","Lamoille","Vermont",33.6,21.8,47.1
+"1463","Alleghany","Virginia",20.8,22.8,53.8
+"1464","Amelia","Virginia",33,26.5,70.1
+"1465","Appomattox","Virginia",23.4,28.8,53.2
+"1466","Bath","Virginia",NA,36.9,49.8
+"1467","Bland","Virginia",26.9,26,43.9
+"1468","Brunswick","Virginia",39.7,26,63.6
+"1469","Buckingham","Virginia",29.5,15.8,58.6
+"1470","Caroline","Virginia",32.5,25.3,68.4
+"1471","Charles City","Virginia",37.2,17.9,70.6
+"1472","Charlotte","Virginia",32.4,28.2,77.9
+"1473","Clarke","Virginia",37.2,27.5,64.1
+"1474","Craig","Virginia",NA,NA,59.3
+"1475","Cumberland","Virginia",23.4,24.7,57
+"1476","Dickenson","Virginia",31.6,17.8,71.2
+"1477","Dinwiddie","Virginia",34.5,22.8,70.7
+"1478","Essex","Virginia",41.9,33.7,72
+"1479","Floyd","Virginia",17.6,14.5,46.8
+"1480","Fluvanna","Virginia",34.4,16.9,51
+"1481","Giles","Virginia",31.1,21.5,71.1
+"1482","Goochland","Virginia",33.1,21.2,62
+"1483","Grayson","Virginia",28.1,20.2,57.2
+"1484","Greene","Virginia",24.8,14,54.9
+"1485","Greensville","Virginia",29.7,26,65.2
+"1486","Highland","Virginia",NA,29.4,53.2
+"1487","King and Queen","Virginia",NA,28.1,55
+"1488","King George","Virginia",22,21.7,70.2
+"1489","King William","Virginia",28.6,18.2,61.4
+"1490","Lancaster","Virginia",37.3,24.4,68.9
+"1491","Lee","Virginia",23.2,21.4,83.2
+"1492","Louisa","Virginia",25.3,27.8,64.6
+"1493","Lunenburg","Virginia",42,24,57.7
+"1494","Madison","Virginia",31.1,25,45.1
+"1495","Mathews","Virginia",40.9,24.1,55.9
+"1496","Middlesex","Virginia",24.6,19.3,61.5
+"1497","Nelson","Virginia",31.7,25.7,58.6
+"1498","New Kent","Virginia",26.7,19.4,75.6
+"1499","Northampton","Virginia",34.8,25,85.2
+"1500","Northumberland","Virginia",23.2,22.4,65.7
+"1501","Nottoway","Virginia",34,29,72
+"1502","Orange","Virginia",28.3,24.6,58.8
+"1503","Page","Virginia",29.5,18.8,56.8
+"1504","Patrick","Virginia",20.5,15.8,55.1
+"1505","Powhatan","Virginia",24,21.1,72.8
+"1506","Prince Edward","Virginia",21,20.5,70.2
+"1507","Rappahannock","Virginia",NA,15.9,40.2
+"1508","Richmond","Virginia",34.9,33.1,71
+"1509","Rockbridge","Virginia",28,27.3,52
+"1510","Scott","Virginia",28.8,17.8,73.2
+"1511","Southampton","Virginia",24.1,27.7,64.8
+"1512","Surry","Virginia",23.8,22.6,75.8
+"1513","Sussex","Virginia",34.7,22.9,67.2
+"1514","Westmoreland","Virginia",25.7,21,82.2
+"1515","Bedford City","Virginia",29.2,30.2,63.5
+"1516","Bristol City","Virginia",34,21.6,79.3
+"1517","Buena Vista City","Virginia",NA,28.9,82
+"1518","Colonial Heights City","Virginia",25.4,24.8,73.5
+"1519","Covington City","Virginia",21.5,26.8,60.5
+"1520","Emporia City","Virginia",25.5,27.3,91
+"1521","Fairfax City","Virginia",32.4,27.1,58.3
+"1522","Falls Church City","Virginia",33.3,15.9,44.6
+"1523","Franklin City","Virginia",39.6,31,74
+"1524","Fredericksburg City","Virginia",33.2,26,76
+"1525","Galax City","Virginia",29.6,27.6,77.7
+"1526","Hopewell City","Virginia",28.3,27,90.6
+"1527","Lexington City","Virginia",41.1,30.1,69.1
+"1528","Manassas Park City","Virginia",NA,37.3,84
+"1529","Martinsville City","Virginia",35.9,24.1,54.2
+"1530","Norton City","Virginia",NA,NA,82.8
+"1531","Poquoson City","Virginia",41.2,13.7,57.5
+"1532","Radford City","Virginia",26.7,27.2,77.4
+"1533","Salem City","Virginia",27.7,18.1,63.4
+"1534","Staunton City","Virginia",25,22.5,57.5
+"1535","Waynesboro City","Virginia",25.3,18.8,66.9
+"1536","Williamsburg City","Virginia",37.6,26.3,68.2
+"1537","Winchester City","Virginia",31.2,23,79.8
+"1538","Adams","Washington",16.1,26.2,45.9
+"1539","Asotin","Washington",18.3,14.8,56.1
+"1540","Columbia","Washington",NA,35.6,76.1
+"1541","Ferry","Washington",NA,25.6,56.6
+"1542","Garfield","Washington",NA,NA,72.3
+"1543","Klickitat","Washington",23.3,17.1,61.4
+"1544","Lincoln","Washington",34.4,12,44.2
+"1545","Pacific","Washington",21.9,24,65
+"1546","Pend Oreille","Washington",22.9,18.7,54.6
+"1547","San Juan","Washington",20.6,11.7,35.7
+"1548","Skamania","Washington",30,24.3,61.1
+"1549","Wahkiakum","Washington",NA,24,51.4
+"1550","Barbour","West Virginia",24.4,25.7,66.2
+"1551","Braxton","West Virginia",28.4,20.4,75.8
+"1552","Calhoun","West Virginia",32.6,26.4,84.7
+"1553","Clay","West Virginia",27.5,28.9,83.9
+"1554","Doddridge","West Virginia",NA,20.2,74.8
+"1555","Gilmer","West Virginia",34,34,77
+"1556","Grant","West Virginia",17.6,17.6,44.7
+"1557","Hampshire","West Virginia",24.8,25.9,62.4
+"1558","Hardy","West Virginia",18.2,27.5,55.6
+"1559","Lewis","West Virginia",23,26.9,70.4
+"1560","Lincoln","West Virginia",29.9,19,91.4
+"1561","Monroe","West Virginia",27.6,20.1,60.7
+"1562","Morgan","West Virginia",19.4,23.8,65.5
+"1563","Pendleton","West Virginia",NA,19.7,32.9
+"1564","Pleasants","West Virginia",22.6,16.5,73.2
+"1565","Pocahontas","West Virginia",20.2,16.6,63.3
+"1566","Ritchie","West Virginia",28.8,24.7,65.4
+"1567","Roane","West Virginia",30.2,19.5,71.2
+"1568","Summers","West Virginia",29.3,18.7,72.9
+"1569","Taylor","West Virginia",31,29.6,73.5
+"1570","Tucker","West Virginia",34.1,33,53.9
+"1571","Tyler","West Virginia",36.7,27.3,77
+"1572","Upshur","West Virginia",24.6,21.3,59.5
+"1573","Webster","West Virginia",29.2,24.2,69.2
+"1574","Wetzel","West Virginia",19.9,28.7,71.2
+"1575","Wirt","West Virginia",NA,NA,82.7
+"1576","Adams","Wisconsin",32.3,22.8,63.7
+"1577","Ashland","Wisconsin",23.8,23.5,51.8
+"1578","Bayfield","Wisconsin",42.5,25.8,56.5
+"1579","Buffalo","Wisconsin",25,21.2,40.9
+"1580","Burnett","Wisconsin",27.4,30.7,52.9
+"1581","Crawford","Wisconsin",25.3,25.7,49.5
+"1582","Florence","Wisconsin",28.9,NA,49.1
+"1583","Forest","Wisconsin",20.1,16.7,63.5
+"1584","Green Lake","Wisconsin",25,19.5,48.5
+"1585","Iowa","Wisconsin",28.1,23.3,45.2
+"1586","Iron","Wisconsin",31.7,11.4,57.7
+"1587","Jackson","Wisconsin",33,22.4,47.7
+"1588","Juneau","Wisconsin",29.8,25.6,68.8
+"1589","Kewaunee","Wisconsin",23,22.4,32.1
+"1590","Lafayette","Wisconsin",20.8,28.9,47.4
+"1591","Langlade","Wisconsin",23,19.6,49.7
+"1592","Marquette","Wisconsin",29.8,18.6,60
+"1593","Menominee","Wisconsin",NA,43.4,102.8
+"1594","Pepin","Wisconsin",NA,23.8,45.5
+"1595","Price","Wisconsin",25.8,19.4,43.4
+"1596","Richland","Wisconsin",27.3,22,37.5
+"1597","Rusk","Wisconsin",21.8,14.6,50.8
+"1598","Sawyer","Wisconsin",19.6,26.5,58.1
+"1599","Taylor","Wisconsin",20.1,16.3,39.6
+"1600","Vilas","Wisconsin",33.9,17.5,55.8
+"1601","Washburn","Wisconsin",17.4,29.2,54.6
+"1602","Waushara","Wisconsin",25.5,20.2,53.7
+"1603","Big Horn","Wyoming",23.8,25.3,56.3
+"1604","Carbon","Wyoming",28.4,25.3,48.1
+"1605","Converse","Wyoming",NA,21.4,58.7
+"1606","Crook","Wyoming",26.7,33.6,41.9
+"1607","Goshen","Wyoming",14.1,21.8,42.6
+"1608","Hot Springs","Wyoming",23.9,29,46.8
+"1609","Johnson","Wyoming",NA,13.4,60.2
+"1610","Lincoln","Wyoming",25.8,20.8,24.5
+"1611","Niobrara","Wyoming",NA,NA,52.3
+"1612","Platte","Wyoming",NA,21.2,45.9
+"1613","Sublette","Wyoming",38.5,21.9,34.2
+"1614","Teton","Wyoming",24.7,15.4,37.7
+"1615","Uinta","Wyoming",15.4,24.7,46.1
+"1616","Washakie","Wyoming",38.2,19.4,45.3
+"1617","Weston","Wyoming",NA,32.8,58.9

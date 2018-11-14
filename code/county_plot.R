@@ -1,10 +1,35 @@
 library(maps)
 library(dplyr)
+library(ggplot2)
+library(tibble)
+library(tidyverse)
 setwd("~/PycharmProjects/EDAV/chsi_dataset")
 
 data(county.fips)
 df = read.csv('./RELATIVEHEALTHIMPORTANCE.csv')
 df2 = read.csv('./RISKFACTORSANDACCESSTOCARE.csv')
+df2 = df2[df2$CHSI_State_Name!="Alaska",]
+df2[df2<0] = 0
+
+#Selecting variables
+no_ex = aggregate(df2[, 7], list(df2$CHSI_State_Name), mean)
+fat = aggregate(df2[, 13], list(df2$CHSI_State_Name), mean)
+theme_dotplot <- theme_bw(18) +
+  theme(axis.text.y = element_text(size = rel(.75)),
+        axis.ticks.y = element_blank(),
+        axis.title.x = element_text(size = rel(.75)),
+        panel.grid.major.x = element_blank(),
+        panel.grid.major.y = element_line(size = 0.5),
+        panel.grid.minor.x = element_blank())
+ggplot() + geom_point(data=fat,
+                      aes(x = x,
+                          y = fct_reorder(Group.1, x))) +
+  ylab("") + xlab("FAT INDEX") + theme_dotplot
+
+#Same for other variables
+
+#Draw the map
+
 ct = read.csv('./zcta_county_rel_10.txt', colClasses=c("character",rep("numeric",23)))
 
 toFIPS = function(state, county) {
