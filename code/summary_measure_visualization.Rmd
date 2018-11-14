@@ -31,12 +31,24 @@ visna(summary_measure_df1,sort = "b")
 ```
 
 ```{r filter02}
+summary_measure_df1 <- summary_measure_df1[complete.cases(summary_measure_df1), ]
 summary_measure_state <- summary_measure_df1%>%
   group_by(CHSI_State_Abbr) %>%
-  mutate(ALE = mean(ALE), All_Death = mean(All_Death), Health_Status = mean(Health_Status), Unhealthy_Days=mean(Unhealthy_Days))
-ggplot(summary_measure_state, aes(CHSI_State_Abbr,ALE))+
+  summarise(meanALE = mean(ALE,rm.na=TRUE), mAD = mean(All_Death),mHS= mean(Health_Status), mUD =mean(Unhealthy_Days))%>%
+  mutate(meanALE = meanALE, meanAll_Death = mAD, meanHealth_Status = mHS, meanUnhealthy_Days=mUD)
+ggplot(summary_measure_state, aes(CHSI_State_Abbr,meanALE))+
   geom_bar(stat = "identity")+
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
+ggplot(summary_measure_state, aes(CHSI_State_Abbr,meanAll_Death))+
+  geom_bar(stat = "identity")+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+ggplot(summary_measure_state, aes(CHSI_State_Abbr,meanHealth_Status))+
+  geom_bar(stat = "identity")+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+ggplot(summary_measure_state, aes(CHSI_State_Abbr,meanUnhealthy_Days))+
+  geom_bar(stat = "identity")+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+write.csv(summary_measure_state, file = "summary_measure_state.csv", row.names = FALSE)
 ```
 
 ```{r cleveland}
@@ -54,6 +66,10 @@ g3
 g4
 ```
 
+```{r}
+merge_demomeasure <- merge(summary_measure_df1, demographics, by=c("CHSI_County_Name","CHSI_State_Abbr"), all=TRUE)
+```
+
 
 
 ```{r map1}
@@ -68,8 +84,8 @@ g <- list(
 
 p <- plot_geo(summary_measure_state, locationmode = 'USA-states') %>%
   add_trace(
-    z = ~ALE, text = ~ALE, locations = ~CHSI_State_Abbr,
-    color = ~ALE, colors = 'Purples'
+    z = ~meanALE, text = ~meanUnhealthy_Days, locations = ~CHSI_State_Abbr,
+    color = ~meanALE, colors = 'Purples'
   ) %>%
   colorbar(title = "ALE") %>%
   layout(
