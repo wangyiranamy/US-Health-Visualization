@@ -11,59 +11,92 @@ Load data and packages.
 ```{r}
 library(tidyverse)
 library(extracat)
+library(grid)
+library(vcd)
 demographics <- read.csv("../data/demographics.csv")
 causes <- read.csv("../data/leading_causes_of_death.csv")
-demographics[demographics == -9999 | demographics == -1111 | demographics == -2222 | demographics == -2222.2 | demographics == -2 | demographics == -1111 | demographics == -1111.1 | demographics == -1] <- NA
-causes[causes == -9999 | causes == -1111 | causes == -2222 | causes == -2222.2 | causes == -2 | causes == -1111 | causes == -1111.1 | causes == -1] <- NA
 ```
 
-Missing data
+Change specific values to NA.
 ```{r}
-visna(causes, sort = 'b')
+demographics[demographics == -9999 | demographics == -2222 | demographics == -2222.2 | demographics == -2] <- NA
+causes[causes == -9999 | causes == -2222 | causes == -2222.2 | causes == -2] <- NA
 ```
 
-```{r fig.width = 10}
-ggplot(demographics) + geom_bar(mapping = aes(x = fct_rev(fct_infreq(CHSI_State_Abbr))))
-demographics %>%
-  filter(Population_Size <= 100000) %>%
-  ggplot() + geom_histogram(mapping = aes(x = Population_Size))
-demographics %>%
-  filter(Population_Size > 100000 & Population_Size < 250000) %>%
-  ggplot() + geom_histogram(mapping = aes(x = Population_Size))
-demographics %>%
-  filter(Population_Density < 1000 & Population_Density > 0) %>%
-  ggplot() + geom_histogram(mapping = aes(x = Population_Density))
-demographics %>%
-  filter(Population_Density > 1000) %>%
-  ggplot() + geom_histogram(mapping = aes(x = Population_Density))
-demographics %>%
-  filter(Poverty > 0 & Poverty < 100) %>%
-  ggplot() + geom_histogram(mapping = aes(x = Poverty))
-demographics %>%
-  filter(Age_19_Under > 0 & Age_19_Under < 100) %>%
-  ggplot() + geom_histogram(mapping = aes(x = Age_19_Under))
-demographics %>%
-  filter(Age_19_64 > 0 & Age_19_64 < 100) %>%
-  ggplot() + geom_histogram(mapping = aes(x = Age_19_64))
-demographics %>%
-  filter(Age_65_84 > 0 & Age_65_84 < 100) %>%
-  ggplot() + geom_histogram(mapping = aes(x = Age_65_84))
-demographics %>%
-  filter(Age_85_and_Over > 0 & Age_85_and_Over < 100) %>%
-  ggplot() + geom_histogram(mapping = aes(x = Age_85_and_Over))
-demographics %>%
-  filter(Black > 0 & Black < 100) %>%
-  ggplot() + geom_histogram(mapping = aes(x = Black))
-demographics %>%
-  filter(White > 0 & White < 100) %>%
-  ggplot() + geom_histogram(mapping = aes(x = White))
-demographics %>%
-  filter(Asian > 0 & Asian < 100) %>%
-  ggplot() + geom_histogram(mapping = aes(x = Asian))
-demographics %>%
-  filter(Native_American > 0 & Native_American < 100) %>%
-  ggplot() + geom_histogram(mapping = aes(x = Native_American))
-demographics %>%
-  filter(Hispanic > 0 & Hispanic < 100) %>%
-  ggplot() + geom_histogram(mapping = aes(x = Hispanic))
+Add the population size in demographics to causes.
+```{r}
+causes$Population_Size <- demographics$Population_Size
 ```
+
+According to data descriptions, these values indicate that only a small number of people have this disease.
+```{r}
+causes[causes == -1111 | causes == -1111.1 | causes == -1] <- 0
+```
+
+I consider the average cancer data. The give data splits the cancer data into different columns by age and race, so I will use multiple columns. Below selects all related columns.
+```{r}
+causes_cancer <- causes %>%
+  select(contains("Cancer")) %>%
+  select(-contains("Min")) %>%
+  select(-contains("Max"))
+```
+
+Plot demographics behavior among people dying because of cancer.
+```{r fig.width = 15}
+mosaic_data <- causes_cancer %>%
+  summarise_all(., 'sum', na.rm = TRUE) %>%
+  gather(group, number) %>%
+  mutate(age = sapply(strsplit(group, "_"), `[`, 1)) %>%
+  mutate(race = sapply(strsplit(group, "_"), `[`, 2)) %>%
+  mutate(age = recode(age, "B" = "1-14", "C" = "15-24", "D" = "25-44", "E" = "45-64", "F" = "above 65")) %>%
+  mutate(race = recode(race, "Wh" = "White", "Bl" = "Black", "Ot" = "Other", "Hi" = "Hispanic")) %>%
+  select(-group)
+
+mosaic(xtabs(number ~ race + age, data = mosaic_data), rot_labels = c(40, 40))
+```
+This plot shows that majority of people dying because of cancer is of age above 45, which is as expected. However, there appears to be more younger white people dying because of cancer than other races. This might also be due to the bias introduced by omitting small number of dying cases in the oringal data and we regarding these data as 0 in our analysis. Since there are less people of race groups other than white, their cases are more likely to be very small and hence omitted and result in a total decrease in the number of peope dying because of cancer in younger ages. 
+
+Plot the proportion of people dying because of cancer in each state.
+```{r fig.height = 10}
+theme_dotplot <- theme_bw(18) +
+    theme(axis.text.y = element_text(size = rel(1.)),
+          axis.ticks.y = element_blank(),
+          axis.title.x = element_text(size = rel(1.)),
+          panel.grid.major.x = element_blank(),
+          panel.grid.major.y = element_line(size = .8),
+          panel.grid.minor.x = element_blank())
+total_death1 <- causes %>%
+  select(-contains("Min")) %>%
+  select(-contains("Max")) %>%
+  select(-State_FIPS_Code, -County_FIPS_Code, -CHSI_County_Name, -CHSI_State_Name, -CHSI_State_Abbr, -Strata_ID_Number, -LCD_Time_Span, -Population_Size) %>%
+  mutate(total = rowSums(., na.rm = TRUE)) %>%
+  select(total)
+total_death1$Population_Size <- causes$Population_Size
+total_death1$state <- factor(causes$CHSI_State_Name)
+total_death1 %>%
+  group_by(state) %>%
+  summarise(percentage = sum(total) / sum(Population_Size)) %>%
+  ggplot() + geom_point(mapping = aes(x = percentage, y = fct_reorder(state, percentage)), color = "blue") + ylab("") + theme_dotplot 
+```
+In general, the percentage of people dying because of cancer is small in each state, but rough calculation can show that after some normalization, the percentage differences among states can also be deemed significant. One may compare this with other variables to see if there is any correlation.
+
+Therefore I begin to see if this percentage has correlation with the poverty level.
+```{r fig.height = 10}
+total_death2 <- causes %>%
+  select(-contains("Min")) %>%
+  select(-contains("Max")) %>%
+  select(-State_FIPS_Code, -County_FIPS_Code, -CHSI_County_Name, -CHSI_State_Name, -CHSI_State_Abbr, -Strata_ID_Number, -LCD_Time_Span, -Population_Size) %>%
+  mutate(total = rowSums(., na.rm = TRUE)) %>%
+  select(total)
+total_death2$Population_Size <- causes$Population_Size
+total_death2$state <- factor(causes$CHSI_State_Name)
+total_death2$poverty <- demographics$Poverty
+total_death2 %>%
+  group_by(state) %>%
+  summarise(percentage = sum(total) / sum(Population_Size), poverty = mean(poverty, na.rm = TRUE)) %>%
+  mutate(percentage = (percentage - mean(percentage)) / sd(percentage)) %>%
+  mutate(poverty = (poverty - mean(poverty)) / sd(poverty)) %>%
+  gather(key, value, -state) %>%
+  ggplot() + geom_point(mapping = aes(x = value, y = fct_reorder2(state, factor(key, levels = c("poverty", "percentage")), -value), color = key)) + ylab("") + theme_dotplot
+```
+According to this plot, there does not seem to be any association between poverty and the percentage of people dying because of cancer. Therefore we will move on to analyze this percentage with other potential variables in our dataset later on.
