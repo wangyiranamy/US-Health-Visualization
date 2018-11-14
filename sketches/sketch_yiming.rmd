@@ -25,7 +25,7 @@ causes[causes == -9999 | causes == -2222 | causes == -2222.2 | causes == -2] <- 
 
 Add the population size in demographics to causes.
 ```{r}
-causes$Population_Size <- demographics$Population_Size
+causes <- merge(causes, demographics, by = c("CHSI_County_Name", "CHSI_State_Name"), all = TRUE)
 ```
 
 According to data descriptions, these values indicate that only a small number of people have this disease.
@@ -66,9 +66,8 @@ theme_dotplot <- theme_bw(18) +
           panel.grid.major.y = element_line(size = .8),
           panel.grid.minor.x = element_blank())
 total_death1 <- causes %>%
-  select(-contains("Min")) %>%
-  select(-contains("Max")) %>%
-  select(-State_FIPS_Code, -County_FIPS_Code, -CHSI_County_Name, -CHSI_State_Name, -CHSI_State_Abbr, -Strata_ID_Number, -LCD_Time_Span, -Population_Size) %>%
+  select(contains("Cancer")) %>%
+  select(-contains("Min"), -contains("Max")) %>%
   mutate(total = rowSums(., na.rm = TRUE)) %>%
   select(total)
 total_death1$Population_Size <- causes$Population_Size
@@ -83,9 +82,8 @@ In general, the percentage of people dying because of cancer is small in each st
 Therefore I begin to see if this percentage has correlation with the poverty level.
 ```{r fig.height = 10}
 total_death2 <- causes %>%
-  select(-contains("Min")) %>%
-  select(-contains("Max")) %>%
-  select(-State_FIPS_Code, -County_FIPS_Code, -CHSI_County_Name, -CHSI_State_Name, -CHSI_State_Abbr, -Strata_ID_Number, -LCD_Time_Span, -Population_Size) %>%
+  select(contains("Cancer")) %>%
+  select(-contains("Min"), -contains("Max")) %>%
   mutate(total = rowSums(., na.rm = TRUE)) %>%
   select(total)
 total_death2$Population_Size <- causes$Population_Size
