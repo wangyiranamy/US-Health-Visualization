@@ -94,6 +94,7 @@ server <- function(input, output, var, session) {
     p <- ggplot(summary_measure_state, aes(CHSI_State_Abbr,var,fill = "orange"))+
       geom_bar(stat = "identity")+
       theme(axis.text.x = element_text(angle = 45, hjust = 1))
+    
     ggplotly(p)
   })
 }
