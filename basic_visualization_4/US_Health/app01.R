@@ -91,10 +91,9 @@ server <- function(input, output, var, session) {
                    "Unhealthy Days" = summary_measure_state$Unhealthy_Days,
                    "Healthy Status" = summary_measure_state$Health_Status,
                    "All Death" = summary_measure_state$All_Death)
-    p <- ggplot(summary_measure_state, aes(CHSI_State_Abbr,var,fill = "orange"))+
-      geom_bar(stat = "identity")+
+   p <-  ggplot(summary_measure_state, aes(CHSI_State_Abbr, var))+
+      geom_bar(stat = "identity", fill ="orange")+
       theme(axis.text.x = element_text(angle = 45, hjust = 1))
-    
     ggplotly(p)
   })
 }

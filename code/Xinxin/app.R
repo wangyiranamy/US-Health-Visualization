@@ -11,7 +11,7 @@ library(shiny)
 #ui <- fluidPage()
 #server <- function(input, output, session) {}
 #shinyApp(ui = ui, server = server)
-preventive_df1 <- read.csv("preventive_df1.csv")
+preventive_df1 <- read.csv("/Users/yiranwang/US-Health-Visualization/data/Clean data/preventive_df1.csv")
 
 
 
