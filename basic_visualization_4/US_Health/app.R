@@ -20,11 +20,10 @@ ui <- navbarPage("US Health Status", id="ush",
                titlePanel("US Health Status Summary"),
                tags$ol(
                  tags$li("Create demographic maps with 
-                         information from the US Health Status Summary.",
-                         tags$code("plotly_selected"))
+                         information from the US Health Status Summary.")
                ),
                fixedRow(
-                 column(5, selectInput(inputId = "var", 
+                 column(5, selectInput(inputId = "var_yiran", 
                                        label = "Choose a variable to display", 
                                        choices = c("Average Life Expectancy", "Unhealthy Days",
                                                    "Health Status", "All Death"), 
@@ -32,8 +31,13 @@ ui <- navbarPage("US Health Status", id="ush",
                ),
                tags$hr(),
                fixedRow(
-                 column(8, plotlyOutput("Plot1", height = "600px")),
+                 column(8, plotlyOutput("Plot1")),
                  column(4, plotlyOutput("Plot2", height = "300px"))),
+               fixedRow(
+                 column(8, verbatimTextOutput("info"))
+               )
+               ),
+              
      tabPanel("PreventiveDisease",
               titlePanel("US Health preventive diseases Status"),
               verbatimTextOutput("click"),
@@ -51,18 +55,19 @@ ui <- navbarPage("US Health Status", id="ush",
                 
                 mainPanel(
                 plotlyOutput("plot"))
-                ))))
+                ))
+)
                 
       
 
 
 # Define server logic required to draw a histogram
-server <- function(input, output, var, session) {
+server <- function(input, output, var_yiran, var_xinxin, session) {
   output$Plot1<- renderPlotly({
-    var_yiran <- switch(input$var, 
+    data <- switch(input$var_yiran, 
                    "Average Life Expectancy" = summary_measure_state$ALE,
                    "Unhealthy Days" = summary_measure_state$Unhealthy_Days,
-                   "Healthy Status" = summary_measure_state$Health_Status,
+                   "Health Status" = summary_measure_state$Health_Status,
                    "All Death" = summary_measure_state$All_Death)
     summary_measure_state$hover <- with(summary_measure_state, paste(State_Name, '<br>', "ALE", ALE, "Unhealthy_Days", Unhealthy_Days, "<br>",
                                "Healthy_Status", Health_Status))
@@ -76,8 +81,8 @@ server <- function(input, output, var, session) {
     )
     plot_geo(summary_measure_state, locationmode = 'USA-states') %>%
       add_trace(
-        z = ~var_yiran, text = ~hover, locations = ~CHSI_State_Abbr,
-        color = ~var_yiran, colors = 'Oranges'
+        z = ~data, text = ~hover, locations = ~CHSI_State_Abbr,
+        color = ~data, colors = 'Oranges'
       ) %>%
       colorbar(title = input$var) %>%
       layout(
@@ -85,18 +90,31 @@ server <- function(input, output, var, session) {
         geo = g
       )
   })
+  
+  ### Yiran Bar
  
+  output$info <- renderText({
+
+    as.character(summary_measure_state[event_data("plotly_hover")$pointNumber,"State_Name"])
+  })
   output$Plot2 <- renderPlotly({
-    var_yiran <- switch(input$var,
+    data <- switch(input$var_yiran,
                    "Average Life Expectancy" = summary_measure_state$ALE,
                    "Unhealthy Days" = summary_measure_state$Unhealthy_Days,
-                   "Healthy Status" = summary_measure_state$Health_Status,
+                   "Health Status" = summary_measure_state$Health_Status,
                    "All Death" = summary_measure_state$All_Death)
-    p <- ggplot(summary_measure_state, aes(CHSI_State_Abbr,var_yiran))+
+    p <- ggplot(summary_measure_state, aes(reorder(CHSI_State_Abbr,data),data))+
       geom_bar(stat = "identity", fill = "orange")+
-      theme(axis.text.x = element_text(angle = 45, hjust = 1))
+      theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 6), 
+            axis.title = element_text(size=8),
+            plot.title = element_text(size = 10))+
+      xlab("States")+
+      ylab("Average Value")+
+      ggtitle(paste("Histogram Visualization for",input$var_yiran))
      ggplotly(p)
   })
+  
+  #### Xinxin
   output$plot <- renderPlotly({
     datainput <- switch(input$var_xinxin, 
                         "Haemophilus Influenzae B" = preventive_df1$sumFluB_Rpt,
