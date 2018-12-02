@@ -16,9 +16,9 @@ library(ggplot2)
 library(tibble)
 library(tidyverse)
 
-summary_measure_state <- read.csv("~/PycharmProjects/EDAV/US-Health-Visualization/basic_visualization_4/US_Health/summary_measure_state.csv")
-preventive_df1 <- read.csv("~/PycharmProjects/EDAV/US-Health-Visualization/data/Clean data/preventive_df1.csv")
-df2 = read.csv('~/PycharmProjects/EDAV/US-Health-Visualization/data/risk_factors_and_access_to_care.csv')
+summary_measure_state <- read.csv("/Users/yiranwang/US-Health-Visualization/basic_visualization_4/US_Health/summary_measure_state.csv")
+preventive_df1 <- read.csv("/Users/yiranwang/US-Health-Visualization/data/Clean data/preventive_df1.csv")
+df2 = read.csv('/Users/yiranwang/US-Health-Visualization/data/risk_factors_and_access_to_care.csv')
 
 no_ex = df2[df2$No_Exercise>0,]
 risk = df2[df2$Obesity>0,]
