@@ -59,6 +59,7 @@ ui <- navbarPage("US Health Status", id="ush",
                fixedRow(column(12, plotlyOutput("plot04"))
                ))
      
+
 )
                 
       
@@ -67,7 +68,7 @@ ui <- navbarPage("US Health Status", id="ush",
 # Define server logic required to draw a histogram
 server <- function(input, output, var_yiran, var_xinxin, session) {
   output$Plot1<- renderPlotly({
-    data <- switch(input$var_yiran, 
+    data <- switch(input$var_yiran,
                    "Average Life Expectancy" = summary_measure_state$ALE,
                    "Unhealthy Days" = summary_measure_state$Unhealthy_Days,
                    "Health Status" = summary_measure_state$Health_Status,
@@ -112,7 +113,6 @@ server <- function(input, output, var_yiran, var_xinxin, session) {
                    "Unhealthy Days" = summary_measure_state$Unhealthy_Days,
                    "Health Status" = summary_measure_state$Health_Status,
                    "All Death" = summary_measure_state$All_Death)
-    
     idx = which(data == event_data("plotly_hover")$z)
     fill_color <- c("orange","orange","orange","orange","orange","orange","orange","orange","orange","orange",
                "orange","orange","orange","orange","orange","orange","orange","orange","orange","orange",
@@ -175,7 +175,7 @@ server <- function(input, output, var_yiran, var_xinxin, session) {
   
   ### Xinxinplot02
   output$plot03 <- renderPlotly({
-    l<- list(color = toRGB("white"), width = 2)
+     l<- list(color = toRGB("white"), width = 2)
     g <- list(
       scope = 'usa',
       projection = list(type = 'albers usa'),
@@ -207,6 +207,36 @@ server <- function(input, output, var_yiran, var_xinxin, session) {
                          "Births to unmarried women" = measurebirth$new_Unmarried,
                          "No care in first trimester" = measurebirth$new_Late_Care
     )
+    
+    p <- plot_ly(data = measurebirth, x = ~datainput2, y = ~datainput,
+                 marker = list(size = 10,
+                               color = 'rgba(255, 182, 193, .9)',
+                               line = list(color = 'rgba(152, 0, 0, .8)',
+                                           width = 2))) %>%
+      layout(title = 'Mother Situation VS. Infant Mortality',
+             yaxis = list(zeroline = FALSE, title=input$var_xinxin02),
+             xaxis = list(zeroline = FALSE,title=input$var_xinxin03))
+    
+    # Create a shareable link to your chart
+    # Set up API credentials: https://plot.ly/r/getting-started
+    #chart_link = api_create(p, filename="scatter-styled")
+    #chart_link
+  })
+  
+  ### Scatterplot
+  output$plot04 <- renderPlotly({
+    datainput<-switch(input$var_xinxin02, 
+                      "Low birth weight.(<2500 g)"= measurebirth$new_LBW,
+                      "Very low birth weight.(<1500 g)"= measurebirth$new_VLBW,
+                      "Premature births"= measurebirth$new_Premature,
+                      "Infant mortality"= measurebirth$new_Infant_Mortality
+                      )
+    datainput2 <- switch(input$var_xinxin03,
+                         "Births to women under 18" = measurebirth$new_Under_18,
+                         "Births to women over 40" = measurebirth$new_Over_40,
+                         "Births to unmarried women" = measurebirth$new_Unmarried,
+                         "No care in first trimester" = measurebirth$new_Late_Care
+                         )
     
     p <- plot_ly(data = measurebirth, x = ~datainput2, y = ~datainput,
                  marker = list(size = 10,
