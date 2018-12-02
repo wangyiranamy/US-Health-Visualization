@@ -100,7 +100,12 @@ ui <- navbarPage("US Health Status", id="ush",
                 ),
                 
                 mainPanel(
-                  plotlyOutput("plot_risk"))
+                  fixedRow(
+                    column(8, plotlyOutput("plot_risk")),
+                    fixedRow(
+                      column(8, plotlyOutput("plot_risk_cleve", height = "800px")))
+                  )
+                )
               ))
 )
                 
@@ -216,6 +221,25 @@ server <- function(input, output, var_yiran, var_xinxin, session) {
         geo = g
       )
     
+  })
+  output$plot_risk_cleve <- renderPlotly({
+    datainput <- switch(input$var_risk, 
+                        "Obesity" = risk$x,
+                        "No exercise" = risk$no_ex,
+                        "Few fruits/vegetables" = risk$few_fruit,
+                        "High blood pressure" = risk$High_Blood_Pres,
+                        "Diabetes" = risk$diabete)
+    theme_dotplot <- theme_bw(18) +
+      theme(axis.text.y = element_text(size = rel(.75)),
+            axis.ticks.y = element_blank(),
+            axis.title.x = element_text(size = rel(.75)),
+            panel.grid.major.x = element_blank(),
+            panel.grid.major.y = element_line(size = 0.5),
+            panel.grid.minor.x = element_blank())
+    p = ggplot() + geom_point(aes(x = datainput, y = fct_reorder(risk$Abbr, datainput)), color = "green") +
+      ylab(input$var_risk) + xlab("Index") + theme_dotplot
+    
+    print(p)
   })
 }
 
