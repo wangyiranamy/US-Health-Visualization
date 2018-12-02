@@ -10,9 +10,34 @@
 library(shiny)
 library(plotly)
 library(leaflet)
+library(maps)
+library(dplyr)
+library(ggplot2)
+library(tibble)
+library(tidyverse)
 
-summary_measure_state <- read.csv("/Users/yiranwang/US-Health-Visualization/basic_visualization_4/US_Health/summary_measure_state.csv")
-preventive_df1 <- read.csv("/Users/yiranwang/US-Health-Visualization/data/Clean data/preventive_df1.csv")
+summary_measure_state <- read.csv("~/PycharmProjects/EDAV/US-Health-Visualization/basic_visualization_4/US_Health/summary_measure_state.csv")
+preventive_df1 <- read.csv("~/PycharmProjects/EDAV/US-Health-Visualization/data/Clean data/preventive_df1.csv")
+df2 = read.csv('~/PycharmProjects/EDAV/US-Health-Visualization/data/risk_factors_and_access_to_care.csv')
+
+no_ex = df2[df2$No_Exercise>0,]
+risk = df2[df2$Obesity>0,]
+few_fruit = df2[df2$Few_Fruit_Veg>0,]
+High_Blood_Pres = df2[df2$High_Blood_Pres>0,]
+diabete = df2[df2$Diabetes>0,]
+
+few_fruit = aggregate(few_fruit[, 10], list(few_fruit$CHSI_State_Abbr), median)
+High_Blood_Pres = aggregate(High_Blood_Pres[, 16], list(High_Blood_Pres$CHSI_State_Abbr), median)
+diabete = aggregate(diabete[, 22], list(diabete$CHSI_State_Abbr), median)
+no_ex = aggregate(no_ex[, 7], list(no_ex$CHSI_State_Abbr), median)
+
+risk = aggregate(risk[, 13], list(risk$CHSI_State_Abbr), median)
+risk$no_ex = no_ex$x
+risk$diabete = diabete$x
+risk$few_fruit = few_fruit$x
+risk$High_Blood_Pres = High_Blood_Pres$x
+
+risk$Abbr = levels(fat$Group.1)[as.numeric(fat$Group.1)]
 
 # Define UI for application that draws a histogram
 ui <- navbarPage("US Health Status", id="ush",
@@ -55,7 +80,28 @@ ui <- navbarPage("US Health Status", id="ush",
                 
                 mainPanel(
                 plotlyOutput("plot"))
-                ))
+                )),
+     tabPanel("Risk Factors",
+              titlePanel("US Health Risk Factors"),
+              verbatimTextOutput("click_risk"),
+              sidebarLayout(
+                sidebarPanel(
+                  helpText("Create demographic maps with 
+                           information from the US Preventive Diseases Summary from 1994-2003."),
+                  
+                  selectInput("var_risk", 
+                              label = "Choose a variable to display",
+                              choices = c("Obesity",
+                                          "No exercise",
+                                          "Few fruits/vegetables",
+                                          "High blood pressure",
+                                          "Diabetes"),
+                              selected = "Obesity")
+                ),
+                
+                mainPanel(
+                  plotlyOutput("plot_risk"))
+              ))
 )
                 
       
@@ -139,6 +185,34 @@ server <- function(input, output, var_yiran, var_xinxin, session) {
       colorbar(title = input$var) %>%
       layout(
         title = '1994-2003 US Preventive Diseases Summary by State<br>(Hover for breakdown)',
+        geo = g
+      )
+    
+  })
+  
+  ## Risk Factor and access to health care
+  output$plot_risk <- renderPlotly({
+    datainput <- switch(input$var_risk, 
+                        "Obesity" = risk$x,
+                        "No exercise" = risk$no_ex,
+                        "Few fruits/vegetables" = risk$few_fruit,
+                        "High blood pressure" = risk$High_Blood_Pres,
+                        "Diabetes" = risk$diabete)
+    l <- list(color = toRGB("white"), width = 2)
+    g <- list(
+      scope = 'usa',
+      projection = list(type = 'albers usa'),
+      showlakes = TRUE,
+      lakecolor = toRGB('white')
+    )
+    plot_geo(risk, locationmode = 'USA-states') %>%
+      add_trace(
+        z = ~datainput, text = ~datainput, locations = ~Abbr,
+        color = ~datainput, colors = 'Oranges'
+      ) %>%
+      colorbar(title = input$var) %>%
+      layout(
+        title = '1994-2003 US Risk Factors Summary by State<br>(Hover for breakdown)',
         geo = g
       )
     
