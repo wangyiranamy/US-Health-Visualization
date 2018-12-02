@@ -37,7 +37,7 @@ risk$diabete = diabete$x
 risk$few_fruit = few_fruit$x
 risk$High_Blood_Pres = High_Blood_Pres$x
 
-risk$Abbr = levels(fat$Group.1)[as.numeric(fat$Group.1)]
+risk$Abbr = levels(risk$Group.1)[as.numeric(risk$Group.1)]
 
 # Define UI for application that draws a histogram
 ui <- navbarPage("US Health Status", id="ush",
