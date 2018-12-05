@@ -547,7 +547,7 @@ server <- function(input,
         panel.grid.major.y = element_line(size = 0.5),
         panel.grid.minor.x = element_blank()
       )
-    p = ggplot() + geom_point(aes(x = datainput, y = fct_reorder(risk$Abbr, datainput)), color = "green") +
+    p = ggplot() + geom_point(aes(x = datainput, y = forcats::fct_reorder(risk$Abbr, datainput)), color = "green") +
       ylab(input$var_risk) + xlab("Index") + theme_dotplot
     
     print(p)
@@ -592,7 +592,7 @@ server <- function(input,
       death_mosaic  %>% 
       group_by(disease) %>%
       summarise(deaths = sum(deaths)) %>%
-      ggplot() + geom_col(aes(x = fct_reorder(disease, deaths, .desc = TRUE), y = deaths), fill = "orange") +
+      ggplot() + geom_col(aes(x = forcats::fct_reorder(disease, deaths, .desc = TRUE), y = deaths), fill = "orange") +
       theme(
         axis.text.x = element_text(
           angle = 45,
