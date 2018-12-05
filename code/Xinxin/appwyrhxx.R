@@ -13,19 +13,27 @@ library(leaflet)
 
 summary_measure_state <-
   read.csv(
-    "~/PycharmProjects/EDAV/US-Health-Visualization/basic_visualization_4/US_Health/summary_measure_state.csv"
+    "/home/huang/projects/US-Health-Visualization/basic_visualization_4/US_Health/summary_measure_state.csv"
   )
 preventive_df1 <-
   read.csv(
-    "~/PycharmProjects/EDAV/US-Health-Visualization/data/Clean data/preventive_df1.csv"
+    "/home/huang/projects/US-Health-Visualization/data/Clean data/preventive_df1.csv"
   )
 measurebirth <-
   read.csv(
-    "~/PycharmProjects/EDAV/US-Health-Visualization/data/Clean data/measureBirth_clean.csv"
+    "/home/huang/projects/US-Health-Visualization/data/Clean data/measureBirth_clean.csv"
   )
 
 df2 = read.csv(
-  '~/PycharmProjects/EDAV/US-Health-Visualization/data/risk_factors_and_access_to_care.csv'
+  '/home/huang/projects/US-Health-Visualization/data/risk_factors_and_access_to_care.csv'
+)
+
+# yiming data
+death_causes = read.csv(
+  '/home/huang/projects/US-Health-Visualization/data/rates_causes_of_death_bystate.csv'
+)
+death_mosaic = read.csv(
+  '/home/huang/projects/US-Health-Visualization/data/disease_mosaic.csv'
 )
 
 no_ex = df2[df2$No_Exercise > 0, ]
@@ -154,6 +162,41 @@ ui <- navbarPage(
         8, plotlyOutput("plot_risk_cleve", height = "800px", width = "1600px")
       )
     )
+  ),
+  # yiming tab
+  tabPanel(
+    "Death Causes",
+    titlePanel("US Unnatural Death Causes"),
+    fixedRow(column(
+      7,
+      helpText(
+        "The summary on leading unnatural causes of deaths of US in 1994-2003"
+      )
+    )),
+    fixedRow(column(
+      10,
+      selectInput(
+        "var_yiming",
+        label = "Choose a variable to display",
+        choices = c(
+          "HIV",
+          "Pregnancy & Birth Issues",
+          "Injury",
+          "Homicide",
+          "Suicide", 
+          "Heart Disease",
+          "Breast Cancer",
+          "Colon Cancer",
+          "Lung Cancer"
+        ),
+        selected = "HIV"
+      )),
+      column(10, plotlyOutput("plot_death_causes"))),
+    
+    fixedRow(column(
+      8, plotlyOutput("plot_summary_death_causes")
+    )
+    )
   )
   
   
@@ -167,6 +210,7 @@ server <- function(input,
                    output,
                    var_yiran,
                    var_xinxin,
+                   var_yiming, # added by yiming
                    session) {
   output$Plot1 <- renderPlotly({
     data <- switch(
@@ -508,7 +552,61 @@ server <- function(input,
     
     print(p)
   })
-  
+  # yiming geo plot
+  output$plot_death_causes <- renderPlotly({
+    datainput <- switch(
+      input$var_yiming,
+      "HIV" = death_causes$hiv,
+      "Pregnancy & Birth Issues" = death_causes$complication_of_pregnancy_birth,
+      "Injury" = death_causes$injury,
+      "Homicide" = death_causes$homicide,
+      "Suicide" = death_causes$suicide, 
+      "Heart Disease" = death_causes$heart_disease,
+      "Breast Cancer" = death_causes$breast_cancer,
+      "Colon Cancer" = death_causes$colon_cancer,
+      "Lung Cancer" = death_causes$lung_cancer
+    )
+    l <- list(color = toRGB("white"), width = 2)
+    g <- list(
+      scope = 'usa',
+      projection = list(type = 'albers usa'),
+      showlakes = TRUE,
+      lakecolor = toRGB('white')
+    )
+    plot_geo(death_causes, locationmode = 'USA-states') %>%
+      add_trace(
+        z = ~ datainput,
+        text = ~ datainput,
+        locations = ~ state,
+        color = ~ datainput,
+        colors = 'Oranges'
+      ) %>%
+      colorbar(title = input$var) %>%
+      layout(title = '1994-2003 US Leading Unnatural Causes of Deaths by State<br>(Hover for breakdown)',
+             geo = g)
+    
+  })
+  # yiming bar plot
+  output$plot_summary_death_causes <- renderPlotly({
+    p <-
+      death_mosaic  %>% 
+      group_by(disease) %>%
+      summarise(deaths = sum(deaths)) %>%
+      ggplot() + geom_col(aes(x = fct_reorder(disease, deaths, .desc = TRUE), y = deaths), fill = "orange") +
+      theme(
+        axis.text.x = element_text(
+          angle = 45,
+          hjust = 1,
+          size = 6
+        ),
+        axis.title = element_text(size = 8),
+        plot.title = element_text(size = 10)
+      ) +
+      xlab("Death Cause") +
+      ylab("Number of Deaths") +
+      ggtitle("Number of Deaths Caused by Each Factor")
+    ggplotly(p)
+  })
 }
 
 # Run the application
