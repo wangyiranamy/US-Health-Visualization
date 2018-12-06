@@ -10,6 +10,7 @@
 library(shiny)
 library(plotly)
 library(leaflet)
+options(scipen=5)
 
 summary_measure_state <-
   read.csv(
@@ -64,12 +65,12 @@ ui <- navbarPage(
   tabPanel(
     "US Health Summary",
     titlePanel("US Health Status Summary"),
-    tags$ol(
-      tags$li(
-        "Create demographic maps with
-        information from the US Health Status Summary."
-      )
-      ),
+    # tags$ol(
+    #   tags$li(
+    #     "Create demographic maps with
+    #     information from the US Health Status Summary."
+    #   )
+    #   ),
     fixedRow(column(
       5,
       selectInput(
@@ -93,15 +94,15 @@ ui <- navbarPage(
     "Measure of Birth",
     titlePanel("US Birth Measure"),
     verbatimTextOutput("click"),
-    tags$ol(
-      tags$li("Get a geographical summary of Total Birth of US in 1994-2003.")
-    ),
-    
+    # tags$ol(
+    #   tags$li("Get a geographical summary of Total Birth of US.")
+    # ),
+    # 
     fixedRow(column(12, plotlyOutput("plot03"))),
     fixedRow(column(
-      7,
+      12,
       helpText(
-        "Get to know the relationship between Unhealthy Birth with situations of Mothers of US in 1994-2003"
+        "Relationship between Unhealthy Birth with situations of Mothers."
       )
     )),
     
@@ -109,7 +110,7 @@ ui <- navbarPage(
       6,
       selectInput(
         "var_xinxin03",
-        label = "Choose the X variable to show their relationship",
+        label = "Choose the X variable.",
         choices = c(
           "Births to women under 18",
           "Births to women over 40",
@@ -121,7 +122,7 @@ ui <- navbarPage(
       6,
       selectInput(
         "var_xinxin02",
-        label = "Choose the Y variable to show their relationship",
+        label = "Choose the Y variable.",
         choices = c(
           "Low birth weight.(<2500 g)",
           "Very low birth weight.(<1500 g)",
@@ -139,7 +140,7 @@ ui <- navbarPage(
     fixedRow(column(
       7,
       helpText(
-        "The General Health Status of US in 1994-2003"
+        "The General Health Status of US"
       )
     )),
     fixedRow(column(
@@ -170,7 +171,7 @@ ui <- navbarPage(
     fixedRow(column(
       7,
       helpText(
-        "The summary on leading unnatural causes of deaths of US in 1994-2003"
+        "The summary on leading unnatural causes of deaths of US"
       )
     )),
     fixedRow(column(
@@ -355,7 +356,7 @@ server <- function(input,
           size = 6
         ),
         axis.title = element_text(size = 8),
-        plot.title = element_text(size = 10)
+        plot.title = element_text(size = 18)
       ) +
       xlab("States") +
       ylab("Average Value") +
@@ -391,7 +392,7 @@ server <- function(input,
         colors = 'Oranges'
       ) %>%
       colorbar(title = input$var) %>%
-      layout(title = '1994-2003 US Preventive Diseases Summary by State',
+      layout(title = 'US Preventive Diseases Summary by State',
              geo = g)
     
   })
@@ -414,7 +415,7 @@ server <- function(input,
         colors = 'Oranges'
       ) %>%
       colorbar(title = 'Total Birth') %>%
-      layout(title = '1994-2003 US Total Birth Summary by State',
+      layout(title = 'US Total Birth Summary 1994-2003',
              geo = g)
   })
   ### Scatterplot
@@ -447,7 +448,7 @@ server <- function(input,
         )
       ) %>%
       layout(
-        title = 'Mother Situation VS. Infant Mortality',
+        title = 'Mother Situation VS. Birth Situation',
         yaxis = list(zeroline = FALSE, title = input$var_xinxin02),
         xaxis = list(zeroline = FALSE, title = input$var_xinxin03)
       )
@@ -525,7 +526,7 @@ server <- function(input,
         colors = 'Oranges'
       ) %>%
       colorbar(title = input$var) %>%
-      layout(title = '1994-2003 US Risk Factors Summary by State<br>(Hover for breakdown)',
+      layout(title = 'US Risk Factors Summary by State<br>',
              geo = g)
     
   })
@@ -547,7 +548,7 @@ server <- function(input,
         panel.grid.major.y = element_line(size = 0.5),
         panel.grid.minor.x = element_blank()
       )
-    p = ggplot() + geom_point(aes(x = datainput, y = forcats::fct_reorder(risk$Abbr, datainput)), color = "green") +
+    p = ggplot() + geom_point(aes(x = datainput, y = forcats::fct_reorder(risk$Abbr, datainput)), color = "orange") +
       ylab(input$var_risk) + xlab("Index") + theme_dotplot
     
     print(p)
@@ -582,7 +583,7 @@ server <- function(input,
         colors = 'Oranges'
       ) %>%
       colorbar(title = input$var) %>%
-      layout(title = '1994-2003 US Leading Unnatural Causes of Deaths by State<br>(Hover for breakdown)',
+      layout(title = 'US Leading Unnatural Causes of Deaths by State<br>',
              geo = g)
     
   })
