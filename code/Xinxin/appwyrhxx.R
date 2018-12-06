@@ -595,12 +595,13 @@ server <- function(input,
       ggplot() + geom_col(aes(x = forcats::fct_reorder(disease, deaths, .desc = TRUE), y = deaths), fill = "orange") +
       theme(
         axis.text.x = element_text(
-          angle = 45,
-          hjust = 1,
-          size = 6
+          size = 13
         ),
-        axis.title = element_text(size = 8),
-        plot.title = element_text(size = 10)
+        axis.text.y = element_text(
+          size = 13
+        ),
+        axis.title = element_text(size = 15),
+        plot.title = element_text(size = 20)
       ) +
       xlab("Death Cause") +
       ylab("Number of Deaths") +
