@@ -1,0 +1,56 @@
+deaths,age,race,disease
+44569.0,below 1,White,Pregnancy & birth issuses
+20206.0,below 1,Black,Pregnancy & birth issuses
+1779.0,below 1,Other,Pregnancy & birth issuses
+7508.0,below 1,Hispanic,Pregnancy & birth issuses
+22816.0,below 1,White,Birth defects
+3619.0,below 1,Black,Birth defects
+818.0,below 1,Other,Birth defects
+3608.0,below 1,Hispanic,Birth defects
+13537.0,1-14,White,Injury
+3211.0,1-14,Black,Injury
+781.0,1-14,Other,Injury
+1666.0,1-14,Hispanic,Injury
+582.0,1-14,White,Homicide
+778.0,1-14,Black,Homicide
+20.0,1-14,Other,Homicide
+84.0,1-14,Hispanic,Homicide
+98250.0,15-24,White,Injury
+8795.0,15-24,Black,Injury
+2671.0,15-24,Other,Injury
+6985.0,15-24,Hispanic,Injury
+3589.0,15-24,White,Homicide
+9540.0,15-24,Black,Homicide
+3069.0,15-24,Hispanic,Homicide
+20874.0,15-24,White,Suicide
+706.0,15-24,Black,Suicide
+969.0,15-24,Other,Suicide
+847.0,15-24,Hispanic,Suicide
+76608.0,25-44,White,Injury
+13025.0,25-44,Black,Injury
+4167.0,25-44,Other,Injury
+9576.0,25-44,Hispanic,Injury
+32150.0,25-44,White,Heart disease
+12663.0,25-44,Black,Heart disease
+1225.0,25-44,Other,Heart disease
+1107.0,25-44,Hispanic,Heart disease
+23884.0,25-44,White,Suicide
+197.0,25-44,Black,Suicide
+1179.0,25-44,Other,Suicide
+881.0,25-44,Hispanic,Suicide
+361.0,25-44,White,HIV
+6065.0,25-44,Black,HIV
+0.0,25-44,Other,HIV
+856.0,25-44,Hispanic,HIV
+666.0,25-44,White,Homicide
+4793.0,25-44,Black,Homicide
+378.0,25-44,Other,Homicide
+1474.0,25-44,Hispanic,Homicide
+79251.0,45-64,White,Heart disease
+32178.0,45-64,Black,Heart disease
+6970.0,45-64,Other,Heart disease
+8436.0,45-64,Hispanic,Heart disease
+102045.0,above 65,White,Heart disease
+47047.0,above 65,Black,Heart disease
+14268.0,above 65,Other,Heart disease
+17518.0,above 65,Hispanic,Heart disease

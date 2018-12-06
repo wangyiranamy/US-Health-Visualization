@@ -13,27 +13,27 @@ library(leaflet)
 
 summary_measure_state <-
   read.csv(
-    "/home/huang/projects/US-Health-Visualization/basic_visualization_4/US_Health/summary_measure_state.csv"
+    "basic_visualization_4/US_Health/summary_measure_state.csv"
   )
 preventive_df1 <-
   read.csv(
-    "/home/huang/projects/US-Health-Visualization/data/Clean data/preventive_df1.csv"
+    "data/Clean data/preventive_df1.csv"
   )
 measurebirth <-
   read.csv(
-    "/home/huang/projects/US-Health-Visualization/data/Clean data/measureBirth_clean.csv"
+    "data/Clean data/measureBirth_clean.csv"
   )
 
 df2 = read.csv(
-  '/home/huang/projects/US-Health-Visualization/data/risk_factors_and_access_to_care.csv'
+  'data/risk_factors_and_access_to_care.csv'
 )
 
 # yiming data
 death_causes = read.csv(
-  '/home/huang/projects/US-Health-Visualization/data/rates_causes_of_death_bystate.csv'
+  'data/rates_causes_of_death_bystate.csv'
 )
 death_mosaic = read.csv(
-  '/home/huang/projects/US-Health-Visualization/data/disease_mosaic.csv'
+  'data/disease_mosaic.csv'
 )
 
 no_ex = df2[df2$No_Exercise > 0, ]

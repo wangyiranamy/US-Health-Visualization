@@ -1,0 +1,13 @@
+name: US-Health-Visualization
+title: US-Health-Visualization
+username:
+account: terry142857
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 605903
+bundleId: 1744457
+url: https://terry142857.shinyapps.io/US-Health-Visualization/
+when: 1544060077.56686
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: app.R|server.r

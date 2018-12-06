@@ -18,7 +18,7 @@ scatterplot<-function(dataset,x,y,alpha=0.6){
   p
 }
 
-measureBirth <- read.csv("/Users/yiranwang/US-Health-Visualization/data/Clean data/measureBirth_clean.csv")
+measureBirth <- read.csv("data/Clean data/measureBirth_clean.csv")
 # Define server logic required to draw a map
 server <- function(input, output, var, session) {
   
