@@ -1,0 +1,195 @@
+---
+title: "Final Report"
+author: "Xinxin Huang, Yiming Huang, Yiran Wang (yw3201), Yufan Zhuang"
+date: "2018/11/1"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+### 3.3.2 Description of Data
+#### Dataset 1) Summary Measure of Health
+This dataset summarizes the four health measures: the length of life (`average life expectancy ALE`), the risk of dying (`rates of death`), the health-related quality of life (self-related `healthy status` and `unhealthy days`) for all counties in all 50 states in the US. 
+
+
+### 3.3.3 Analysis of Data Quality
+#### Dataset 1) Summary Measure of Health
+The data is quite tidy as each column could not be further divided into a more detailed ones. However, this measurement is according to a quite old version government standards, `Behavior Risk Factor Surveillance System` from 1993 to 1997. Though the data is quite old, the latest modified time is in 2018. 
+```{r readfile}
+summary_measure <-read.csv(
+    "/Users/yiranwang/US-Health-Visualization/data/summary_measures_of_health.csv"
+  )
+```
+
+
+### 3.3.4 Main analysis (Exploratory Data Analysis)
+#### Dataset 1) Summary Measure of Health
+The data is a statistical summary of the survey data including columns such as confidence interval and variance for each factor, however in our project, we are going to only analyze on the medium value of each factors. Each row is a medium observation of a county in one state. `-2222.20` and `-1111.10` cell value indicates the missing data which has been converted to `NA`. We visualize the missing pattern in this dataset, variables `Healthy_Status` and `Unhealthy_Days` has the most counts of missing values.
+```{r filter01}
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+
+summary_measure_df1<- summary_measure %>% 
+  select(State_FIPS_Code,County_FIPS_Code,CHSI_County_Name,CHSI_State_Name,CHSI_State_Abbr,ALE, All_Death, Health_Status, Unhealthy_Days)
+
+summary_measure_df1[summary_measure_df1==-2222.20] <- NA
+summary_measure_df1[summary_measure_df1==-1111.10] <- NA
+
+library(extracat)
+visna(summary_measure_df1,sort = "b")
+```
+
+We remove the NA's and take the average over counties' value for each state.
+The bar charts visualize the ordering of the amount in all four factors crossing 50 states:
+```{r filter02}
+summary_measure_df1 <- summary_measure_df1[complete.cases(summary_measure_df1), ]
+summary_measure_state <- summary_measure_df1%>%
+  group_by(CHSI_State_Abbr) %>%
+  summarise(meanALE = mean(ALE,rm.na=TRUE), mAD = mean(All_Death),mHS= mean(Health_Status), mUD =mean(Unhealthy_Days))%>%
+  mutate(meanALE = meanALE, meanAll_Death = mAD, meanHealth_Status = mHS, meanUnhealthy_Days=mUD)
+
+# Average Life Expectancy — This represents the average number of years that a baby born in 1990 is expected to live if current mortality  trends continue to apply.
+ggplot(summary_measure_state, aes(reorder(CHSI_State_Abbr,meanALE),meanALE))+
+  geom_bar(stat = "identity",fill='rosybrown')+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 9),
+        axis.title = element_text(size = 12),
+        plot.title = element_text(size = 14)
+      )+
+      xlab("States") +
+      ylab("Average Value") +
+      ggtitle(paste("Histogram Visualization for Average Life Expectancy"))
+
+# All_Death: Mortality from any cause is the average annual rate of all causes of death.
+ggplot(summary_measure_state, aes(reorder(CHSI_State_Abbr,meanAll_Death),meanAll_Death))+
+  geom_bar(stat = "identity",fill='rosybrown')+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 9),
+        axis.title = element_text(size = 12),
+        plot.title = element_text(size = 14)
+      )+
+      xlab("States") +
+      ylab("Average Value") +
+      ggtitle(paste("Histogram Visualization for All Death"))
+
+ggplot(summary_measure_state, aes(reorder(CHSI_State_Abbr,meanHealth_Status),meanHealth_Status))+
+  geom_bar(stat = "identity",fill='rosybrown')+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 9),
+        axis.title = element_text(size = 12),
+        plot.title = element_text(size = 14)
+      )+
+      xlab("States") +
+      ylab("Average Value") +
+      ggtitle(paste("Histogram Visualization for Self-rated Health Status"))
+
+# The average number of unhealthy days (mental or physical) in the past 30 days, reported by adults age 18 and older is provided,
+ggplot(summary_measure_state, aes(reorder(CHSI_State_Abbr,meanUnhealthy_Days),meanUnhealthy_Days))+
+  geom_bar(stat = "identity",fill='rosybrown')+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 9),
+        axis.title = element_text(size = 12),
+        plot.title = element_text(size = 14)
+      )+
+      xlab("States") +
+      ylab("Average Value") +
+      ggtitle(paste("Histogram Visualization for Unhealthy Days"))
+
+# Output the cleaned datafile
+# write.csv(summary_measure_state, file = "summary_measure_state.csv", row.names = FALSE)
+```
+
+The Cleveland plots provides another way to visualize the ordering of the amount in all four factors crossing 50 states:
+```{r cleveland}
+summary_measure_state2 <- gather(summary_measure_state, key = variable, value=Value, meanALE)
+summary_measure_state3 <- gather(summary_measure_state, key = variable, value=Value, meanAll_Death)
+summary_measure_state4 <- gather(summary_measure_state, key = variable, value=Value, meanUnhealthy_Days)
+summary_measure_state5 <- gather(summary_measure_state, key = variable, value=Value, meanHealth_Status)
+ggplot(summary_measure_state2, aes(x=Value, y = fct_reorder2(CHSI_State_Abbr, fct_rev(variable),-Value)))+
+  geom_point(aes(col=variable))+scale_color_manual("Variables", values = c("rosybrown"))+
+  theme(axis.text.x = element_text(hjust = 1, size = 9),
+        axis.title = element_text(size = 12),
+        plot.title = element_text(size = 14)
+      )+
+      ylab("States") +
+      xlab("Average Value") +
+      ggtitle(paste("Cleveland for Average Life Expectancy"))
+
+ggplot(summary_measure_state3, aes(x=Value, y = fct_reorder2(CHSI_State_Abbr, fct_rev(variable),-Value)))+
+  geom_point(aes(col=variable))+scale_color_manual("Variables", values = c( "rosybrown"))+
+  theme(axis.text.x = element_text(hjust = 1, size = 9),
+        axis.title = element_text(size = 12),
+        plot.title = element_text(size = 14)
+      )+
+      ylab("States") +
+      xlab("Average Value") +
+      ggtitle(paste("Cleveland for All Death"))
+
+ggplot(summary_measure_state4, aes(x=Value, y = fct_reorder2(CHSI_State_Abbr, fct_rev(variable),-Value)))+
+  geom_point(aes(col=variable))+scale_color_manual("Variables", values = c("rosybrown"))+
+  theme(axis.text.x = element_text(hjust = 1, size = 9),
+        axis.title = element_text(size = 12),
+        plot.title = element_text(size = 14)
+      )+
+      ylab("States") +
+      xlab("Average Value") +
+      ggtitle(paste("Cleveland for Self-rated Health Status"))
+
+ggplot(summary_measure_state5, aes(x=Value, y = fct_reorder2(CHSI_State_Abbr, fct_rev(variable),-Value)))+
+  geom_point(aes(col=variable))+scale_color_manual("Variables", values = c("rosybrown")) +
+  theme(axis.text.x = element_text(hjust = 1, size = 9),
+        axis.title = element_text(size = 12),
+        plot.title = element_text(size = 14)
+      )+
+      ylab("States") +
+      xlab("Average Value") +
+      ggtitle(paste("Cleveland for Unhealthy Days"))  
+
+```
+
+
+Main conclusion from bar chars/Cleveland plots:
+
+1) Washintong, D.C has the shortest ALE value while Hawaii state has the largest value of ALE. The variance of `ALE` is quite small as it ranges from 72 years to 79.47 years.
+
+2) Plots for `Unhealthy Days` and `All Death` have consistent finding where Hawaii has the smallest value. West Virgina has the largest value of unhealthy days, and Mississippi has the largest value of all deaths.
+
+3) However, the plots for self-rated `Healthy Status` shows insteresting results where the states with larger value of `Unhealthy Days` tends to have a higher rating for their `Health Status`.
+
+
+### 3.3.5 Executive summary (Presentation-style)
+#### Dataset 1) Summary Measure of Health
+The spatial visualization would be the most expressive way for us to draw the insight of health factors crossing 50 states. The bar charts and Cleveland can only be able to show the ranking of the counts in four variables, while the map is able to illustrate on the spatial variations. The most significant maps are one for `Average Life Expectancy` and one for `All Death`. These two maps consistently illustrate that the health conditions in middle, western and northestern regions outperformed the southeastern area in the US.
+```{r map1}
+library(plotly)
+
+l <- list(color = toRGB("white"), width = 2)
+g <- list(
+  scope = 'usa',
+  projection = list(type = 'albers usa'),
+  showlakes = TRUE,
+  lakecolor = toRGB('white')
+)
+p1 <- plot_geo(summary_measure_state, locationmode = 'USA-states') %>%
+  add_trace(
+    z = ~meanALE, text = ~meanALE, locations = ~CHSI_State_Abbr,
+    color = ~meanALE, colors = 'Oranges'
+  ) %>%
+  colorbar(title = "ALE") %>%
+  layout(
+    title = 'Average Life Expectation by State',
+    geo = g
+  )
+p2 <- plot_geo(summary_measure_state, locationmode = 'USA-states') %>%
+  add_trace(
+    z = ~meanAll_Death, text = ~meanAll_Death, locations = ~CHSI_State_Abbr,
+    color = ~meanAll_Death, colors = 'Oranges'
+  ) %>%
+  colorbar(title = "All_Death") %>%
+  layout(
+    title = 'All Death by State',
+    geo = g
+  )
+
+p1
+p2
+
+```
