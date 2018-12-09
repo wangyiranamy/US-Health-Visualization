@@ -1,0 +1,305 @@
+---
+title: "US Health Status Report"
+author: "Xinxin Huang, Yiming Huang, Yiran Wang (yw3201), Yufan Zhuang (yz3453)"
+date: "2018/12/8"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE,
+                      warning = FALSE)
+```
+### 1 Introduction
+
+We chose to investigate the health status in the US. The United States is among the wealthiest nations in the world, but it is far from the healthiest. We are interested in studying the geographical patterns of illnesses and injuries as well as the correlation between different factors in life. **(YUFAN: feel free to add more)**
+
+| Group Member | Contribution |
+|----------------|------------------------------|
+| Xinxin Huang | Analyze birth and death data |
+| Yiming Huang | Analyze disease data |
+| Yiran Wang | Analyze summary measure of health |
+| Yufan Zhuang | Analyze health risk factors  |
+
+### 2 Description of Data
+We retrieved our data from the Community Health Status Indicators database of the Centers for Disease Control and Prevention. It contains 8 sub-datasets that have indicators refined to the county level. We selected a part of that dataset for the analysis of our project.
+
+#### 2.1 Summary Measure of Health
+This dataset summarizes the four health measures: the length of life (`average life expectancy ALE`), the risk of dying (`rates of death`), the health-related quality of life (self-related `healthy status` and `unhealthy days`) for all counties in all 50 states in the US. 
+
+#### 2.3 Risk Factors
+This dataset identifies the risk factors to health such as (`obesity`) and  (`no exercise`) in the US to the county level.
+
+### 3 Analysis of Data Quality
+
+```{r readfile}
+summary_measure <-read.csv(
+    here::here("data","summary_measures_of_health.csv")
+  )
+
+preventive_df <-
+  read.csv(
+    here::here("data","Clean data", "preventive_df1.csv")
+  )
+measurebirth <-
+  read.csv(
+    here::here("data","Clean data", "measureBirth_clean.csv")
+  )
+
+risk_factor = read.csv(
+  here::here("data","risk_factors_and_access_to_care.csv")
+)
+
+death_causes = read.csv(
+  here::here("data","rates_causes_of_death_bystate.csv")
+)
+death_mosaic = read.csv(
+  here::here("data","disease_mosaic.csv")
+)
+```
+
+```{r echo=FALSE}
+no_ex = risk_factor[risk_factor$No_Exercise > 0, ]
+risk = risk_factor[risk_factor$Obesity > 0, ]
+few_fruit = risk_factor[risk_factor$Few_Fruit_Veg > 0, ]
+High_Blood_Pres = risk_factor[risk_factor$High_Blood_Pres > 0, ]
+diabete = risk_factor[risk_factor$Diabetes > 0, ]
+
+few_fruit = aggregate(few_fruit[, 10], list(few_fruit$CHSI_State_Abbr), median)
+High_Blood_Pres = aggregate(High_Blood_Pres[, 16],
+                            list(High_Blood_Pres$CHSI_State_Abbr),
+                            median)
+diabete = aggregate(diabete[, 22], list(diabete$CHSI_State_Abbr), median)
+no_ex = aggregate(no_ex[, 7], list(no_ex$CHSI_State_Abbr), median)
+
+risk = aggregate(risk[, 13], list(risk$CHSI_State_Abbr), median)
+risk$no_ex = no_ex$x
+risk$diabete = diabete$x
+risk$few_fruit = few_fruit$x
+risk$High_Blood_Pres = High_Blood_Pres$x
+
+risk$Abbr = levels(risk$Group.1)[as.numeric(risk$Group.1)]
+```
+The data is quite tidy as each column could not be further divided into more detailed ones. This measurement is according to an old version government standards, `Behavior Risk Factor Surveillance System` from 1993 to 1997, but it has been well maintained.
+
+In the dataset, `-2222.20` and `-1111.10` cell value indicates the missing data which has been converted to `NA`. We visualize the missing pattern in one dataset as an example, in general, there aren't many missing data.
+```{r filter01}
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+
+summary_measure_df1<- summary_measure %>% 
+  select(State_FIPS_Code,County_FIPS_Code,CHSI_County_Name,CHSI_State_Name,CHSI_State_Abbr,ALE, All_Death, Health_Status, Unhealthy_Days)
+
+summary_measure_df1[summary_measure_df1==-2222.20] <- NA
+summary_measure_df1[summary_measure_df1==-1111.10] <- NA
+
+library(extracat)
+visna(summary_measure_df1,sort = "b")
+```
+
+
+### 4 Main analysis (Exploratory Data Analysis)
+#### 4.1 Summary Measure of Health
+
+We remove the NA's and take the average over counties' value for each state.
+The bar charts visualize the ordering of the amount in all four factors crossing 50 states:
+```{r filter02, fig.width = 14}
+summary_measure_df1 <- summary_measure_df1[complete.cases(summary_measure_df1), ]
+summary_measure_state <- summary_measure_df1%>%
+  group_by(CHSI_State_Abbr) %>%
+  summarise(meanALE = mean(ALE,rm.na=TRUE), mAD = mean(All_Death),mHS= mean(Health_Status), mUD =mean(Unhealthy_Days))%>%
+  mutate(meanALE = meanALE, meanAll_Death = mAD, meanHealth_Status = mHS, meanUnhealthy_Days=mUD)
+
+# Average Life Expectancy — This represents the average number of years that a baby born in 1990 is expected to live if current mortality trends continue to apply.
+ggplot(summary_measure_state, aes(reorder(CHSI_State_Abbr,meanALE),meanALE))+
+  geom_bar(stat = "identity",fill='rosybrown')+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 9),
+        axis.title = element_text(size = 12),
+        plot.title = element_text(size = 14)
+      )+
+      xlab("States") +
+      ylab("Average Value") +
+      ggtitle(paste("Histogram Visualization for Average Life Expectancy"))
+
+# All_Death: Mortality from any cause is the average annual rate of all causes of death.
+ggplot(summary_measure_state, aes(reorder(CHSI_State_Abbr,meanAll_Death),meanAll_Death))+
+  geom_bar(stat = "identity",fill='rosybrown')+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 9),
+        axis.title = element_text(size = 12),
+        plot.title = element_text(size = 14)
+      )+
+      xlab("States") +
+      ylab("Average Value") +
+      ggtitle(paste("Histogram Visualization for All Death"))
+
+ggplot(summary_measure_state, aes(reorder(CHSI_State_Abbr,meanHealth_Status),meanHealth_Status))+
+  geom_bar(stat = "identity",fill='rosybrown')+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 9),
+        axis.title = element_text(size = 12),
+        plot.title = element_text(size = 14)
+      )+
+      xlab("States") +
+      ylab("Average Value") +
+      ggtitle(paste("Histogram Visualization for Self-rated Health Status"))
+
+# The average number of unhealthy days (mental or physical) in the past 30 days, reported by adults age 18 and older is provided,
+ggplot(summary_measure_state, aes(reorder(CHSI_State_Abbr,meanUnhealthy_Days),meanUnhealthy_Days))+
+  geom_bar(stat = "identity",fill='rosybrown')+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 9),
+        axis.title = element_text(size = 12),
+        plot.title = element_text(size = 14)
+      )+
+      xlab("States") +
+      ylab("Average Value") +
+      ggtitle(paste("Histogram Visualization for Unhealthy Days"))
+
+# Output the cleaned datafile
+# write.csv(summary_measure_state, file = "summary_measure_state.csv", row.names = FALSE)
+```
+
+Main conclusion from bar chart plots:
+
+1) Washintong, D.C has the shortest ALE value while Hawaii state has the largest value of ALE. The variance of `ALE` is quite small as it ranges from 72 years to 79.47 years.
+
+2) Plots for `Unhealthy Days` and `All Death` have consistent finding where Hawaii has the smallest value. West Virginia has the largest value of unhealthy days, and Mississippi has the largest value of all deaths.
+
+3) However, the plots for self-rated `Healthy Status` shows interesting results where the states with a larger value of `Unhealthy Days` tends to have a higher rating for their `Health Status`.
+
+#### 4.3 Risk Factors
+We studied the geographical patterns of risk factors and the relationship between them.
+
+For the obesity, which is our variable of primal risk factor here, we plotted its gray scale map to the county level and major cities has been marked out in the plot as red crosses.
+```{r fig.width=14, fig.height=12}
+library(maps)
+risk_factor = risk_factor[ which(risk_factor$Obesity > 0),] 
+toFIPS = function(state, county) {
+  state = sprintf("%02d", state)
+  county = sprintf("%03d", county)
+  return(as.numeric(paste0(state,county)))
+}
+
+toZIP = function(state, county, ct) {
+  if (length(which(ct$STATE == state && ct$COUNTY == county)) == 0) {
+    return("-1")
+  }
+  return(ct[which(ct$STATE == state && ct$COUNTY == county), 'ZCTA5'])
+}
+
+plot_df = data.frame(region = vector(length = nrow(risk_factor)), value = vector(length = nrow(risk_factor)))
+for (i in 1:nrow(risk_factor)) {
+  plot_df[i, "region"] = toFIPS(risk_factor[i, "State_FIPS_Code"], risk_factor[i, "County_FIPS_Code"])
+  plot_df[i, "value"] = gray(abs(risk_factor[i, "Obesity"] / max(risk_factor[,"Obesity"])))
+}
+
+maps::map("county", fill=TRUE, col=plot_df$value)
+maps::map.cities(x = us.cities, country = "", label = NULL, minpop = 0,
+maxpop = Inf, capitals = 2, cex = 2, projection = FALSE,
+parameters = NULL, orientation = NULL, pch = 3,col="red")
+
+```
+
+It can be observed that 
+
+1. the Southern states tend to be more obsessed that other parts of the US.
+2. people in the major cities seem to be more obsessed
+
+We then study for the relationship between obesity and other factors.
+
+```{r fig.height=14, fig.width=14}
+risk$diabete = diabete$x
+risk$few_fruit = few_fruit$x
+risk$High_Blood_Pres = High_Blood_Pres$x
+
+theme_dotplot <- theme_bw(18) +
+  theme(axis.text.y = element_text(size = rel(.75)),
+        axis.ticks.y = element_blank(),
+        axis.title.x = element_text(size = rel(.75)),
+        panel.grid.major.x = element_blank(),
+        panel.grid.major.y = element_line(size = 0.5),
+        panel.grid.minor.x = element_blank())
+ggplot() + geom_point(data=risk,
+                      aes(x = x,
+                          y = fct_reorder(Abbr, x), color = "green")) +
+  geom_point(data=risk,
+             aes(x = no_ex,
+                 y = fct_reorder(Abbr, no_ex), color = "red")) +
+  geom_point(data=risk,
+             aes(x = few_fruit,
+                 y = fct_reorder(Abbr, few_fruit), color = "blue")) +
+  geom_point(data=risk,
+             aes(x = diabete,
+                 y = fct_reorder(Abbr, diabete), color = "orange")) +
+    geom_point(data=risk,
+             aes(x = High_Blood_Pres,
+                 y = fct_reorder(Abbr, High_Blood_Pres), color = "purple")) +
+scale_colour_manual(name = 'Variables',
+values =c("green"="green","red"="red", "blue" = "blue", "orange" = "orange", "purple" = "purple"),
+labels = c("green"='Obesity Index', "red"='No-excercise Index',  "blue" ='Few Fruit Index',"orange" = 'Diabete Index',"purple" = 'High Blood Pressure Index'),
+breaks=c("green", "red","blue", "orange", "purple")) + 
+  ylab("") + xlab("Index") + theme_dotplot
+```
+
+It can be seen that there exists a strong correlation among these health risk factors, and the Southern states ranked higher on this Cleveland plot. 
+
+### 5 Executive summary
+#### 5.1 Summary Measure of Health
+This map illustrates that the life-expectancy in middle, western and northeastern regions outperformed the southeastern area in the US.
+```{r map1, echo=FALSE}
+library(plotly)
+
+l <- list(color = toRGB("white"), width = 2)
+g <- list(
+  scope = 'usa',
+  projection = list(type = 'albers usa'),
+  showlakes = TRUE,
+  lakecolor = toRGB('white')
+)
+p1 <- plot_geo(summary_measure_state, locationmode = 'USA-states') %>%
+  add_trace(
+    z = ~meanALE, text = ~meanALE, locations = ~CHSI_State_Abbr,
+    color = ~meanALE, colors = 'Oranges'
+  ) %>%
+  colorbar(title = "Average Life Expectation") %>%
+  layout(
+    title = 'Average Life Expectation by State',
+    geo = g
+  )
+p1
+```
+
+#### 5.3 Risk Factors
+
+The Southern states are more obese, and obesity is strongly correlated with unhealthy habits like do not do exercises and do not consume enough fruits, also with diseases such as diabetes and high blood pressure.
+```{r fig.height=14, fig.width=14, echo=FALSE}
+risk$diabete = diabete$x
+risk$few_fruit = few_fruit$x
+risk$High_Blood_Pres = High_Blood_Pres$x
+
+theme_dotplot <- theme_bw(18) +
+  theme(axis.text.y = element_text(size = rel(.75)),
+        axis.ticks.y = element_blank(),
+        axis.title.x = element_text(size = rel(.75)),
+        panel.grid.major.x = element_blank(),
+        panel.grid.major.y = element_line(size = 0.5),
+        panel.grid.minor.x = element_blank())
+ggplot() + geom_point(data=risk,
+                      aes(x = x,
+                          y = fct_reorder(Abbr, x), color = "green")) +
+  geom_point(data=risk,
+             aes(x = no_ex,
+                 y = fct_reorder(Abbr, no_ex), color = "red")) +
+  geom_point(data=risk,
+             aes(x = few_fruit,
+                 y = fct_reorder(Abbr, few_fruit), color = "blue")) +
+  geom_point(data=risk,
+             aes(x = diabete,
+                 y = fct_reorder(Abbr, diabete), color = "orange")) +
+    geom_point(data=risk,
+             aes(x = High_Blood_Pres,
+                 y = fct_reorder(Abbr, High_Blood_Pres), color = "purple")) +
+scale_colour_manual(name = 'Variables',
+values =c("green"="green","red"="red", "blue" = "blue", "orange" = "orange", "purple" = "purple"),
+labels = c("green"='Obesity Index', "red"='No-excercise Index',  "blue" ='Few Fruit Index',"orange" = 'Diabete Index',"purple" = 'High Blood Pressure Index'),
+breaks=c("green", "red","blue", "orange", "purple")) + 
+  ylab("") + xlab("Index") + theme_dotplot +ggtitle("Ranking of States and Correlation among Factors")
+```
