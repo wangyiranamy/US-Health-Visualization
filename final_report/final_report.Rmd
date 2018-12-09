@@ -28,7 +28,7 @@ We chose to investigate the health status in the US. The United States is among 
 We retrieved our data from the Community Health Status Indicators database of the Centers for Disease Control and Prevention. It contains 8 sub-datasets that have indicators refined to the county level. We selected a part of that dataset for the analysis of our project.
 
 #### 2.1 Summary Measure of Health
-This data set summarizes the four health measures: the length of life (`average life expectancy ALE`), the risk of dying (`rates of death`), the health-related quality of life (self-related `healthy status` and `unhealthy days`) for all counties in all 50 states in the US. 
+This dataset summarizes the four health measures: the length of life (`average life expectancy ALE`), the risk of dying (`rates of death`), the health-related quality of life (self-related `healthy status` and `unhealthy days`) for all counties in all 50 states in the US. 
 
 #### 2.2 Demographics
 This dataset shows the demographic information of the counties during the time the data from other datasets were collected. This includes average estimations of the total population, a population in each age and race group, population densities, and poverty levels.
@@ -37,7 +37,7 @@ This dataset shows the demographic information of the counties during the time t
 This dataset identifies the risk factors to health such as (`obesity`) and  (`no exercise`) in the US to the county level.
 
 #### 2.4 Leading Causes of Death
-This data set summarizes the accumulative numbers of deaths due to different unnatural causes such as diseases, injuries, and suicides during the whole period when the data was collected. It also partitions the numbers of deaths by age and race groups and provides.
+This dataset summarizes the accumulative numbers of deaths due to different unnatural causes such as diseases, injuries, and suicides during the whole period when the data was collected. It also partitions the numbers of deaths by age and race groups and provides.
 
 #### 2.5 Measures of Birth and Death
 This dataset consists of the measures of Birth and Death: Total number birth of each county (`Total_Deaths`) during three different time span. We chose the time period from 1994-2003. 
@@ -60,7 +60,7 @@ This dataset consists of the measures of Birth and Death: Total number birth of 
     + White/Black Infant Mortality (`IM_Wh_Non_Hisp`, `IM_Bl_Non_Hisp`): Race-specific infant mortality.
 
 #### 2.6 Measure of Preventive Diseases
-Data are from the Centers for Disease Control and Prevention, National Center for Infectious Diseases and the National Center for HIV, STD, and TB, 1989-1998. Depending upon county size, the number of cases for the most recent 3, 5, or 10 years is reported. Data include all cases for which county of residence was specified. The expected number is based on the rate for the strata of peer counties and the county’s population estimate. (Expected number = rate among peers x county population).
+This dataset includes all cases for which county of residence was specified. Depending upon county size, the number of cases for the most recent 3, 5, or 10 years is reported. The expected number is based on the rate for the strata of peer counties and the county’s population estimate. (Expected number = rate among peers x county population).
   
 * This dataset contains the reported cases of expected cases of some preventive diseases, such as the following:
 
@@ -110,8 +110,6 @@ death_causes = read.csv(
 death_mosaic = read.csv(
   here::here("data","disease_mosaic.csv")
 )
-preventive_df1 <-read.csv( here::here("data/Clean data","preventive_df1.csv"))
-measurebirth <-read.csv(here::here("data/Clean data","measureBirth_clean.csv"))
 ```
 
 ```{r echo=FALSE}
@@ -173,7 +171,7 @@ visna(deaths_raw_zeros[, 17: 27], sort = "b")
 
 This implies that our analysis based on this dataset might be an underestimate of the number of deaths in low population areas and/or race/age categories. We try to mitigate the effect by ignoring races and ages so that only the total number of deaths due to a certain cause in a county is used for analysis. Nonetheless, there are still two major sources of underestimation: lower total population in an area, and rarer occurrence of death due to a disease or an accident.
 
-### 4 Main analysis (Exploratory Data Analysis)
+### 4 Main Analysis (Exploratory Data Analysis)
 #### 4.1 Summary Measure of Health
 
 We remove the Na's and take the average over counties' value for each state.
@@ -241,7 +239,7 @@ The main conclusion from bar chart plots:
 #### 4.2 Measures of Birth and Death
 For the measure of birth, we wanted to explore the correlation between Mother situations and Infant situations. The following scatter plot matrix shows some positive correlations.
   
-```{r scatterplotmatrix}
+```{r scatterplotmatrix, fig.width=14, fig.height=8}
 library(extracat)
 library(dbplyr)
 
@@ -283,11 +281,11 @@ p
 
 ```{r }
 library(tidyr)
-preventive <-gather(preventive_df1, key = variable, value = Value, 
+preventive <-gather(preventive_df, key = variable, value = Value, 
                     sumFluB_Rpt, sumHepB_Rpt, sumMeas_Rpt,sumPert_Rpt,sumCRS_Rpt,sumSyphilis_Rpt)
 ```
 ```{r }
-ggplot(preventive)+geom_bar(aes(x=variable, y=Value), fill="rosybrown",stat ="identity" )+ggtitle("Bar plot of All Preventive Diseases (Reported cases)")+labs(x="Preventive Diseases", y= "Number of Cases")
+ggplot(preventive)+geom_bar(aes(x=reorder(variable, Value), y=Value), fill="rosybrown",stat ="identity" )+ggtitle("Bar plot of All Preventive Diseases (Reported cases)")+labs(x="Preventive Diseases", y= "Number of Cases")
 
 ```
 
@@ -394,7 +392,7 @@ We then explore the geographical distribution of the number of deaths due to dif
 
 Browsing through all causes of deaths, we can see that there are two clusters in the US that have higher death rates among almost all death causes: one is around Mississippi and Alabama, while the other is around Wyoming and South Dakota. Besides, Alaska has the highest suicide rate. The reasons leading to this remain unclear for further investigation.
 
-### 5 Executive summary
+### 5 Executive Summary
 We visualized the most significant variables in one geographic map with the drop-down table at the side.
 
 ```{r map2, echo=FALSE, fig.width=10}
@@ -433,7 +431,7 @@ p1 <- plot_geo(summary_measure_state, locationmode = 'USA-states') %>%
              args = list("z", list(summary_measure_state$mUD), "text", list(summary_measure_state$mUD), "color", list(summary_measure_state$mUD)), 
              label = "Mean Unhealthy Days"),
         list(method = "restyle",
-             args = list("z", list(preventive_df1$sumPert_Rpt), "text", list(preventive_df1$sumPert_Rpt), "color", list(preventive_df1$sumPert_Rpt)), 
+             args = list("z", list(preventive_df$sumPert_Rpt), "text", list(preventive_df$sumPert_Rpt), "color", list(preventive_df$sumPert_Rpt)), 
              label = " Number of Pertussis Reported"),
         list(method = "restyle",
              args = list("z", list(measurebirth$sum_birth), "text", list(measurebirth$sum_birth), "color", list(measurebirth$sum_birth)), 
