@@ -366,7 +366,7 @@ scale_colour_manual(name = 'Variables',
 values =c("green"="green","red"="red", "blue" = "blue", "orange" = "orange", "purple" = "purple"),
 labels = c("green"='Obesity Index', "red"='No-excercise Index',  "blue" ='Few Fruit Index',"orange" = 'Diabete Index',"purple" = 'High Blood Pressure Index'),
 breaks=c("green", "red","blue", "orange", "purple")) + 
-  ylab("") + xlab("Index") + theme_dotplot
+  ylab("") + xlab("Index") + theme_dotplot+ggtitle("Ranking of States and Correlation among Factors")
 ```
 
 It can be seen that there exists a strong correlation among these health risk factors, and the Southern states ranked higher on this Cleveland plot. 
@@ -458,8 +458,11 @@ p1 <- plot_geo(summary_measure_state, locationmode = 'USA-states') %>%
              args = list("z", list(death_causes$hiv), "text", list(death_causes$hiv), "color", list(death_causes$hiv)), 
              label = "HIV Density"),
         list(method = "restyle",
-             args = list("z", list(death_causes$injury), "text", list(death_causes$injury), "color", list(death_causes$injury)), 
+             args = list("z", list(death_causes$complication_of_pregnancy_birth), "text", list(death_causes$complication_of_pregnancy_birth), "color", list(death_causes$complication_of_pregnancy_birth)), 
              label = "Pregnancy & Birth Issues Density"),
+        list(method = "restyle",
+             args = list("z", list(death_causes$injury), "text", list(death_causes$injury), "color", list(death_causes$injury)), 
+             label = "Injury Density"),
         list(method = "restyle",
              args = list("z", list(death_causes$homicide), "text", list(death_causes$homicide), "color", list(death_causes$homicide)), 
              label = "Homicide Density"),
