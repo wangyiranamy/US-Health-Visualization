@@ -14,27 +14,27 @@ options(scipen=5)
 
 summary_measure_state <-
   read.csv(
-    "basic_visualization_4/US_Health/summary_measure_state.csv"
+    "shiny_data/US_Health/summary_measure_state.csv"
   )
 preventive_df1 <-
   read.csv(
-    "data/Clean data/preventive_df1.csv"
+    "raw_data/Clean data/preventive_df1.csv"
   )
 measurebirth <-
   read.csv(
-    "data/Clean data/measureBirth_clean.csv"
+    "raw_data/Clean data/measureBirth_clean.csv"
   )
 
 df2 = read.csv(
-  'data/risk_factors_and_access_to_care.csv'
+  'raw_data/risk_factors_and_access_to_care.csv'
 )
 
 # yiming data
 death_causes = read.csv(
-  'data/rates_causes_of_death_bystate.csv'
+  'raw_data/rates_causes_of_death_bystate.csv'
 )
 death_mosaic = read.csv(
-  'data/disease_mosaic.csv'
+  'raw_data/disease_mosaic.csv'
 )
 
 no_ex = df2[df2$No_Exercise > 0, ]

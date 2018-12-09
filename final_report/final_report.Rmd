@@ -2,16 +2,17 @@
 title: "US Health Status Report"
 author: Xinxin Huang (xh2389), Yiming Huang (yh3065), Yiran Wang (yw3201), Yufan Zhuang
   (yz3453)
-date: "2018/12/8"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(message = FALSE,
                       warning = FALSE)
 ```
+[Github link](https://github.com/Terry1004/US-Health-Visualization)
+
 ### 1 Introduction
 
 We chose to investigate the health status in the US. The United States is among the wealthiest nations in the world, but it is far from the healthiest. We are interested in studying the geographical patterns of illnesses and injuries as well as the correlation between different factors in life. Do states with a higher count in infectious diseases present poorer health condition? What are the major indicators the government used to evaluate the health status in every region? Do all factors try to reveal a similar geographical pattern? We carried out a collaborative work with major jobs split as following:
