@@ -1,8 +1,11 @@
 ---
 title: "US Health Status Report"
-author: "Xinxin Huang (xh2389), Yiming Huang (yh3065), Yiran Wang (yw3201), Yufan Zhuang (yz3453)"
+author: Xinxin Huang (xh2389), Yiming Huang (yh3065), Yiran Wang (yw3201), Yufan Zhuang
+  (yz3453)
 date: "2018/12/8"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -491,7 +494,8 @@ This map illustrates that the life-expectancy in middle, western and northeaster
  * The special summary of the total number of birth per year from 1994-2003 which can be found in our interactive components shows that Texas has the highest number of birth per year during the 1994-2003 period.
   * Southeast areas of the US has relatively higher number of birth per year than that of other areas of US.
   * For the measure of birth, the data shows there is an obvious relationship between a mother's health and infant's health. Unhealthy mothers have a great impact on the health of the baby. For example, from the scatter plot of premature versus mother under 18, we can see that women get birth under 18 have very high probability of premature birth. 
-```{r echo=FALSE, fig.width=1}
+  
+```{r echo=FALSE, fig.width=10}
 p2 = plot_ly(
         data = measurebirth,
         x = ~ new_Under_18,
@@ -543,6 +547,8 @@ p2 = plot_ly(
 )
 p2
 ```
+
+
 #### 5.3 Preventive Services Use (Number of Pertussis)
 * The Syphilis and Pertussis were the two most popular preventive diseases in the US from 1994-2003 seeing from the distribution of different cases in the bar plot in the Analysis part.
 * Pertussis Reported Case was the most popular preventive diseases during 1994-2003, and Arkansas was the place of the highest number of Pertussis.
