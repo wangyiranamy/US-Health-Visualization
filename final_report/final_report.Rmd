@@ -30,7 +30,7 @@ We retrieved our data from the Community Health Status Indicators database of th
 #### 2.1 Summary Measure of Health
 This data set summarizes the four health measures: the length of life (`average life expectancy ALE`), the risk of dying (`rates of death`), the health-related quality of life (self-related `healthy status` and `unhealthy days`) for all counties in all 50 states in the US. 
 
-#### 2.2 demographics
+#### 2.2 Demographics
 This dataset shows the demographic information of the counties during the time the data from other datasets were collected. This includes average estimations of the total population, a population in each age and race group, population densities, and poverty levels.
 
 #### 2.3 Risk Factors
@@ -139,7 +139,7 @@ risk$Abbr = levels(risk$Group.1)[as.numeric(risk$Group.1)]
 
 Most of our dataset is quite tidy as each column could not be further divided into more detailed ones. This measurement is according to an old version government standards, `Behavior Risk Factor Surveillance System` from 1993 to 1997, but it has been well maintained. 
 
-One untidy dataset is `Measures of Birth and Death` where each column represents each different categories of measure of birth and measure of infant mortality. This data also contains lots of useless features like Confidence intervals of the survey data such as `CI_Min_LBW`. To get the weighted percentage of each state, we merged it with **Demographics** dataset and calculated the weighted average of each feature by states. The processes of replacing Na's, selecting useful features and merging datasets were in file _FinalProjDataPre.Rmd_ . 
+One untidy dataset is `Measures of Birth and Death` where each column represents each different categories of measure of birth and measure of infant mortality. This data also contains lots of useless features like Confidence intervals of the survey data such as `CI_Min_LBW`. To get the weighted percentage of each state, we merged it with `Demographics` dataset and calculated the weighted average of each feature by states. The processes of replacing Na's, selecting useful features and merging datasets were in file _FinalProjDataPre.Rmd_ . 
 
 In our dataset, the special numbers `-2222`, `-2222.2`, `-2`, and `-9999` stand for missing data, and they are converted to `NA` during our analysis. In addition, the values `-1111`, `-1111.1`, and `-1` in the `leading causes of death` data mean that the data was not reported for that county because either the number is less than 20 for a specific race/age category or that number is less than 10% of all the deaths in that race/age category. During the analysis, these numbers are converted to `0` instead. We visualize the missing pattern in one dataset `Summary Measure of Health` as an example, in general, there aren't many missing data.
 
@@ -187,9 +187,9 @@ summary_measure_state <- summary_measure_df1%>%
 # Average Life Expectancy — This represents the average number of years that a baby born in 1990 is expected to live if current mortality trends continue to apply.
 ggplot(summary_measure_state, aes(reorder(CHSI_State_Abbr,meanALE),meanALE))+
   geom_bar(stat = "identity",fill='rosybrown')+
-  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 9),
-        axis.title = element_text(size = 12),
-        plot.title = element_text(size = 14)
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 10),
+        axis.title = element_text(size = 14),
+        plot.title = element_text(size = 18)
       )+
       xlab("States") +
       ylab("Average Value") +
@@ -198,9 +198,9 @@ ggplot(summary_measure_state, aes(reorder(CHSI_State_Abbr,meanALE),meanALE))+
 # All_Death: Mortality from any cause is the average annual rate of all causes of death.
 ggplot(summary_measure_state, aes(reorder(CHSI_State_Abbr,meanAll_Death),meanAll_Death))+
   geom_bar(stat = "identity",fill='rosybrown')+
-  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 9),
-        axis.title = element_text(size = 12),
-        plot.title = element_text(size = 14)
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 10),
+        axis.title = element_text(size = 14),
+        plot.title = element_text(size = 18)
       )+
       xlab("States") +
       ylab("Average Value") +
@@ -208,9 +208,9 @@ ggplot(summary_measure_state, aes(reorder(CHSI_State_Abbr,meanAll_Death),meanAll
 
 ggplot(summary_measure_state, aes(reorder(CHSI_State_Abbr,meanHealth_Status),meanHealth_Status))+
   geom_bar(stat = "identity",fill='rosybrown')+
-  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 9),
-        axis.title = element_text(size = 12),
-        plot.title = element_text(size = 14)
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 10),
+        axis.title = element_text(size = 14),
+        plot.title = element_text(size = 18)
       )+
       xlab("States") +
       ylab("Average Value") +
@@ -219,16 +219,14 @@ ggplot(summary_measure_state, aes(reorder(CHSI_State_Abbr,meanHealth_Status),mea
 # The average number of unhealthy days (mental or physical) in the past 30 days, reported by adults age 18 and older is provided,
 ggplot(summary_measure_state, aes(reorder(CHSI_State_Abbr,meanUnhealthy_Days),meanUnhealthy_Days))+
   geom_bar(stat = "identity",fill='rosybrown')+
-  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 9),
-        axis.title = element_text(size = 12),
-        plot.title = element_text(size = 14)
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 10),
+        axis.title = element_text(size = 14),
+        plot.title = element_text(size = 18)
       )+
       xlab("States") +
       ylab("Average Value") +
       ggtitle(paste("Histogram Visualization for Unhealthy Days"))
 
-# Output the cleaned datafile
-# write.csv(summary_measure_state, file = "summary_measure_state.csv", row.names = FALSE)
 ```
 
 The main conclusion from bar chart plots:
@@ -280,7 +278,7 @@ p
 
   * We can clearly see that the states have the higher percentage of women who are under 18 get birth to tend to have the higher percentage of premature birth, which indicates that young mothers (under 18) have negative impacts on the health of infants.
 
-#### 4.3 **Preventive Services Use**
+#### 4.3 Preventive Services Use
 
 ```{r }
 library(tidyr)
@@ -375,7 +373,7 @@ breaks=c("green", "red","blue", "orange", "purple")) +
 It can be seen that there exists a strong correlation among these health risk factors, and the Southern states ranked higher on this Cleveland plot. 
 
 #### 4.5 Leading Causes of Deaths
-We used pre-cleaned data processed by python. The cleaning script is located in out [github repository](https://github.com/Terry1004/US-Health-Visualization/blob/master/sketches/preprocessing.ipynb). We first take a general view on the total number of deaths due to each cause. Since we take the sums of data over all the counties in the US, even though the number of deaths might be smaller than the actual one for causes with the smaller number of deaths, this should have little impact on their absolute ranking. 
+We used pre-cleaned data processed by python. The cleaning script is located in out [github repository](https://github.com/Terry1004/US-Health-Visualization/blob/master/python/preprocessing.ipynb). We first take a general view on the total number of deaths due to each cause. Since we take the sums of data over all the counties in the US, even though the number of deaths might be smaller than the actual one for causes with the smaller number of deaths, this should have little impact on their absolute ranking. 
 
 ```{r}
 death_mosaic %>% 
@@ -391,7 +389,7 @@ death_mosaic %>%
 
 Heart disease as the first killer is not very surprising. However, this should still be a warning that people have to take actions to prevent heart disease. An unexpected fact is that suicide ranks the 4th among all the leading factors of deaths. This is a signal of bad mental health.
 
-We then explore the geographical distribution of the number of deaths due to different causes. In this case, note that we may underestimate the death numbers in areas with lower population. Therefore, we mainly focus on those areas with significant high death rates due to a certain cause. While analyzing the deaths of causes in each state, we use the death rates of a cause per 100000 people in states to indicate the color in the graph to account for the population differences among states. After some exploration of the causes, we find three remarkable ones. The related graphs are published on [shinyapps]( https://terry142857.shinyapps.io/US-Health-Visualization/) in the US Unnatural Death Causes section. 
+We then explore the geographical distribution of the number of deaths due to different causes. In this case, note that we may underestimate the death numbers in areas with lower population. Therefore, we mainly focus on those areas with significant high death rates due to a certain cause. While analyzing the deaths of causes in each state, we use the death rates of a cause per 100000 people in states to indicate the color in the graph to account for the population differences among states. After some exploration of the causes, we find three remarkable ones. The related graphs are in the Executive Summary section. 
 
 Browsing through all causes of deaths, we can see that there are two clusters in the US that have higher death rates among almost all death causes: one is around Mississippi and Alabama, while the other is around Wyoming and South Dakota. Besides, Alaska has the highest suicide rate. The reasons leading to this remain unclear for further investigation.
 
@@ -488,7 +486,7 @@ p1
 ```
 
 
-#### 5.1 Summary Measure of Health (Average Life Expectancy)
+#### 5.1 Summary Measure of Health
 This map illustrates that the life-expectancy in middle, western and northeastern regions outperformed the southeastern area in the US.
 
 #### 5.2 Measures of Birth and Death
@@ -550,32 +548,13 @@ p2
 ```
 
 
-#### 5.3 Preventive Services Use (Number of Pertussis)
+#### 5.3 Preventive Services Use
 * The Syphilis and Pertussis were the two most popular preventive diseases in the US from 1994-2003 seeing from the distribution of different cases in the bar plot in the Analysis part.
 * Pertussis Reported Case was the most popular preventive diseases during 1994-2003, and Arkansas was the place of the highest number of Pertussis.
 * Most of the states has a low number of Pertussis Reported Case, so the local preventive diseases center of states such as Arkansas and Idaho should pay attention to this situation and promote the preventive service of Pertussis. 
 
-#### 5.4 Risk Factors (Risk)
+#### 5.4 Risk Factors
 The Southern states are more obese, and obesity is strongly correlated with unhealthy habits like do not do exercises and do not consume enough fruits, also with diseases such as diabetes and high blood pressure.
-
-#### 5.5 Unnatural Causes of Death
-
-Heart disease ranks first among all causes of deaths and people have to start living a healthy lifestyle to prevent such disease. Suicide ranks the fourth among the causes and this might be suggesting that the overall mental health of US citizens is in a worrying status.
-```{r}
-options(scipen=5)
-death_mosaic %>% 
-  group_by(disease) %>%
-  summarise(deaths = sum(deaths)) %>%
-  ggplot() + geom_col(aes(x = fct_reorder(disease, deaths, .desc = TRUE), y = deaths), fill = "rosybrown") + 
-  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 13),
-        axis.text.y = element_text(size = 13),
-        axis.title = element_text(size = 15),
-        plot.title = element_text(size = 20)
-      ) + 
-  ggtitle("Number of Deaths Caused by Each Factor") + xlab("Death Cause") + ylab("Number of Deaths")
-```
-In addition, the geographical plots on death rates of each unnatural death cause at the beggining of the Executive Summary section shows two significant clusters where the death rates of most causes are high: one is located east south around Mississippi and Alabama, and the other is located west north around Wyoming and South Dakota. 
-
 ```{r fig.height=14, fig.width=14, echo=FALSE}
 risk$diabete = diabete$x
 risk$few_fruit = few_fruit$x
@@ -609,6 +588,28 @@ labels = c("green"='Obesity Index', "red"='No-excercise Index',  "blue" ='Few Fr
 breaks=c("green", "red","blue", "orange", "purple")) + 
   ylab("") + xlab("Index") + theme_dotplot +ggtitle("Ranking of States and Correlation among Factors")
 ```
+
+#### 5.5 Unnatural Causes of Death
+
+Heart disease ranks first among all causes of deaths and people have to start living a healthy lifestyle to prevent such disease. Suicide ranks the fourth among the causes and this might be suggesting that the overall mental health of US citizens is in a worrying status.
+```{r}
+options(scipen=5)
+death_mosaic %>% 
+  group_by(disease) %>%
+  summarise(deaths = sum(deaths)) %>%
+  ggplot() + geom_col(aes(x = fct_reorder(disease, deaths, .desc = TRUE), y = deaths), fill = "rosybrown") + 
+  theme(axis.text.x = element_text(angle = 30, hjust = 1, size = 8),
+        axis.text.y = element_text(size = 12),
+        axis.title = element_text(size = 12),
+        plot.title = element_text(size = 16)
+      ) + 
+  ggtitle("Number of Deaths Caused by Each Factor") + xlab("Death Cause") + ylab("Number of Deaths")
+```
+
+
+In addition, the geographical plots on death rates of each unnatural death cause at the beggining of the Executive Summary section shows two significant clusters where the death rates of most causes are high: one is located east south around Mississippi and Alabama, and the other is located west north around Wyoming and South Dakota. 
+
+
 
 ### 6 Conclusion
 The investigation of US health status project was quite fruitful where all of us have a chance to explore both large dataset cleaning approaches and interactive visualization method through PLotly and Shiny App. The most expressive and significant finding in our project is to discover the geographical pattern of the health condition in the US: the Southeastern region has the worst health status, especially in states Mississippi and Alabama. We struggled at dealing with a large amount of variables/affecting factors and most of them are highly correlated, however, we were not able to capture that causal relationship. In the future, we are willing to investigate more literature paper and health measurement criteria to gain more insight regarding the evaluation of health condition.
