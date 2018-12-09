@@ -1,6 +1,6 @@
 ---
 title: "US Health Status Report"
-author: "Xinxin Huang, Yiming Huang, Yiran Wang (yw3201), Yufan Zhuang (yz3453)"
+author: "Xinxin Huang, Yiming Huang (yh3065), Yiran Wang (yw3201), Yufan Zhuang (yz3453)"
 date: "2018/12/8"
 output: html_document
 ---
@@ -26,8 +26,14 @@ We retrieved our data from the Community Health Status Indicators database of th
 #### 2.1 Summary Measure of Health
 This dataset summarizes the four health measures: the length of life (`average life expectancy ALE`), the risk of dying (`rates of death`), the health-related quality of life (self-related `healthy status` and `unhealthy days`) for all counties in all 50 states in the US. 
 
+#### 2.2 demographics
+This dataset shows the demographic information of the counties during the time the data from other datasets were collected. This includes average estimations of total population, population in each age and race group, population densities, and poverty levels.
+
 #### 2.3 Risk Factors
 This dataset identifies the risk factors to health such as (`obesity`) and  (`no exercise`) in the US to the county level.
+
+#### 2.4 Leading Causes of Death
+This dataset summarizes the accumulative numbers of deaths due to different unnatural causes such as diseases, injuries, and suicides during the whole period when the data was collected. It also partitions the numbers of deaths by age and race groups and provides.
 
 ### 3 Analysis of Data Quality
 
@@ -35,6 +41,10 @@ This dataset identifies the risk factors to health such as (`obesity`) and  (`no
 summary_measure <-read.csv(
     here::here("data","summary_measures_of_health.csv")
   )
+
+demographics <- read.csv(
+    here::here("data", "demographics.csv")
+)
 
 preventive_df <-
   read.csv(
@@ -47,6 +57,10 @@ measurebirth <-
 
 risk_factor = read.csv(
   here::here("data","risk_factors_and_access_to_care.csv")
+)
+
+deaths_raw = read.csv(
+  here::here("data", "leading_causes_of_death.csv")
 )
 
 death_causes = read.csv(
@@ -81,7 +95,7 @@ risk$Abbr = levels(risk$Group.1)[as.numeric(risk$Group.1)]
 ```
 The data is quite tidy as each column could not be further divided into more detailed ones. This measurement is according to an old version government standards, `Behavior Risk Factor Surveillance System` from 1993 to 1997, but it has been well maintained.
 
-In the dataset, `-2222.20` and `-1111.10` cell value indicates the missing data which has been converted to `NA`. We visualize the missing pattern in one dataset as an example, in general, there aren't many missing data.
+In the dataset, The special numbers `-2222`, `-2222.2`, `-2`, and `-9999` stand for missing data, and they are converted to `NA` during our analysis. In addition, the values `-1111`, `-1111.1`, and `-1` in the `leading causes of death` data mean that the data was not reported for that county because either the number is less than 20 for a specific race/age category or that number is less than 10% of all the deaths in that race/age category. During the analysis, these numbers are converted to `0` instead. We visualize the missing pattern in one dataset as an example, in general, there aren't many missing data.
 ```{r filter01}
 library(tidyverse)
 library(ggplot2)
@@ -96,7 +110,16 @@ summary_measure_df1[summary_measure_df1==-1111.10] <- NA
 library(extracat)
 visna(summary_measure_df1,sort = "b")
 ```
-
+However, in the `leading causes of death` dataset, there are many "zero" entries in number of deaths columns. We choose a subset of the variables to illustrate this fact.
+```{r}
+deaths_raw_zeros <- deaths_raw
+deaths_raw_zeros[deaths_raw_zeros == -1111 | deaths_raw_zeros == -1111.1 | deaths_raw_zeros == -1] <- NA
+deaths_raw_zeros <- deaths_raw_zeros %>%
+  select(-contains("Min")) %>%
+  select(-contains("Max")) 
+visna(deaths_raw_zeros[, 17: 27], sort = "b")
+```
+This implies that our analysis based on this dataset might be an underestimate of number of deaths in low population areas and/or race/age categories. We try to mitigate the effect by ignoring races and ages so that only the total number of deaths due to a certain cause in a county is used for analysis. Nonetheless there are still two major sources of underestimation: lower total population in an area, and rarer occurence of death due to a disease or an accident.
 
 ### 4 Main analysis (Exploratory Data Analysis)
 #### 4.1 Summary Measure of Health
@@ -241,10 +264,29 @@ breaks=c("green", "red","blue", "orange", "purple")) +
 
 It can be seen that there exists a strong correlation among these health risk factors, and the Southern states ranked higher on this Cleveland plot. 
 
+#### 4.4 Leading Causes of Deaths
+We used pre-cleaned data processed by python. The cleaning script is located in out [github repository](https://github.com/Terry1004/US-Health-Visualization/blob/master/sketches/preprocessing.ipynb). We firstly take a general view on the total number of deaths due to each cause. Since we take the sums of data over all the counties in US, even though the number of deaths might be smaller than the actual one for causes with smaller number of deaths, this should have little impact on their absolute ranking. 
+```{r}
+death_mosaic %>% 
+  group_by(disease) %>%
+  summarise(deaths = sum(deaths)) %>%
+  ggplot() + geom_col(aes(x = fct_reorder(disease, deaths, .desc = TRUE), y = deaths), fill = "rosybrown") + 
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 9),
+        axis.title = element_text(size = 12),
+        plot.title = element_text(size = 14)
+      ) + 
+  ggtitle("Number of Deaths Caused by Each Factor") + xlab("Death Cause") + ylab("Number of Deaths")
+```
+Heart disease as the first killer is not very suprising. However, this should still be a warning that people have to take actions to prevent heart disease. An unexpected fact is that suicide ranks the 4th among all the leading factors of deaths. This is a signal of bad mental health.
+
+We then explore the geographical distribution of the number of deaths due to different causes. In this case, note that we may underestimate the death numbers in areas with lower population. Therefore, we mainly focus on those areas with significant high death rates due to a certain cuase. While analyzing the deaths of causes in each state, we use the death rates of a cause per 100000 people in states to indicate the color in the graph to account for the population differences among states. After some exploration of the causes, we find three remarkable ones. The related graphs are published on [shinyapps]( https://terry142857.shinyapps.io/US-Health-Visualization/) in the US Unnatural Death Causes section. 
+
+Browsing through all causes of deaths, we can see that there are two clusters in US that have higher death rates among almost all death causes: one is around Mississippi and Alabama, while the other is around Wyoming and South Dakota. Besides, Alaska has the highest suicide rate. The reasons leading to this remain unclear for further investigation.
+
 ### 5 Executive summary
 #### 5.1 Summary Measure of Health
 This map illustrates that the life-expectancy in middle, western and northeastern regions outperformed the southeastern area in the US.
-```{r map1, echo=FALSE}
+```{r map2, echo=FALSE}
 library(plotly)
 
 l <- list(color = toRGB("white"), width = 2)
