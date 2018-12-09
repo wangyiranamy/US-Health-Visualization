@@ -59,7 +59,7 @@ This dataset consists of the measures of Birth and Death: Total number birth of 
     + Postneonatal mortality (`IM_Postneonatal`): Infant deaths occurring day 29 or later.
     + White/Black Infant Mortality (`IM_Wh_Non_Hisp`, `IM_Bl_Non_Hisp`): Race-specific infant mortality.
 
-#### 2.6 Preventive Services Use
+#### 2.6 Measure of Preventive Diseases
 Data are from the Centers for Disease Control and Prevention, National Center for Infectious Diseases and the National Center for HIV, STD, and TB, 1989-1998. Depending upon county size, the number of cases for the most recent 3, 5, or 10 years is reported. Data include all cases for which county of residence was specified. The expected number is based on the rate for the strata of peer counties and the county’s population estimate. (Expected number = rate among peers x county population).
   
 * This dataset contains the reported cases of expected cases of some preventive diseases, such as the following:
@@ -77,6 +77,7 @@ Data are from the Centers for Disease Control and Prevention, National Center fo
 ### 3 Analysis of Data Quality
 
 ```{r readfile}
+options(scipen =5)
 # Load data files here
 summary_measure <-read.csv(
     here::here("data","summary_measures_of_health.csv")
@@ -278,7 +279,7 @@ p
 
   * We can clearly see that the states have the higher percentage of women who are under 18 get birth to tend to have the higher percentage of premature birth, which indicates that young mothers (under 18) have negative impacts on the health of infants.
 
-#### 4.3 Preventive Services Use
+#### 4.3  Measure of Preventive Diseases
 
 ```{r }
 library(tidyr)
@@ -548,7 +549,7 @@ p2
 ```
 
 
-#### 5.3 Preventive Services Use
+#### 5.3  Measure of Preventive Diseases
 * The Syphilis and Pertussis were the two most popular preventive diseases in the US from 1994-2003 seeing from the distribution of different cases in the bar plot in the Analysis part.
 * Pertussis Reported Case was the most popular preventive diseases during 1994-2003, and Arkansas was the place of the highest number of Pertussis.
 * Most of the states has a low number of Pertussis Reported Case, so the local preventive diseases center of states such as Arkansas and Idaho should pay attention to this situation and promote the preventive service of Pertussis. 
@@ -598,7 +599,7 @@ death_mosaic %>%
   group_by(disease) %>%
   summarise(deaths = sum(deaths)) %>%
   ggplot() + geom_col(aes(x = fct_reorder(disease, deaths, .desc = TRUE), y = deaths), fill = "rosybrown") + 
-  theme(axis.text.x = element_text(angle = 30, hjust = 1, size = 8),
+  theme(axis.text.x = element_text(angle = 20, hjust = 1, size = 11),
         axis.text.y = element_text(size = 12),
         axis.title = element_text(size = 12),
         plot.title = element_text(size = 16)
