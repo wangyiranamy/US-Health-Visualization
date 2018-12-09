@@ -4,4 +4,4 @@
 .Ruserdata
 **/.DS_Store
 python/.ipynb_checkpoints
-**/.lock*
+**/.~lock*
